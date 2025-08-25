@@ -832,6 +832,29 @@ function hideTooltip() {
     }
 }
 
+// Accordion functionality
+function toggleAccordion(header) {
+    const content = header.nextElementSibling;
+    const icon = header.querySelector('.accordion-icon i');
+    
+    // Toggle active class on header
+    header.classList.toggle('active');
+    
+    // Toggle content visibility
+    if (content.classList.contains('active')) {
+        content.classList.remove('active');
+        icon.style.transform = 'rotate(0deg)';
+    } else {
+        content.classList.add('active');
+        icon.style.transform = 'rotate(180deg)';
+        
+        // Ensure content is fully visible
+        setTimeout(() => {
+            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 300);
+    }
+}
+
 // Add CSS for notifications
 const notificationStyles = document.createElement('style');
 notificationStyles.textContent = `
