@@ -131,7 +131,7 @@ p {
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .nav-menu a {
@@ -1173,7 +1173,7 @@ body {
 @media (max-width: 1024px) {
     .nav-menu {
         gap: 1rem;
-        justify-content: flex-start;
+        justify-content: center;
     }
     
     .nav-menu a {
