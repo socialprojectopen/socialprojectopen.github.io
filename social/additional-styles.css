@@ -479,6 +479,75 @@
     }
 }
 
+@media (max-width: 360px) {
+    /* Адаптация таблиц для очень узких экранов - без горизонтальной прокрутки */
+    .table-container {
+        margin: 1.5rem 0 0;
+    }
+
+    .services-table-main,
+    .representatives-table-main {
+        width: 100%;
+        font-size: 0.7rem;
+        table-layout: auto;
+    }
+
+    .services-table-main th,
+    .representatives-table-main th {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.7rem;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .services-table-main td,
+    .representatives-table-main td {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.65rem;
+        line-height: 1.2;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    /* Адаптивные колонки для очень узких экранов */
+    .services-table-main th:nth-child(1),
+    .services-table-main td:nth-child(1),
+    .representatives-table-main th:nth-child(1),
+    .representatives-table-main td:nth-child(1) {
+        width: auto;
+        max-width: 35%;
+    }
+
+    .services-table-main th:nth-child(2),
+    .services-table-main td:nth-child(2),
+    .representatives-table-main th:nth-child(2),
+    .representatives-table-main td:nth-child(2) {
+        width: auto;
+        max-width: 45%;
+    }
+
+    .services-table-main th:nth-child(3),
+    .services-table-main td:nth-child(3),
+    .representatives-table-main th:nth-child(3),
+    .representatives-table-main td:nth-child(3) {
+        width: auto;
+        max-width: 20%;
+    }
+
+    .services-table-main th:nth-child(4),
+    .services-table-main td:nth-child(4),
+    .representatives-table-main th:nth-child(4),
+    .representatives-table-main td:nth-child(4) {
+        width: auto;
+        max-width: 20%;
+    }
+
+    .status {
+        padding: 0.15rem 0.4rem;
+        font-size: 0.6rem;
+    }
+}
+
 @media (max-width: 480px) {
     .hero-image-container {
         height: 250px;
@@ -492,6 +561,227 @@
     .about-main-image {
         margin: 1rem 0;
         border-radius: 0.5rem;
+    }
+
+    /* Преобразование таблиц в карточки для мобильных */
+    .table-container {
+        margin: 2rem 0 0;
+        border-radius: 1rem;
+        overflow: visible;
+        background: white;
+    }
+
+    /* Скрываем таблицы на мобильных */
+    .services-table-main,
+    .representatives-table-main {
+        display: none;
+    }
+
+
+    /* Стили для карточек данных */
+    .mobile-table-card {
+        background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+        border: 1px solid #E2E8F0;
+        border-radius: 1rem;
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mobile-table-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #1E3A8A, #3B82F6);
+    }
+
+    .mobile-table-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .mobile-table-card h4 {
+        color: #1E3A8A;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .mobile-table-card h4::before {
+        content: '📋';
+        font-size: 1.2rem;
+    }
+
+    .mobile-table-card .field {
+        margin-bottom: 0.75rem;
+        padding: 0.75rem;
+        background: rgba(248, 250, 252, 0.8);
+        border-radius: 0.5rem;
+        border-left: 3px solid #3B82F6;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-table-card .field:hover {
+        background: rgba(59, 130, 246, 0.05);
+        border-left-color: #1E3A8A;
+    }
+
+    .mobile-table-card .field-label {
+        font-weight: 600;
+        color: #1F2937;
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .mobile-table-card .field-label::before {
+        content: '•';
+        color: #3B82F6;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    .mobile-table-card .field-value {
+        color: #4B5563;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        font-weight: 500;
+    }
+
+    .mobile-table-card .status {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.4rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-top: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-table-card .status::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+    }
+
+    .mobile-table-card .status.active {
+        background: linear-gradient(135deg, #D1FAE5, #A7F3D0);
+        color: #065F46;
+        border: 1px solid #A7F3D0;
+    }
+
+    .mobile-table-card .status.active::before {
+        background: #10B981;
+    }
+
+    .mobile-table-card .status.planning {
+        background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+        color: #92400E;
+        border: 1px solid #FDE68A;
+    }
+
+    .mobile-table-card .status.planning::before {
+        background: #F59E0B;
+    }
+
+    /* Анимация появления карточек */
+    .mobile-cards-container {
+        animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Статистические карточки */
+    .stat-card {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+        margin: 0.5rem 0;
+    }
+
+    .stat-description {
+        font-size: 0.7rem;
+    }
+
+    /* Достижения */
+    .achievement-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .achievement-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .achievement-card p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .achievement-date {
+        font-size: 0.7rem;
+    }
+
+    /* Формы */
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
 

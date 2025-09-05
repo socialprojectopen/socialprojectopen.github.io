@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Создание мобильных карточек из таблиц
+    createMobileTableCards();
+
     // Отслеживание активной секции для подсветки меню
     function updateActiveNavLink() {
         const sections = document.querySelectorAll('section[id]');
@@ -928,3 +931,87 @@ mobileMenuStyles.textContent = `
 `;
 
 document.head.appendChild(mobileMenuStyles);
+
+// Функция для создания мобильных карточек из таблиц
+function createMobileTableCards() {
+    // Проверяем, что мы на мобильном устройстве
+    if (window.innerWidth > 768) return;
+
+    // Обрабатываем таблицу услуг
+    const servicesTable = document.querySelector('.services-table-main');
+    if (servicesTable) {
+        createCardsFromTable(servicesTable, 'services');
+    }
+
+    // Обрабатываем таблицу представителей
+    const representativesTable = document.querySelector('.representatives-table-main');
+    if (representativesTable) {
+        createCardsFromTable(representativesTable, 'representatives');
+    }
+}
+
+function createCardsFromTable(table, tableType) {
+    const tbody = table.querySelector('tbody');
+    if (!tbody) return;
+
+    const rows = tbody.querySelectorAll('tr');
+    const container = table.closest('.table-container');
+    
+    // Создаем контейнер для карточек
+    const cardsContainer = document.createElement('div');
+    cardsContainer.className = 'mobile-cards-container';
+    
+    rows.forEach((row, index) => {
+        const cells = row.querySelectorAll('td');
+        if (cells.length === 0) return;
+
+        const card = document.createElement('div');
+        card.className = 'mobile-table-card';
+
+        // Создаем заголовок карточки
+        const title = document.createElement('h4');
+        title.textContent = cells[0].textContent.trim();
+        card.appendChild(title);
+
+        // Добавляем поля данных
+        const headers = table.querySelectorAll('th');
+        for (let i = 1; i < cells.length; i++) {
+            const field = document.createElement('div');
+            field.className = 'field';
+
+            const label = document.createElement('div');
+            label.className = 'field-label';
+            label.textContent = headers[i] ? headers[i].textContent.trim() : `Поле ${i}`;
+
+            const value = document.createElement('div');
+            value.className = 'field-value';
+            
+            // Обрабатываем статусы
+            if (cells[i].querySelector('.status')) {
+                const status = cells[i].querySelector('.status');
+                value.innerHTML = `<span class="status ${status.classList.contains('active') ? 'active' : 'planning'}">${status.textContent.trim()}</span>`;
+            } else {
+                value.textContent = cells[i].textContent.trim();
+            }
+
+            field.appendChild(label);
+            field.appendChild(value);
+            card.appendChild(field);
+        }
+
+        cardsContainer.appendChild(card);
+    });
+
+    // Заменяем таблицу карточками
+    container.appendChild(cardsContainer);
+}
+
+// Пересоздаем карточки при изменении размера окна
+window.addEventListener('resize', function() {
+    // Удаляем существующие карточки
+    const existingCards = document.querySelectorAll('.mobile-cards-container');
+    existingCards.forEach(cards => cards.remove());
+    
+    // Создаем новые карточки
+    createMobileTableCards();
+});
