@@ -1,0 +1,4099 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ТосолИмпорт</title>
+  <link rel="icon" type="image/png" href="assets/images/Favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="description" content="ООО "ТосолИмпорт" предлагает профессиональные материалы и технологии для ремонта бетона, промышленной химии и полимерных полов, гарантируя долговечность и качество.">
+  
+  <style>
+    /* Live Chat Styles */
+    .live-chat-widget{position:fixed;bottom:20px;right:20px;z-index:9999;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;opacity:1;visibility:visible}.chat-backdrop{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(3px);z-index:9998;opacity:0;visibility:hidden;transition:all 0.3s ease}.chat-backdrop.active{opacity:1;visibility:visible}.chat-toggle{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,#2196F3 0%,#1976D2 50%,#0D47A1 100%);border:none;box-shadow:0 8px 25px rgba(33,150,243,0.4),0 0 20px rgba(25,118,210,0.3);cursor:pointer;display:flex;align-items:center;justify-content:center;color:white;transition:all 0.3s ease;position:relative;border:3px solid rgba(255,255,255,0.2)}.chat-toggle:hover{transform:scale(1.08);box-shadow:0 12px 35px rgba(33,150,243,0.6),0 0 30px rgba(25,118,210,0.5)}.chat-toggle .chat-icon,.chat-toggle .close-icon{transition:all 0.3s ease;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2))}.chat-pulse-ring{position:absolute;width:100%;height:100%;border:2px solid rgba(33,150,243,0.6);border-radius:50%;animation:pulse-ring 2s infinite ease-out;top:50%;left:50%;transform:translate(-50%,-50%)}.chat-toggle.has-new-message .chat-pulse-ring{animation:pulse-ring 1s infinite ease-out}@keyframes pulse-ring{0%{transform:translate(-50%,-50%) scale(1);opacity:0.8}50%{transform:translate(-50%,-50%) scale(1.2);opacity:0.4}100%{transform:translate(-50%,-50%) scale(1.4);opacity:0}}.hidden{display:none!important}.chat-window{position:absolute;bottom:85px;right:0;width:400px;height:580px;background:linear-gradient(145deg,#ffffff 0%,#f8fafc 50%,#f1f5f9 100%);border-radius:24px;box-shadow:0 25px 80px rgba(0,0,0,0.15),0 0 60px rgba(33,150,243,0.1),inset 0 1px 0 rgba(255,255,255,0.8);display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(33,150,243,0.1);background-clip:padding-box;animation:slideUpModern 0.4s cubic-bezier(0.4,0,0.2,1);backdrop-filter:blur(20px)}@keyframes slideUpModern{from{transform:translateY(30px) scale(0.9)}to{transform:translateY(0) scale(1)}}.chat-window::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;border-radius:20px;padding:2px;background:linear-gradient(45deg,#667eea,#764ba2,#f093fb,#f5576c,#4facfe,#00f2fe);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;z-index:-1}.chat-header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:20px;display:flex;align-items:center;justify-content:space-between;position:relative}.chat-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent)}.header-info{display:flex;align-items:center;gap:10px}.header-title{font-weight:700;font-size:17px;text-shadow:0 2px 4px rgba(0,0,0,0.3)}.chat-close-btn{background:rgba(255,255,255,0.1);border:none;color:white;cursor:pointer;padding:8px;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:all 0.2s ease;backdrop-filter:blur(10px)}.chat-close-btn:hover{background:rgba(255,255,255,0.2);transform:scale(1.1)}.messages-container{flex:1;overflow-y:auto;padding:20px;background:rgba(255,255,255,0.05);display:flex;flex-direction:column;gap:15px;backdrop-filter:blur(5px)}.message{display:flex;align-items:flex-start;gap:10px;animation:messageSlide 0.3s ease-out}@keyframes messageSlide{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.message.user-message{flex-direction:row-reverse}.message-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(102,126,234,0.3);font-weight:bold;font-size:14px;overflow:hidden}.message-avatar.operator{background-image:url('assets/images/operator.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;border:2px solid rgba(102,126,234,0.5)}.user-message .message-avatar{background:linear-gradient(135deg,#f093fb,#f5576c)}.message-bubble{background:rgba(255,255,255,0.95);padding:15px 20px;border-radius:20px;max-width:75%;box-shadow:0 4px 15px rgba(0,0,0,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2)}.user-message .message-bubble{background:linear-gradient(135deg,#667eea,#764ba2);color:white;border-bottom-right-radius:6px;box-shadow:0 4px 15px rgba(102,126,234,0.3)}.bot-message .message-bubble{border-bottom-left-radius:6px}.message-text{font-size:15px;line-height:1.5;word-wrap:break-word;font-weight:500}.message-time{font-size:12px;opacity:0.7;margin-top:6px;font-weight:400}.chat-input-container{padding:20px;background:rgba(255,255,255,0.08);border-top:1px solid rgba(255,255,255,0.1);display:flex;gap:12px;align-items:flex-end;backdrop-filter:blur(10px)}.message-input{flex:1;border:2px solid rgba(255,255,255,0.2);border-radius:25px;padding:16px 22px;font-size:15px;resize:none;font-family:inherit;outline:none;max-height:140px;min-height:52px;background:rgba(255,255,255,0.95);color:#333;transition:all 0.3s ease;backdrop-filter:blur(5px);line-height:1.4}.message-input:focus{border-color:#667eea;box-shadow:0 0 20px rgba(102,126,234,0.3);background:rgba(255,255,255,1)}.message-input::placeholder{color:#888;font-weight:400}.send-button{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);border:none;color:white;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;flex-shrink:0;box-shadow:0 6px 20px rgba(102,126,234,0.4)}.send-button:hover:not(:disabled){transform:scale(1.1);box-shadow:0 8px 25px rgba(102,126,234,0.6)}.send-button:disabled{background:linear-gradient(135deg,#ccc,#999);cursor:not-allowed;transform:none;box-shadow:none}.typing-indicator{display:flex;gap:6px;align-items:center;padding:10px 0}.typing-indicator span{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);animation:typingNeon 1.4s infinite ease-in-out;box-shadow:0 2px 8px rgba(102,126,234,0.4)}.typing-indicator span:nth-child(1){animation-delay:-0.32s}.typing-indicator span:nth-child(2){animation-delay:-0.16s}@keyframes typingNeon{0%,80%,100%{transform:scale(0.8);opacity:0.5}40%{transform:scale(1.2);opacity:1}}.chat-status{padding:12px 20px;background:rgba(33,150,243,0.1);color:#1976d2;text-align:center;font-size:13px;font-weight:500;border-top:1px solid rgba(33,150,243,0.2)}@media (max-width:480px){.live-chat-widget{right:15px;bottom:15px}.chat-window{width:calc(100vw - 30px);right:-15px;height:480px}.chat-toggle{width:60px;height:60px}}.messages-container::-webkit-scrollbar{width:8px}.messages-container::-webkit-scrollbar-track{background:rgba(255,255,255,0.1);border-radius:4px}.messages-container::-webkit-scrollbar-thumb{background:linear-gradient(135deg,#667eea,#764ba2);border-radius:4px;box-shadow:0 2px 8px rgba(102,126,234,0.3)}.messages-container::-webkit-scrollbar-thumb:hover{background:linear-gradient(135deg,#764ba2,#667eea)}.chat-window[dir="rtl"]{direction:rtl}.chat-window[dir="rtl"] .chat-header{flex-direction:row-reverse}.chat-window[dir="rtl"] .header-info{flex-direction:row-reverse}.chat-window[dir="rtl"] .message{text-align:right}.chat-window[dir="rtl"] .message.user-message{flex-direction:row}.chat-window[dir="rtl"] .message.bot-message{flex-direction:row-reverse}.chat-window[dir="rtl"] .chat-input-container{flex-direction:row-reverse}.chat-window[dir="rtl"] .message-input{text-align:right}
+  </style>
+</head>
+<body>
+  
+  <div class="background-image" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #001a1a;
+    z-index: -2;
+  "></div>
+  
+  
+  <!-- Бегущая строка -->
+  
+  <div class="running-line-container">
+    <div class="running-line" style="
+      background-color: #001a1a;
+    ">
+      <div class="running-line-text">Комплексные решения для бетона, оборудования и полов – надежность и качество в каждом продукте</div>
+    </div>
+  </div>
+  
+  
+  <header>
+    <nav style="background-color: #008686; --menu-bg-color: #008686; --menu-link-color: #ffd180;">
+      <div class="nav-container">
+        <div class="site-branding" style="display: flex; flex-direction: column; margin-right: 2rem;">
+          <div class="logo" style="color: #ffffff">ТосолИмпорт</div>
+          
+        </div>
+        <button class="menu-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          
+            <li>
+              <a href="#о_компании" style="
+                color: #ffd180;
+                font-size: 16px;
+                font-weight: 500;
+                transition: 0.3s;
+              ">о_компании</a>
+            </li>
+          
+            <li>
+              <a href="#услуги" style="
+                color: #ffd180;
+                font-size: 16px;
+                font-weight: 500;
+                transition: 0.3s;
+              ">услуги</a>
+            </li>
+          
+            <li>
+              <a href="#преимущества" style="
+                color: #ffd180;
+                font-size: 16px;
+                font-weight: 500;
+                transition: 0.3s;
+              ">преимущества</a>
+            </li>
+          
+            <li>
+              <a href="#новости" style="
+                color: #ffd180;
+                font-size: 16px;
+                font-weight: 500;
+                transition: 0.3s;
+              ">новости</a>
+            </li>
+          
+            <li>
+              <a href="#вопросы" style="
+                color: #ffd180;
+                font-size: 16px;
+                font-weight: 500;
+                transition: 0.3s;
+              ">вопросы</a>
+            </li>
+          
+            <li>
+              <a href="#отзывы" style="
+                color: #ffd180;
+                font-size: 16px;
+                font-weight: 500;
+                transition: 0.3s;
+              ">отзывы</a>
+            </li>
+          
+          <li>
+            <a href="#contact" style="
+              color: #ffd180;
+              font-size: 16px;
+              font-weight: 500;
+              transition: 0.3s;
+            ">Контакты</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero" style="
+      
+      
+    ">
+      
+        <div class="hero-bg-animation" style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('assets/images/hero.jpg');
+          background-size: cover;
+          background-position: center;
+          filter: blur(0.1px);
+          z-index: 1;
+        "></div>
+      
+      
+      
+      
+        <div class="hero-overlay" style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(rgba(0,0,0,0.001), rgba(0,0,0,0.001));
+          z-index: 2;
+        "></div>
+      
+      <div class="hero-content">
+        <div class="hero-text-wrapper" style="
+          position: relative;
+          z-index: 10;
+          background: rgba(0, 0, 0, 0.4);
+          padding: 2rem 3rem;
+          border-radius: 20px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+          max-width: 800px;
+          margin: 0 auto;
+        ">
+          <h1 style="
+            color: #ffffff;
+            text-shadow: 
+              2px 2px 4px rgba(0, 0, 0, 0.9),
+              -1px -1px 2px rgba(255, 255, 255, 0.8),
+              1px 1px 2px rgba(255, 255, 255, 0.6),
+              0 0 20px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(255, 255, 255, 0.3);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.8));
+            margin-bottom: 1.5rem;
+          ">Надежные решения для строительства и промышленности</h1>
+          <p style="
+            color: #ffd180;
+            text-shadow: 
+              1px 1px 3px rgba(0, 0, 0, 0.9),
+              -1px -1px 1px rgba(255, 255, 255, 0.7),
+              0 0 15px rgba(0, 0, 0, 0.5),
+              0 0 25px rgba(255, 255, 255, 0.2);
+            -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.2);
+            filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.7));
+            margin-bottom: 2rem;
+          ">ООО "ТосолИмпорт" предлагает профессиональные материалы и технологии для ремонта бетона, промышленной химии и полимерных полов, гарантируя долговечность и качество.</p>
+          
+          <div style="display: flex; gap: 1rem; justify-content: center; align-items: center;">
+            
+            <a href="#contact" style="
+              color: #ffffff;
+              text-decoration: none;
+              padding: 0.75rem 1.5rem;
+              border: 2px solid #ffffff;
+              border-radius: 6px;
+              transition: all 0.3s ease;
+              font-weight: 500;
+              background: rgba(255, 255, 255, 0.1);
+            ">Контакты</a>
+          </div>ьныйый
+        </div>
+      </div>
+    </section>
+
+    
+        <section id="о_компании" class="section" 
+          data-show-background="false"
+          style="
+            --border-start-color: #00cccc;
+            --border-end-color: #00cccc;
+            --section-background-color: #001a1a;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            color: #455a64;
+          "
+        >
+          <div class="section-container" style="position: relative; z-index: 2;">
+            <div class="section-header">
+              <h2 style="
+                color: #ffffff; 
+                text-align: center; 
+                margin-bottom: 1rem;
+                font-size: 2rem;
+                font-weight: 600;
+              ">ООО "ТосолИмпорт" – качество и надежность</h2>
+              
+                <p style="
+                  color: #00ffff; 
+                  text-align: center; 
+                  margin-bottom: 1rem;
+                  font-size: 1.1rem;
+                  line-height: 1.6;
+                ">Мы предоставляем широкий ассортимент материалов и решений для строительства и промышленности, ориентируясь на долговечность, инновации и высокие стандарты качества.</p>
+              
+              
+                      <div class="section-gallery" data-section-id="о_компании" style="
+                        width: 100%;
+                        margin: 2rem auto;
+                        text-align: center;
+                        max-width: 800px;
+                        height: 500px;
+                        position: relative;
+                        border-radius: 12px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                      ">
+                        
+                            <img 
+                              src="assets/images/о_компании_1758097707077_ih034n.jpg" 
+                              alt="ООО "ТосолИмпорт" – качество и надежность 1"
+                              class="gallery-img"
+                              data-index="0"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: block;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/о_компании_1758097705521_mslkxk.jpg" 
+                              alt="ООО "ТосолИмпорт" – качество и надежность 2"
+                              class="gallery-img"
+                              data-index="1"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/о_компании_1758097706916_9ggtaf.jpg" 
+                              alt="ООО "ТосолИмпорт" – качество и надежность 3"
+                              class="gallery-img"
+                              data-index="2"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/о_компании_1758097707288_z79711.jpg" 
+                              alt="ООО "ТосолИмпорт" – качество и надежность 4"
+                              class="gallery-img"
+                              data-index="3"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/о_компании_1758097707459_92att3.jpg" 
+                              alt="ООО "ТосолИмпорт" – качество и надежность 5"
+                              class="gallery-img"
+                              data-index="4"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/о_компании_1758097708817_hi74xm.jpg" 
+                              alt="ООО "ТосолИмпорт" – качество и надежность 6"
+                              class="gallery-img"
+                              data-index="5"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/о_компании_1758097705336_z37z2h.jpg" 
+                              alt="ООО "ТосолИмпорт" – качество и надежность 7"
+                              class="gallery-img"
+                              data-index="6"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/о_компании_1758097710551_qg8w0y.jpg" 
+                              alt="ООО "ТосолИмпорт" – качество и надежность 8"
+                              class="gallery-img"
+                              data-index="7"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/о_компании_1758097710636_ydfkfi.jpg" 
+                              alt="ООО "ТосолИмпорт" – качество и надежность 9"
+                              class="gallery-img"
+                              data-index="8"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/о_компании_1758097710718_wm7gpj.jpg" 
+                              alt="ООО "ТосолИмпорт" – качество и надежность 10"
+                              class="gallery-img"
+                              data-index="9"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                        
+                                        <!-- Gallery Navigation -->
+                <div style="
+                          position: absolute;
+                          bottom: 10px;
+                          left: 0;
+                          right: 0;
+                          text-align: center;
+                          z-index: 2;
+                        ">
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="0"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: #ffffff;
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="1"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="2"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="3"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="4"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="5"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="6"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="7"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="8"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="9"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                        </div>
+                      </div>
+                    
+            </div>
+            <div class="cards-container">
+              
+                <div class="card elevated" data-card-id="about_1" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Конструкционные ремонтные смеси</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Предлагаем тиксотропные, литьевые и подливочные составы, которые эффективно восстанавливают поврежденный бетон. Наши решения позволяют укрепить конструкции, продлить срок их службы и повысить прочность. Используются на промышленных объектах, в гражданском строительстве и при ремонте инфраструктуры. Мы гарантируем надежность и сертифицированное качество продукции.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_2" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Гидроизоляционные материалы</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Наш ассортимент включает проникающие, обмазочные и эластичные гидроизоляционные составы. Эти материалы защищают конструкции от влаги, предотвращают коррозию и обеспечивают долговечность. Используются для фундаментов, подвалов, бассейнов и других объектов, где требуется надежная защита от воды. Мы предлагаем проверенные решения, которые сохраняют целостность бетона на десятилетия.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_3" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Герметизация швов и трещин</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">ООО "ТосолИмпорт" поставляет гидрошнуры, гидроленты и мастики для устранения протечек и укрепления соединений. Наши материалы надежно герметизируют швы и трещины в бетонных конструкциях, обеспечивая защиту от влаги и деформаций. Используются в строительстве и ремонте зданий, промышленных сооружений и гидротехнических объектов.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_4" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Огнезащитные составы</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Мы предлагаем покрытия и системы огнезащиты для строительных конструкций. Они препятствуют распространению огня, повышают пожаробезопасность зданий и соответствуют строгим нормативам. Наши материалы применяются в жилых, коммерческих и промышленных объектах, обеспечивая надежную защиту людей и имущества.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_5" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Добавки в бетон</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">В ассортименте – добавки, повышающие прочность, влагостойкость и долговечность бетона. Они улучшают рабочие характеристики раствора, ускоряют набор прочности и предотвращают образование трещин. Такие решения применяются в строительстве дорог, мостов, зданий и инженерных сооружений.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_6" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Герметики</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Мы поставляем силиконовые, полиуретановые и акриловые герметики для надежного уплотнения швов и соединений. Продукция отличается высокой адгезией, устойчивостью к перепадам температур и химическим воздействиям. Используется в промышленности, строительстве и ремонте оборудования.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_7" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Клеи промышленного назначения</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">ООО "ТосолИмпорт" предлагает эпоксидные, цианоакрилатные, аэрозольные клеи и фиксаторы резьбы. Эти продукты обеспечивают прочное соединение деталей, устойчивое к вибрациям и нагрузкам. Они применяются в машиностроении, ремонте и производстве.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_8" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Смазочные материалы</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">В нашем ассортименте представлены силиконовые, тефлоновые, медные и универсальные смазки. Они защищают механизмы от износа, снижают трение и предотвращают коррозию. Применяются в обслуживании промышленного оборудования, автомобилей и бытовой техники.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_9" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Очистители и обезжириватели</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Мы предлагаем эффективные средства для очистки контактов, тормозов, удаления ржавчины, клеевых следов и масел. Эти продукты обеспечивают чистоту и продлевают срок службы оборудования. Подходят для промышленности, автосервиса и технического обслуживания.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_10" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Сорбенты и комплекты для ликвидации утечек</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">ООО "ТосолИмпорт" поставляет маты, подушки и гранулы для устранения утечек химических веществ, масел и топлива. Эти материалы помогают быстро локализовать и устранить аварийные ситуации, обеспечивая безопасность на производстве.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_11" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Полимерные наливные полы</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Мы предоставляем полиуретановые и эпоксидные составы для устройства прочных и долговечных полов. Они устойчивы к химическим веществам, ударам и износу. Используются в промышленных помещениях, складах и общественных зданиях.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_12" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Грунтовки и пропитки</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Ассортимент включает составы для укрепления бетона и подготовки основания под полимерные покрытия. Они повышают адгезию, предотвращают пыление и увеличивают срок службы полов. Решения применяются в промышленности и строительстве.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_13" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Краски и лаки</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">ООО "ТосолИмпорт" предлагает износостойкие и УФ-стойкие покрытия для полов. Они защищают поверхность от повреждений, придают декоративный вид и обеспечивают долговечность. Подходят для коммерческих и промышленных объектов.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_14" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Полиуретановые клеи</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Наши клеи предназначены для монтажа панелей, паркета и рулонных покрытий. Они обеспечивают надежное сцепление, устойчивость к нагрузкам и долговечность соединений. Продукция применяется в строительстве и ремонте полов.</p>
+                </div>
+              
+                <div class="card elevated" data-card-id="about_15" data-card-type="elevated" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Декоративные элементы</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">В ассортименте есть чипсы и флоки для создания эстетичных декоративных полов. Эти материалы придают поверхности уникальный вид, устойчивость к истиранию и легкость в уходе. Используются в торговых залах, офисах и общественных помещениях.</p>
+                </div>
+              
+            </div>
+          </div>
+        </section>
+      
+            <style>
+              @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+              }
+              
+              @keyframes slideInLeft {
+                from { opacity: 0; transform: translateX(-30px); }
+                to { opacity: 1; transform: translateX(0); }
+              }
+              
+              @keyframes slideUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+              }
+              
+              #услуги .service-block {
+                animation: slideInLeft 0.5s ease-out forwards;
+                animation-delay: calc(var(--index, 0) * 0.1s);
+              }
+              
+              #услуги h2 {
+                animation: slideUp 0.7s ease-out forwards;
+              }
+              
+              #услуги > p {
+                animation: slideUp 0.7s ease-out 0.2s forwards;
+                opacity: 0;
+                animation-fill-mode: forwards;
+              }
+              
+              /* Media query for mobile devices */
+              @media (max-width: 768px) {
+                #услуги .image-container {
+                  float: none !important;
+                  margin: 0 auto 2rem auto !important;
+                  width: 100% !important;
+                  max-width: 100% !important;
+                  height: 250px !important;
+                }
+                
+                #услуги .section-gallery {
+                  float: none !important;
+                  margin: 0 auto 2rem auto !important;
+                  width: 100% !important;
+                  max-width: 100% !important;
+                  height: 250px !important;
+                }
+              }
+            </style>
+            
+            <section id="услуги" class="section section-nocards" style="
+              padding: 4rem 0;
+              position: relative;
+              background: transparent;
+              border-radius: 20px;
+              margin: 2rem auto;
+              max-width: 1000px;
+              box-shadow: none;
+              overflow: hidden;
+              animation: fadeIn 0.5s ease-in-out;
+            ">
+              <!-- Top color bar -->
+              <div style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, #1976d2, #42a5f5);
+                display: none;
+              "></div>
+            
+            <div class="container">
+              <div class="section-content" style="
+                position: relative;
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 0 2rem;
+              ">
+                
+                  <h2 style="
+                    color: #ffffff;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    margin-bottom: 1.5rem;
+                    text-align: center;
+                    position: relative;
+                  ">Комплексные решения для клиентов</h2>
+                
+                
+                
+                  <p style="
+                    color: #00ffff;
+                    font-size: 1.1rem;
+                    line-height: 1.6;
+                    margin-bottom: 2rem;
+                    text-align: center;
+                    max-width: 800px;
+                    margin-left: auto;
+                    margin-right: auto;
+                  ">Мы предлагаем широкий спектр услуг и материалов для строительства, ремонта и промышленного применения, обеспечивая качество и долговечность.</p>
+                
+                
+                <!-- Container with text and image -->
+                <div class="with-image" style="
+                  position: relative;
+                  display: flow-root;
+                ">
+                  <!-- Floating image -->
+                  
+                <div class="section-gallery" data-section-id="услуги" style="
+                  float: right;
+                  margin: 0 0 1rem 1.5rem;
+                  width: 40%;
+                  max-width: 300px;
+                  height: 300px;
+                  position: relative;
+                  border-radius: 12px;
+                  overflow: hidden;
+                  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                  transition: transform 0.3s ease;
+                " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                  
+                      <img 
+                        src="assets/images/услуги_1758097757319_15br12.jpg" 
+                        alt="Комплексные решения для клиентов 1"
+                        class="gallery-img"
+                        data-index="0"
+                        style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          object-fit: cover;
+                          display: block;
+                          transition: opacity 0.5s ease;
+                        "
+                      >
+                    
+                      <img 
+                        src="assets/images/услуги_1758097778017_nwdnam.jpg" 
+                        alt="Комплексные решения для клиентов 2"
+                        class="gallery-img"
+                        data-index="1"
+                        style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          object-fit: cover;
+                          display: none;
+                          transition: opacity 0.5s ease;
+                        "
+                      >
+                    
+                      <img 
+                        src="assets/images/услуги_1758097814454_domju4.jpg" 
+                        alt="Комплексные решения для клиентов 3"
+                        class="gallery-img"
+                        data-index="2"
+                        style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          object-fit: cover;
+                          display: none;
+                          transition: opacity 0.5s ease;
+                        "
+                      >
+                    
+                      <img 
+                        src="assets/images/услуги_1758097815272_n9aue5.jpg" 
+                        alt="Комплексные решения для клиентов 4"
+                        class="gallery-img"
+                        data-index="3"
+                        style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          object-fit: cover;
+                          display: none;
+                          transition: opacity 0.5s ease;
+                        "
+                      >
+                    
+                      <img 
+                        src="assets/images/услуги_1758097816325_jfxhrp.jpg" 
+                        alt="Комплексные решения для клиентов 5"
+                        class="gallery-img"
+                        data-index="4"
+                        style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          object-fit: cover;
+                          display: none;
+                          transition: opacity 0.5s ease;
+                        "
+                      >
+                    
+                      <img 
+                        src="assets/images/услуги_1758097816877_4b0zuh.jpg" 
+                        alt="Комплексные решения для клиентов 6"
+                        class="gallery-img"
+                        data-index="5"
+                        style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          object-fit: cover;
+                          display: none;
+                          transition: opacity 0.5s ease;
+                        "
+                      >
+                    
+                      <img 
+                        src="assets/images/услуги_1758097817954_zib3tk.jpg" 
+                        alt="Комплексные решения для клиентов 7"
+                        class="gallery-img"
+                        data-index="6"
+                        style="
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          object-fit: cover;
+                          display: none;
+                          transition: opacity 0.5s ease;
+                        "
+                      >
+                    
+                  
+                  <!-- Gallery Navigation -->
+                  <div style="
+                    position: absolute;
+                    bottom: 10px;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+                    z-index: 2;
+                  ">
+                    
+                      <span 
+                        class="gallery-dot"
+                        data-index="0"
+                        style="
+                          display: inline-block;
+                          width: 8px;
+                          height: 8px;
+                          border-radius: 50%;
+                          background-color: #ffffff;
+                          margin: 0 3px;
+                          cursor: pointer;
+                        "
+                      ></span>
+                    
+                      <span 
+                        class="gallery-dot"
+                        data-index="1"
+                        style="
+                          display: inline-block;
+                          width: 8px;
+                          height: 8px;
+                          border-radius: 50%;
+                          background-color: rgba(255,255,255,0.5);
+                          margin: 0 3px;
+                          cursor: pointer;
+                        "
+                      ></span>
+                    
+                      <span 
+                        class="gallery-dot"
+                        data-index="2"
+                        style="
+                          display: inline-block;
+                          width: 8px;
+                          height: 8px;
+                          border-radius: 50%;
+                          background-color: rgba(255,255,255,0.5);
+                          margin: 0 3px;
+                          cursor: pointer;
+                        "
+                      ></span>
+                    
+                      <span 
+                        class="gallery-dot"
+                        data-index="3"
+                        style="
+                          display: inline-block;
+                          width: 8px;
+                          height: 8px;
+                          border-radius: 50%;
+                          background-color: rgba(255,255,255,0.5);
+                          margin: 0 3px;
+                          cursor: pointer;
+                        "
+                      ></span>
+                    
+                      <span 
+                        class="gallery-dot"
+                        data-index="4"
+                        style="
+                          display: inline-block;
+                          width: 8px;
+                          height: 8px;
+                          border-radius: 50%;
+                          background-color: rgba(255,255,255,0.5);
+                          margin: 0 3px;
+                          cursor: pointer;
+                        "
+                      ></span>
+                    
+                      <span 
+                        class="gallery-dot"
+                        data-index="5"
+                        style="
+                          display: inline-block;
+                          width: 8px;
+                          height: 8px;
+                          border-radius: 50%;
+                          background-color: rgba(255,255,255,0.5);
+                          margin: 0 3px;
+                          cursor: pointer;
+                        "
+                      ></span>
+                    
+                      <span 
+                        class="gallery-dot"
+                        data-index="6"
+                        style="
+                          display: inline-block;
+                          width: 8px;
+                          height: 8px;
+                          border-radius: 50%;
+                          background-color: rgba(255,255,255,0.5);
+                          margin: 0 3px;
+                          cursor: pointer;
+                        "
+                      ></span>
+                    
+                  </div>
+                </div>
+              
+                  
+                  <!-- Cards -->
+                  <div style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                  ">
+                    
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 0;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Ремонт бетонных конструкций</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Мы предоставляем профессиональные смеси для восстановления бетона. Продукция укрепляет конструкции, предотвращает разрушения и продлевает срок эксплуатации.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 1;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Гидроизоляция</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Предлагаем проникающие, обмазочные и эластичные гидроизоляционные составы. Материалы обеспечивают защиту от влаги и сохраняют прочность бетонных конструкций.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 2;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Герметизация швов</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Наша продукция – гидрошнуры, гидроленты, мастики – гарантирует герметичность соединений и долговечность конструкции при эксплуатации в любых условиях.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 3;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Огнезащита</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Поставляем сертифицированные огнезащитные составы и системы, повышающие безопасность зданий и соответствующие современным требованиям пожарной безопасности.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 4;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Добавки в бетон</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Мы предлагаем современные добавки, улучшающие характеристики бетона: прочность, влагостойкость и устойчивость к агрессивной среде.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 5;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Герметики для промышленности</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Силиконовые, полиуретановые и акриловые герметики для оборудования и строительных объектов, обеспечивающие надежность и долговечность соединений.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 6;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Клеи и фиксаторы</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Эпоксидные, цианоакрилатные и аэрозольные клеи для ремонта и производства, обеспечивающие прочные соединения и устойчивость к нагрузкам.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 7;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Смазочные материалы</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Мы предоставляем широкий выбор смазок, защищающих механизмы от износа, снижающих трение и увеличивающих срок службы оборудования.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 8;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Очистка и обезжиривание</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Эффективные очистители для контактов, тормозных систем, металла и пластика. Средства обеспечивают чистоту и долгую работу оборудования.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 9;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Сорбенты</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Предлагаем маты, подушки и гранулы для локализации утечек. Эти решения обеспечивают безопасность и минимизируют последствия аварий.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 10;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Полимерные полы</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Полиуретановые и эпоксидные покрытия для полов с высокой износостойкостью. Подходят для промышленных и коммерческих объектов.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 11;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Декоративные полимерные решения</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Мы предоставляем декоративные элементы – чипсы и флоки – для создания красивых и долговечных полов в общественных пространствах.</p>
+              </div>
+           
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        
+        <section id="преимущества" class="section" 
+          data-show-background="false"
+          style="
+            --border-start-color: #00cccc;
+            --border-end-color: #00cccc;
+            --section-background-color: #001a1a;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            color: #455a64;
+          "
+        >
+          <div class="section-container" style="position: relative; z-index: 2;">
+            <div class="section-header">
+              <h2 style="
+                color: #ffffff; 
+                text-align: center; 
+                margin-bottom: 1rem;
+                font-size: 2rem;
+                font-weight: 600;
+              ">Почему выбирают нас</h2>
+              
+                <p style="
+                  color: #00ffff; 
+                  text-align: center; 
+                  margin-bottom: 1rem;
+                  font-size: 1.1rem;
+                  line-height: 1.6;
+                ">ООО "ТосолИмпорт" предлагает проверенные решения, сочетающие качество, долговечность и современные технологии для промышленности и строительства.</p>
+              
+              
+                      <div class="section-gallery" data-section-id="преимущества" style="
+                        width: 100%;
+                        margin: 2rem auto;
+                        text-align: center;
+                        max-width: 800px;
+                        height: 500px;
+                        position: relative;
+                        border-radius: 12px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                      ">
+                        
+                            <img 
+                              src="assets/images/преимущества_1758097878761_qoazdo.jpg" 
+                              alt="Почему выбирают нас 1"
+                              class="gallery-img"
+                              data-index="0"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: block;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/преимущества_1758097879041_c9sy7q.jpg" 
+                              alt="Почему выбирают нас 2"
+                              class="gallery-img"
+                              data-index="1"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/преимущества_1758097879162_mprg7e.jpg" 
+                              alt="Почему выбирают нас 3"
+                              class="gallery-img"
+                              data-index="2"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/преимущества_1758097880135_uowlb0.jpg" 
+                              alt="Почему выбирают нас 4"
+                              class="gallery-img"
+                              data-index="3"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/преимущества_1758097880664_v5zuds.jpg" 
+                              alt="Почему выбирают нас 5"
+                              class="gallery-img"
+                              data-index="4"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/преимущества_1758097881122_pestqa.jpg" 
+                              alt="Почему выбирают нас 6"
+                              class="gallery-img"
+                              data-index="5"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                        
+                                        <!-- Gallery Navigation -->
+                <div style="
+                          position: absolute;
+                          bottom: 10px;
+                          left: 0;
+                          right: 0;
+                          text-align: center;
+                          z-index: 2;
+                        ">
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="0"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: #ffffff;
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="1"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="2"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="3"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="4"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="5"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                        </div>
+                      </div>
+                    
+            </div>
+            <div class="cards-container">
+              
+                <div class="card gradient" data-card-id="feature_1" data-card-type="gradient" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Комплексный ассортимент</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Мы предоставляем широкий выбор материалов: ремонтные смеси, химические средства и полимерные покрытия. Все продукты сертифицированы и соответствуют стандартам качества.</p>
+                </div>
+              
+                <div class="card gradient" data-card-id="feature_2" data-card-type="gradient" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Инновационные технологии</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Наши материалы создаются с использованием современных технологий, что обеспечивает высокую эффективность и долговечность конструкций и оборудования.</p>
+                </div>
+              
+                <div class="card gradient" data-card-id="feature_3" data-card-type="gradient" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Профессиональный подход</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Мы предлагаем решения, учитывающие особенности каждого проекта. Консультируем клиентов и подбираем оптимальные материалы для конкретных задач.</p>
+                </div>
+              
+                <div class="card gradient" data-card-id="feature_4" data-card-type="gradient" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Надежность продукции</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Вся продукция проходит строгий контроль качества, что гарантирует ее надежность при эксплуатации в любых условиях и сферах применения.</p>
+                </div>
+              
+                <div class="card gradient" data-card-id="feature_5" data-card-type="gradient" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Гибкость поставок</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Мы обеспечиваем поставки материалов для разных масштабов проектов – от небольших ремонтов до крупных промышленных объектов.</p>
+                </div>
+              
+                <div class="card gradient" data-card-id="feature_6" data-card-type="gradient" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Техническая поддержка</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Наши специалисты консультируют по выбору материалов, технологиям применения и помогают внедрять эффективные решения на объектах.</p>
+                </div>
+              
+                <div class="card gradient" data-card-id="feature_7" data-card-type="gradient" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Соблюдение сроков</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">ООО "ТосолИмпорт" гарантирует своевременные поставки продукции, что позволяет клиентам реализовывать проекты без задержек.</p>
+                </div>
+              
+                <div class="card gradient" data-card-id="feature_8" data-card-type="gradient" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Долгосрочное сотрудничество</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Мы ценим доверие клиентов и строим партнерские отношения, основанные на качестве, надежности и стабильности.</p>
+                </div>
+              
+            </div>
+          </div>
+        </section>
+      
+        <section id="новости" class="section" 
+          data-show-background="false"
+          style="
+            --border-start-color: #00cccc;
+            --border-end-color: #00cccc;
+            --section-background-color: #001a1a;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            color: #455a64;
+          "
+        >
+          <div class="section-container" style="position: relative; z-index: 2;">
+            <div class="section-header">
+              <h2 style="
+                color: #ffffff; 
+                text-align: center; 
+                margin-bottom: 1rem;
+                font-size: 2rem;
+                font-weight: 600;
+              ">Актуальные события компании</h2>
+              
+                <p style="
+                  color: #00ffff; 
+                  text-align: center; 
+                  margin-bottom: 1rem;
+                  font-size: 1.1rem;
+                  line-height: 1.6;
+                ">Мы регулярно обновляем информацию о новых продуктах, акциях и достижениях компании, чтобы клиенты были в курсе последних событий.</p>
+              
+              
+                      <div class="section-gallery" data-section-id="новости" style="
+                        width: 100%;
+                        margin: 2rem auto;
+                        text-align: center;
+                        max-width: 800px;
+                        height: 500px;
+                        position: relative;
+                        border-radius: 12px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                      ">
+                        
+                            <img 
+                              src="assets/images/новости_1758097913027_u0ty8a.jpg" 
+                              alt="Актуальные события компании 1"
+                              class="gallery-img"
+                              data-index="0"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: block;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/новости_1758097913344_ywyg1s.jpg" 
+                              alt="Актуальные события компании 2"
+                              class="gallery-img"
+                              data-index="1"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/новости_1758097913437_7zoyjo.jpg" 
+                              alt="Актуальные события компании 3"
+                              class="gallery-img"
+                              data-index="2"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/новости_1758097914195_6tnwoj.jpg" 
+                              alt="Актуальные события компании 4"
+                              class="gallery-img"
+                              data-index="3"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/новости_1758097914520_b867dk.jpg" 
+                              alt="Актуальные события компании 5"
+                              class="gallery-img"
+                              data-index="4"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                            <img 
+                              src="assets/images/новости_1758097915010_gcjdk3.jpg" 
+                              alt="Актуальные события компании 6"
+                              class="gallery-img"
+                              data-index="5"
+                              style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                transition: opacity 0.5s ease;
+                              "
+                            >
+                          
+                        
+                                        <!-- Gallery Navigation -->
+                <div style="
+                          position: absolute;
+                          bottom: 10px;
+                          left: 0;
+                          right: 0;
+                          text-align: center;
+                          z-index: 2;
+                        ">
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="0"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: #ffffff;
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="1"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="2"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="3"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="4"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                            <span 
+                              class="gallery-dot"
+                              data-index="5"
+                              style="
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: rgba(255,255,255,0.5);
+                                margin: 0 5px;
+                                cursor: pointer;
+                              "
+                            ></span>
+                          
+                        </div>
+                      </div>
+                    
+            </div>
+            <div class="cards-container">
+              
+                <div class="card gradient" data-card-id="новости_1" data-card-type="gradient" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Новые ремонтные смеси</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">ООО "ТосолИмпорт" расширил ассортимент конструкционных смесей. Новые продукты отличаются повышенной прочностью и устойчивостью к агрессивной среде, что делает их идеальными для сложных объектов.</p>
+                </div>
+              
+                <div class="card gradient" data-card-id="новости_2" data-card-type="gradient" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Акция на гидроизоляционные материалы</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">В течение месяца действует скидка на обмазочные и эластичные гидроизоляционные составы. Это отличная возможность приобрести надежные материалы по выгодной цене.</p>
+                </div>
+              
+                <div class="card gradient" data-card-id="новости_3" data-card-type="gradient" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Поступление новых клеев</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Ассортимент клеев пополнился современными эпоксидными и аэрозольными составами. Они обеспечивают прочное соединение и устойчивость к нагрузкам.</p>
+                </div>
+              
+                <div class="card gradient" data-card-id="новости_4" data-card-type="gradient" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Новые декоративные решения</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Мы представили линейку декоративных элементов для полов – флоки и чипсы, позволяющие создавать уникальные покрытия с высокой износостойкостью.</p>
+                </div>
+              
+                <div class="card gradient" data-card-id="новости_5" data-card-type="gradient" data-bg-type="gradient"
+                  style="
+                  background: linear-gradient(45deg, #003333, #00cccc);
+                  border: 3px solid #00cccc;
+                  border-radius: 16px;
+                  box-shadow: 0 6px 12px rgba(0,255,255,0.5);
+                  position: relative;
+                  z-index: 2;
+                  display: flex;
+                  flex-direction: column;
+                  height: 100%;
+                  padding: 1.5rem;
+                  transition: all 0.3s ease-in-out;">
+                  <h3 style="
+                    color: #ffffff; 
+                    margin-bottom: 0.7rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    transition: color 0.3s ease-in-out;
+                    text-align: center;
+                  ">Расширение технической поддержки</h3>
+                  <p style="
+                    color: #00ffff; 
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    transition: color 0.3s ease-in-out;
+                    text-align: left;
+                  ">Компания увеличила штат специалистов, которые консультируют клиентов по подбору и применению продукции. Это позволит повысить качество обслуживания.</p>
+                </div>
+              
+            </div>
+          </div>
+        </section>
+      
+            <style>
+              @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+              }
+              
+              @keyframes slideInLeft {
+                from { opacity: 0; transform: translateX(-30px); }
+                to { opacity: 1; transform: translateX(0); }
+              }
+              
+              @keyframes slideUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+              }
+              
+              #вопросы .service-block {
+                animation: slideInLeft 0.5s ease-out forwards;
+                animation-delay: calc(var(--index, 0) * 0.1s);
+              }
+              
+              #вопросы h2 {
+                animation: slideUp 0.7s ease-out forwards;
+              }
+              
+              #вопросы > p {
+                animation: slideUp 0.7s ease-out 0.2s forwards;
+                opacity: 0;
+                animation-fill-mode: forwards;
+              }
+              
+              /* Media query for mobile devices */
+              @media (max-width: 768px) {
+                #вопросы .image-container {
+                  float: none !important;
+                  margin: 0 auto 2rem auto !important;
+                  width: 100% !important;
+                  max-width: 100% !important;
+                  height: 250px !important;
+                }
+                
+                #вопросы .section-gallery {
+                  float: none !important;
+                  margin: 0 auto 2rem auto !important;
+                  width: 100% !important;
+                  max-width: 100% !important;
+                  height: 250px !important;
+                }
+              }
+            </style>
+            
+            <section id="вопросы" class="section section-nocards" style="
+              padding: 4rem 0;
+              position: relative;
+              background: transparent;
+              border-radius: 20px;
+              margin: 2rem auto;
+              max-width: 1000px;
+              box-shadow: none;
+              overflow: hidden;
+              animation: fadeIn 0.5s ease-in-out;
+            ">
+              <!-- Top color bar -->
+              <div style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, #1976d2, #42a5f5);
+                display: none;
+              "></div>
+            
+            <div class="container">
+              <div class="section-content" style="
+                position: relative;
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 0 2rem;
+              ">
+                
+                  <h2 style="
+                    color: #ffffff;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    margin-bottom: 1.5rem;
+                    text-align: center;
+                    position: relative;
+                  ">Часто задаваемые вопросы</h2>
+                
+                
+                
+                  <p style="
+                    color: #00ffff;
+                    font-size: 1.1rem;
+                    line-height: 1.6;
+                    margin-bottom: 2rem;
+                    text-align: center;
+                    max-width: 800px;
+                    margin-left: auto;
+                    margin-right: auto;
+                  ">Мы собрали ответы на самые популярные вопросы, чтобы сделать сотрудничество удобным и прозрачным.</p>
+                
+                
+                <!-- Container with text and image -->
+                <div class="with-image" style="
+                  position: relative;
+                  display: flow-root;
+                ">
+                  <!-- Floating image -->
+                  
+                  
+                  <!-- Cards -->
+                  <div style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                  ">
+                    
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 0;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Какие материалы вы предлагаете?</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Мы предлагаем ремонтные смеси, гидроизоляцию, герметики, клеи, смазки, очистители, сорбенты, полимерные покрытия и декоративные элементы для полов.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 1;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Где применяются ваши материалы?</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Продукция используется в строительстве, промышленности, машиностроении, ремонте оборудования, обустройстве полов и в ликвидации аварийных ситуаций.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 2;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Можно ли получить консультацию?</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Да, наши специалисты помогут подобрать материалы, объяснят технологию применения и предложат оптимальные решения для ваших задач.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 3;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Как оформить заказ?</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Вы можете связаться с нами по телефону или электронной почте. Мы подготовим коммерческое предложение и согласуем поставки.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 4;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Есть ли у вас сертификаты?</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Вся продукция сертифицирована и соответствует требованиям качества. Мы предоставляем необходимые документы при поставке.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 5;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Работаете ли вы с оптовыми заказами?</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Да, мы сотрудничаем как с частными, так и с корпоративными клиентами. Обеспечиваем поставки любого объема и масштаба.</p>
+              </div>
+           
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        
+            <style>
+              @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+              }
+              
+              @keyframes slideInLeft {
+                from { opacity: 0; transform: translateX(-30px); }
+                to { opacity: 1; transform: translateX(0); }
+              }
+              
+              @keyframes slideUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+              }
+              
+              #отзывы .service-block {
+                animation: slideInLeft 0.5s ease-out forwards;
+                animation-delay: calc(var(--index, 0) * 0.1s);
+              }
+              
+              #отзывы h2 {
+                animation: slideUp 0.7s ease-out forwards;
+              }
+              
+              #отзывы > p {
+                animation: slideUp 0.7s ease-out 0.2s forwards;
+                opacity: 0;
+                animation-fill-mode: forwards;
+              }
+              
+              /* Media query for mobile devices */
+              @media (max-width: 768px) {
+                #отзывы .image-container {
+                  float: none !important;
+                  margin: 0 auto 2rem auto !important;
+                  width: 100% !important;
+                  max-width: 100% !important;
+                  height: 250px !important;
+                }
+                
+                #отзывы .section-gallery {
+                  float: none !important;
+                  margin: 0 auto 2rem auto !important;
+                  width: 100% !important;
+                  max-width: 100% !important;
+                  height: 250px !important;
+                }
+              }
+            </style>
+            
+            <section id="отзывы" class="section section-nocards" style="
+              padding: 4rem 0;
+              position: relative;
+              background: transparent;
+              border-radius: 20px;
+              margin: 2rem auto;
+              max-width: 1000px;
+              box-shadow: none;
+              overflow: hidden;
+              animation: fadeIn 0.5s ease-in-out;
+            ">
+              <!-- Top color bar -->
+              <div style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, #1976d2, #42a5f5);
+                display: none;
+              "></div>
+            
+            <div class="container">
+              <div class="section-content" style="
+                position: relative;
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 0 2rem;
+              ">
+                
+                  <h2 style="
+                    color: #ffffff;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    margin-bottom: 1.5rem;
+                    text-align: center;
+                    position: relative;
+                  ">Мнения наших клиентов</h2>
+                
+                
+                
+                  <p style="
+                    color: #00ffff;
+                    font-size: 1.1rem;
+                    line-height: 1.6;
+                    margin-bottom: 2rem;
+                    text-align: center;
+                    max-width: 800px;
+                    margin-left: auto;
+                    margin-right: auto;
+                  ">Наши клиенты делятся опытом сотрудничества и результатами применения продукции ООО "ТосолИмпорт".</p>
+                
+                
+                <!-- Container with text and image -->
+                <div class="with-image" style="
+                  position: relative;
+                  display: flow-root;
+                ">
+                  <!-- Floating image -->
+                  
+                  
+                  <!-- Cards -->
+                  <div style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                  ">
+                    
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 0;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Александр П.</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Компания поставила гидроизоляционные материалы для нашего строительного проекта. Качество превзошло ожидания, материалы легки в применении и долговечны. Мы довольны сотрудничеством.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 1;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Марина В.</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Приобрели у ООО "ТосолИмпорт" полимерные покрытия для полов. Покрытие получилось прочным, красивым и устойчивым к износу. Отличный сервис и грамотная консультация.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 2;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Игорь С.</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Для ремонта оборудования использовали герметики и смазки. Все продукты высокого качества, оборудование работает без сбоев. Рекомендуем компанию как надежного поставщика.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 3;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Светлана Н.</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Заказывали добавки в бетон и ремонтные смеси. Материалы легко применяются, повышают прочность и долговечность конструкций. Отличное соотношение цены и качества.</p>
+              </div>
+           
+              <div class="service-block" style="
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 3px solid #00cccc;
+                background: transparent;
+                transition: all 0.3s ease;
+                opacity: 0;
+                --index: 4;
+                cursor: pointer;
+                position: relative;
+              " 
+              onmouseover="this.style.transform='translateX(10px)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.1)'"
+              onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='none'"
+              >
+                <h3 style="
+                  color: #ffffff;
+                  font-size: 1.3rem;
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                ">Дмитрий Л.</h3>
+                <p style="
+                  color: #00ffff;
+                  font-size: 1rem;
+                  line-height: 1.6;
+                  margin: 0;
+                  font-family: 'Roboto', sans-serif;
+                  text-align: left;
+                ">Приобрели декоративные элементы для полов. Покрытие получилось стильным и практичным. Работать с ООО "ТосолИмпорт" было удобно и надежно.</p>
+              </div>
+           
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        
+
+    <section id="contact" class="section"
+      style="
+        padding: 4rem 0;
+        position: relative;
+        z-index: 2;
+        border-radius: 20px;
+        overflow: hidden;
+        background: linear-gradient(to bottom, #001a1a, #142e2e);
+      ">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+          <h2 style="
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+          ">
+            Контакты
+            <span style="
+              content: '';
+              position: absolute;
+              bottom: -10px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 50px;
+              height: 3px;
+              background-color: #ffffff;
+            "></span>
+          </h2>
+          <p style="
+            color: #00ffff;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+          ">
+            Свяжитесь с нами для консультаций и оформления заказов, мы всегда готовы помочь вам с выбором продукции
+          </p>
+        </div>
+        <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1140px; margin: 0 auto; padding: 0 20px;">
+          <div class="contact-form" style="
+            border: 1px solid #00cccc;
+            padding: 2.5rem;
+            border-radius: 8px;
+            background-color: #003333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          ">
+            <form 
+              id="contactForm" 
+              method="POST"
+              onsubmit="submitForm(event)"
+            >
+              <input type="hidden" name="_next" value="merci.html" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_subject" value="New message from website" />
+              <input type="hidden" name="_language" id="formLanguage" value="en" />
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label for="name" style="color: #00ffff; display: block; margin-bottom: 0.5rem; font-weight: 500;">Full Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  class="form-control" 
+                  placeholder="Enter your full name" 
+                  style="
+                    border: 1px solid #ddd;
+                    background-color: #003333;
+                    color: #ffffff;
+                    padding: 0.85rem 1rem;
+                    width: 100%;
+                    border-radius: 6px;
+                    font-size: 1rem;
+                    box-sizing: border-box;
+                    margin-bottom: 0;
+                  " 
+                  required
+                >
+              </div>
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label for="phone" style="color: #00ffff; display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone Number</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  class="form-control" 
+                  placeholder="Enter your phone number with country code" 
+                  style="
+                    border: 1px solid #ddd;
+                    background-color: #003333;
+                    color: #ffffff;
+                    padding: 0.85rem 1rem;
+                    width: 100%;
+                    border-radius: 6px;
+                    font-size: 1rem;
+                    box-sizing: border-box;
+                    margin-bottom: 0;
+                  " 
+                  pattern="\+?[0-9\s-()]{7,}"
+                  required
+                >
+              </div>
+              <div class="form-group" style="margin-bottom: 2rem;">
+                <label for="email" style="color: #00ffff; display: block; margin-bottom: 0.5rem; font-weight: 500;">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  class="form-control" 
+                  placeholder="Enter your email address" 
+                  style="
+                    border: 1px solid #ddd;
+                    background-color: #003333;
+                    color: #ffffff;
+                    padding: 0.85rem 1rem;
+                    width: 100%;
+                    border-radius: 6px;
+                    font-size: 1rem;
+                    box-sizing: border-box;
+                    margin-bottom: 0;
+                  " 
+                  required
+                >
+              </div>
+              <button 
+                type="submit" 
+                class="submit-btn" 
+                style="
+                  background-color: #00ffff;
+                  color: #001a1a;
+                  border: none;
+                  padding: 0.9rem 1.5rem;
+                  border-radius: 6px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  font-weight: 500;
+                  width: 100%;
+                  font-size: 1rem;
+                  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                "
+              >
+                Send Message
+              </button>
+            </form>
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('contactForm');
+                const inputs = form.querySelectorAll('input[type="text"], input[type="tel"], input[type="email"]');
+                
+                // Language logic removed
+                
+                // Load saved data
+                try {
+                  const savedData = localStorage.getItem('contactFormData');
+                  if (savedData) {
+                    const data = JSON.parse(savedData);
+                    if (data) {
+                      inputs.forEach(input => {
+                        if (data[input.name]) {
+                          input.value = data[input.name];
+                        }
+                      });
+                    }
+                  }
+                } catch (error) {
+                  console.error('Error loading saved data:', error);
+                }
+
+                // Save data on input
+                inputs.forEach(input => {
+                  input.addEventListener('input', function() {
+                    try {
+                      const formData = {};
+                      inputs.forEach(inp => {
+                        formData[inp.name] = inp.value;
+                      });
+                      localStorage.setItem('contactFormData', JSON.stringify(formData));
+                    } catch (error) {
+                      console.error('Error saving data:', error);
+                    }
+                  });
+                });
+              });
+              
+              // Form submission function with forced redirect
+              async function submitForm(event) {
+                event.preventDefault();
+                
+                const form = event.target;
+                const formData = new FormData(form);
+                
+                try {
+                  // Clear localStorage
+                  localStorage.removeItem('contactFormData');
+                  
+                  // Send form data to Formspree
+const response = await fetch('https://formspree.io/f/mqalqbeo', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                      'Accept': 'application/json'
+                    }
+                  }).finally(() => {
+                    // Always redirect to merci.html
+                    window.location.href = 'merci.html';
+                  });
+                } catch (error) {
+                  console.error('Error sending form:', error);
+                  // Even on error, redirect to merci.html
+                  window.location.href = 'merci.html';
+                }
+                
+                return false;
+              }
+            </script>
+          </div>
+          <div class="contact-info" style="
+            border: 1px solid #00cccc;
+            border-radius: 8px;
+            background-color: #003333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+          ">
+            <div class="company-info" style="
+              padding: 2rem;
+              border-bottom: 1px solid #00cccc;
+            ">
+              <h3 style="
+                color: #ffffff;
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+                text-align: center;
+              ">ТосолИмпорт</h3>
+              <div class="contact-details">
+                
+                  <p style="color: #00ffff; margin-bottom: 1rem;">
+                    <i class="fas fa-map-marker-alt" style="color: #ffffff; margin-right: 0.5rem;"></i>
+                    Россия, Москва, Ленинградское шоссе, дом 228, корп. 6, помещение 189К, муниципальный округ Молжаниновский, 141431
+                  </p>
+                
+                
+                  <p style="color: #00ffff; margin-bottom: 1rem;">
+                    <i class="fas fa-phone" style="color: #ffffff; margin-right: 0.5rem;"></i>
+                    +7(916)631-76-13
+                  </p>
+                
+                
+                  <p style="color: #00ffff; margin-bottom: 1rem;">
+                    <i class="fas fa-envelope" style="color: #ffffff; margin-right: 0.5rem;"></i>
+                    tosolimport83@gmail.com
+                  </p>
+                  
+                
+              </div>
+            </div>
+            <div class="contact-map" style="height: 300px;">
+              <iframe
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%BE%D0%B5%20%D1%88%D0%BE%D1%81%D1%81%D0%B5%2C%20%D0%B4%D0%BE%D0%BC%20228%2C%20%D0%BA%D0%BE%D1%80%D0%BF.%206%2C%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20189%D0%9A%2C%20%D0%BC%D1%83%D0%BD%D0%B8%D1%86%D0%B8%D0%BF%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BE%D0%BA%D1%80%D1%83%D0%B3%20%D0%9C%D0%BE%D0%BB%D0%B6%D0%B0%D0%BD%D0%B8%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C%20141431"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="
+    background-color: #008686;
+    color: #ffffff;
+    padding: 3rem 0;
+    position: relative;
+    z-index: 1;
+  ">
+    <div style="
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    ">
+      <div style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      ">
+        <div style="
+          background-color: rgba(255, 255, 255, 0.05);
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        ">
+          <h3 style="
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+          ">ТосолИмпорт</h3>
+          <p style="
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          ">
+            <i class="fas fa-map-marker-alt" style="color: #fff"></i>
+            Россия, Москва, Ленинградское шоссе, дом 228, корп. 6, помещение 189К, муниципальный округ Молжаниновский, 141431
+          </p>
+          <p style="
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          ">
+            <i class="fas fa-phone" style="color: #fff"></i>
+            +7(916)631-76-13
+          </p>
+          <p style="
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          ">
+            <i class="fas fa-envelope" style="color: #fff"></i>
+            tosolimport83@gmail.com
+          </p>
+          
+        </div>
+
+        <div style="
+          background-color: rgba(255, 255, 255, 0.05);
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        ">
+          <h3 style="
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+          ">Menu</h3>
+          <div style="
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+          ">
+            
+              <a href="#о_компании" style="
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s;
+                padding: 0.25rem 0;
+              ">о_компании</a>
+            
+              <a href="#услуги" style="
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s;
+                padding: 0.25rem 0;
+              ">услуги</a>
+            
+              <a href="#преимущества" style="
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s;
+                padding: 0.25rem 0;
+              ">преимущества</a>
+            
+              <a href="#новости" style="
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s;
+                padding: 0.25rem 0;
+              ">новости</a>
+            
+              <a href="#вопросы" style="
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s;
+                padding: 0.25rem 0;
+              ">вопросы</a>
+            
+              <a href="#отзывы" style="
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s;
+                padding: 0.25rem 0;
+              ">отзывы</a>
+            
+            <a href="#contact" style="
+              color: #ffffff;
+              text-decoration: none;
+              transition: color 0.3s;
+              padding: 0.25rem 0;
+            ">Контакты</a>
+          </div>
+        </div>
+
+        <div style="
+          background-color: rgba(255, 255, 255, 0.05);
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        ">
+          <h3 style="
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+          ">Legal Information</h3>
+          <ul style="
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          ">
+            <li style="margin-bottom: 0.5rem;">
+              <a href="privacy-policy.html" style="
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s;
+              ">Privacy Policy</a>
+            </li>
+            <li style="margin-bottom: 0.5rem;">
+              <a href="terms-of-service.html" style="
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s;
+              ">Terms of Service</a>
+            </li>
+            <li>
+              <a href="cookie-policy.html" style="
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s;
+              ">Cookie Policy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      ">
+        <p style="
+          color: #ffffff;
+          font-size: 0.9rem;
+        ">
+          © 2025 ТосолИмпорт. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+
+  <!-- Cookie consent notification -->
+  <div id="cookieConsent" style="
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background: rgba(30, 30, 30, 0.97);
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    padding: 1.2rem 1.5rem;
+    z-index: 9999;
+    display: none;
+    min-width: 280px;
+    max-width: 350px;
+    font-size: 1rem;
+    animation: fadeInUp 0.7s cubic-bezier(.23,1.01,.32,1) both;
+  ">
+    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+      <div style="flex:1;">
+        <strong>We use cookies</strong><br>
+        This website uses cookies to ensure you get the best experience on our website. <a href="cookie-policy.html" style="color:#90caf9;text-decoration:underline;">Learn more</a>.
+      </div>
+      <button id="cookieAcceptBtn" style="margin-left: 8px; background: #1976d2; color: #fff; border: none; border-radius: 6px; padding: 0.5rem 1.1rem; font-weight: 500; cursor: pointer; transition: background 0.2s;">Accept</button>
+    </div>
+  </div>
+
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    #cookieConsent a:hover { color: #fff; text-decoration: underline; }
+    #cookieAcceptBtn:hover { background: #1565c0; }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var consent = localStorage.getItem('cookieConsent');
+      var consentBox = document.getElementById('cookieConsent');
+      var acceptBtn = document.getElementById('cookieAcceptBtn');
+      if (!consent && consentBox) {
+        consentBox.style.display = 'block';
+      }
+      if (acceptBtn) {
+        acceptBtn.onclick = function() {
+          localStorage.setItem('cookieConsent', 'accepted');
+          if (consentBox) consentBox.style.display = 'none';
+        };
+      }
+    });
+  </script>
+
+  <!-- Live Chat Widget -->
+    <div id="liveChatWidget" class="live-chat-widget">
+      <button id="chatToggle" class="chat-toggle" aria-label="Open chat">
+        <svg class="chat-icon" viewBox="0 0 24 24" width="28" height="28">
+          <path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+          <circle cx="7" cy="10" r="1.5" fill="rgba(255,255,255,0.9)"/>
+          <circle cx="12" cy="10" r="1.5" fill="rgba(255,255,255,0.9)"/>
+          <circle cx="17" cy="10" r="1.5" fill="rgba(255,255,255,0.9)"/>
+        </svg>
+        <div class="chat-pulse-ring"></div>
+        <svg class="close-icon hidden" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+        </svg>
+      </button>
+      <div id="chatWindow" class="chat-window hidden">
+                  <div class="chat-header">
+            <div class="header-info">
+            <span class="header-title" data-header-title>ТосолИмпорт</span>
+            </div>
+          <button id="chatClose" class="chat-close-btn" aria-label="Close chat">
+            <svg viewBox="0 0 24 24" width="18" height="18">
+              <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+            </svg>
+          </button>
+        </div>
+        <div id="messagesContainer" class="messages-container">
+          <div class="message bot-message">
+            <div class="message-avatar operator"></div>
+            <div class="message-bubble">
+              <div class="message-text" data-welcome-message>Привет! Я виртуальный помощник ТосолИмпорт. Как могу помочь вам сегодня? 👋</div>
+              <div class="message-time">11:35 AM</div>
+            </div>
+          </div>
+          <div id="loadingIndicator" class="message bot-message hidden">
+            <div class="message-avatar operator"></div>
+            <div class="message-bubble">
+              <div class="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-container">
+          <textarea id="messageInput" class="message-input" placeholder="Введите ваше сообщение..." rows="1" data-input-placeholder></textarea>
+          <button id="sendButton" class="send-button" disabled aria-label="Send">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+            </svg>
+          </button>
+        </div>
+        <div id="chatStatus" class="chat-status hidden">
+          💡 За дополнительной помощью, пожалуйста, заполните форму на сайте
+        </div>
+      </div>
+    </div>
+
+  <script>
+    (function(){
+    console.log('🚀 Live Chat JS loaded - Direct Mode');
+    const SITE_NAME='ТосолИмпорт';
+    const LANGUAGE='ru';
+    const PRESET_RESPONSES = ["Рады, что вы к нам обратились! 😊 Наши специалисты уже работают над вашим вопросом.","Спасибо за ваше сообщение! Мы ценим ваше доверие и обязательно поможем вам.","Отлично! Ваш запрос принят. Наша команда специалистов спешит с ответом! ⚡","Благодарим за обращение! Мы уже подключили к решению вашего вопроса наших экспертов.","Замечательно! Ваше сообщение получено. Специалисты уже анализируют ситуацию. 🔍","Прекрасно! Мы получили ваш запрос и уже начали работу над ним!"];
+    const MESSAGE_LIMIT = 5;
+    
+    let messageCounter=1;
+    let isLoading=false;
+    let userMessageCount = 0;
+    let usedResponses = [];
+    
+    const chatToggle=document.getElementById('chatToggle');
+    const chatWindow=document.getElementById('chatWindow');
+    const chatClose=document.getElementById('chatClose');
+    const messagesContainer=document.getElementById('messagesContainer');
+    const messageInput=document.getElementById('messageInput');
+    const sendButton=document.getElementById('sendButton');
+    const loadingIndicator=document.getElementById('loadingIndicator');
+    const chatStatus=document.getElementById('chatStatus');
+    const liveChatWidget=document.getElementById('liveChatWidget');
+    
+
+    const BUSY_SPECIALISTS_MESSAGE = 'К сожалению, наши специалисты заняты из-за большой загрузки. Пожалуйста, заполните контактную форму в конце сайта для персональной консультации. 📋';
+    
+    
+
+    const playClickSound = () => {
+      try {
+        const audio = new Audio('assets/chat-open.ogg');
+        audio.volume = 0.3;
+        audio.play().then(() => {
+          console.log('🔊 Chat open sound played');
+        }).catch(err => {
+          console.log('🔇 Could not play chat sound:', err.message);
+        });
+      } catch (error) {
+        console.log('🔇 Audio not available:', error.message);
+      }
+    };
+    
+    function getRandomResponse() {
+
+      if (userMessageCount > MESSAGE_LIMIT) {
+        if (chatStatus) {
+          chatStatus.classList.remove('hidden');
+        }
+        return null;
+      }
+
+      
+      if (userMessageCount === MESSAGE_LIMIT) {
+        return BUSY_SPECIALISTS_MESSAGE;
+      }
+
+      const availableResponses = PRESET_RESPONSES.filter((_, index) => !usedResponses.includes(index));
+      
+      if (availableResponses.length === 0) {
+        usedResponses = [];
+        return PRESET_RESPONSES[Math.floor(Math.random() * PRESET_RESPONSES.length)];
+      }
+
+      const randomIndex = Math.floor(Math.random() * availableResponses.length);
+      const selectedResponse = availableResponses[randomIndex];
+      const originalIndex = PRESET_RESPONSES.indexOf(selectedResponse);
+      usedResponses.push(originalIndex);
+      
+      return selectedResponse;
+    }
+    
+    function initChat(){
+      console.log('🚀 Initializing direct chat...');
+      if(!chatToggle || !chatWindow || !messageInput || !sendButton) {
+        console.error('❌ Chat elements not found');
+        return;
+      }
+      
+      const headerTitle = document.querySelector('[data-header-title]');
+      if(headerTitle) {
+        headerTitle.textContent = SITE_NAME;
+      }
+      
+      chatToggle.addEventListener('click',toggleChat);
+      chatClose.addEventListener('click',closeChat);
+      sendButton.addEventListener('click',sendMessage);
+      messageInput.addEventListener('keydown',handleKeyPress);
+      messageInput.addEventListener('input',handleInputChange);
+      messageInput.addEventListener('input',autoResizeTextarea);
+      
+
+      liveChatWidget.classList.add('ready');
+
+      chatToggle.classList.add('has-new-message');
+      
+
+      const chatWasClosed = sessionStorage.getItem('chat-manually-closed') === 'true';
+      if (!chatWasClosed) {
+        setTimeout(() => {
+
+          if (chatWindow.classList.contains('hidden') && !sessionStorage.getItem('chat-manually-closed')) {
+            console.log('🎯 Auto-opening chat after 5 seconds');
+            openChat();
+
+            chatToggle.classList.add('has-new-message');
+          }
+        }, 5000);
+      } else {
+        console.log('💭 Chat auto-open skipped - user previously closed manually in this session');
+      }
+      
+      console.log('✅ Direct chat initialized successfully');
+    }
+    
+    function toggleChat(){
+      const isOpen=!chatWindow.classList.contains('hidden');
+      if(isOpen){
+        closeChat();
+      }else{
+        openChat();
+      }
+    }
+    
+    function openChat(){
+      chatWindow.classList.remove('hidden');
+      chatToggle.querySelector('.chat-icon').classList.add('hidden');
+      chatToggle.querySelector('.close-icon').classList.remove('hidden');
+      messageInput.focus();
+      
+      
+      playClickSound();
+      
+
+      chatToggle.classList.remove('has-new-message');
+    }
+    
+    function closeChat(){
+      chatWindow.classList.add('hidden');
+      chatToggle.querySelector('.chat-icon').classList.remove('hidden');
+      chatToggle.querySelector('.close-icon').classList.add('hidden');
+      
+      
+      sessionStorage.setItem('chat-manually-closed', 'true');
+      console.log('💾 Chat manually closed - auto-open disabled for this session');
+      
+      
+      chatToggle.classList.remove('has-new-message');
+    }
+    
+    function handleKeyPress(e){
+      if(e.key==='Enter'&&!e.shiftKey){
+        e.preventDefault();
+        sendMessage();
+      }
+    }
+    
+    function handleInputChange(){
+      const hasText=messageInput.value.trim().length>0;
+      sendButton.disabled=!hasText;
+    }
+    
+    function autoResizeTextarea(){
+      messageInput.style.height='auto';
+        messageInput.style.height=Math.min(messageInput.scrollHeight,140)+'px';
+    }
+    
+    function scrollToBottom(){
+      setTimeout(()=>{
+        messagesContainer.scrollTop=messagesContainer.scrollHeight;
+      },100);
+    }
+    
+    function addMessage(text,isUser=false){
+      const messageDiv=document.createElement('div');
+      messageDiv.className='message '+(isUser?'user-message':'bot-message');
+      
+      const avatar=document.createElement('div');
+      avatar.className='message-avatar'+(isUser?'':' operator');
+      
+      const bubble=document.createElement('div');
+      bubble.className='message-bubble';
+      
+      const messageText=document.createElement('div');
+      messageText.className='message-text';
+      messageText.textContent=text;
+      
+      const messageTime=document.createElement('div');
+      messageTime.className='message-time';
+      messageTime.textContent=new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+      
+      bubble.appendChild(messageText);
+      bubble.appendChild(messageTime);
+      messageDiv.appendChild(avatar);
+      messageDiv.appendChild(bubble);
+      
+      messagesContainer.insertBefore(messageDiv,loadingIndicator);
+      scrollToBottom();
+    }
+    
+    function showTypingIndicator() {
+      loadingIndicator.classList.remove('hidden');
+      scrollToBottom();
+    }
+    
+    function hideTypingIndicator() {
+      loadingIndicator.classList.add('hidden');
+    }
+    
+        async function sendMessage(){
+      const message=messageInput.value.trim();
+      if(!message||isLoading) {
+        console.log('❌ Cannot send message');
+        return;
+      }
+      
+      console.log('🚀 Sending message:', message);
+      
+      addMessage(message,true);
+      messageInput.value='';
+      handleInputChange();
+      autoResizeTextarea();
+      userMessageCount++;
+      
+      showTypingIndicator();
+      isLoading = true;
+      
+      setTimeout(() => {
+        hideTypingIndicator();
+        isLoading = false;
+        
+        const response = getRandomResponse();
+        if (response) {
+          addMessage(response, false);
+        }
+        
+        console.log('✅ Message sent. Messages count:', userMessageCount);
+      }, 1000 + Math.random() * 2000);
+    }
+    
+    if(document.readyState==='loading'){
+      document.addEventListener('DOMContentLoaded',initChat);
+    }else{
+      initChat();
+    }
+    
+    console.log('💬 Direct chat system ready for language: ru');
+  })();
+  </script>
+
+  </body>
+</html>
