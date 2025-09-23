@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Надежные маршруты для перевозок по Кыргызстану - ООО "Меркуриус"</title>
+    <meta name="description" content="Компания предлагает безопасные и удобные маршруты для грузоперевозок по Бишкеку и всей республике, гарантируя клиентам точность сроков и прозрачность.">
+    <link rel="icon" type="image/png" href="assets/images/Favicon.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- React и основные библиотеки -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Material-UI -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="https://unpkg.com/@mui/material@5.15.10/umd/material-ui.production.min.js"></script>
+    <script src="https://unpkg.com/@emotion/react@11.14.0/dist/emotion-react.umd.min.js"></script>
+    <script src="https://unpkg.com/@emotion/styled@11.14.1/dist/emotion-styled.umd.min.js"></script>
+    
+    <!-- Дополнительные библиотеки для элементов -->
+    <script src="https://unpkg.com/framer-motion@12.23.0/dist/framer-motion.js"></script>
+    <script src="https://unpkg.com/react-countup@6.5.3/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-confetti@6.4.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/qrcode.react@4.2.0/lib/index.umd.js"></script>
+    <script src="https://unpkg.com/react-player@3.1.0/dist/ReactPlayer.js"></script>
+    <script src="https://unpkg.com/react-rating-stars-component@2.2.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-text-transition@3.1.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-share@5.2.2/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-copy-to-clipboard@5.1.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-color@2.19.3/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-datepicker@8.4.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-select@5.10.1/dist/react-select.umd.js"></script>
+    <script src="https://unpkg.com/react-scroll@1.9.3/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-rnd@10.5.2/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-image-crop@11.0.10/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-markdown@9.0.1/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-plotly.js@2.6.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-apexcharts@1.7.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/react-chartjs-2@5.3.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/recharts@3.0.2/lib/index.umd.js"></script>
+    <script src="https://unpkg.com/apexcharts@4.7.0/dist/apexcharts.min.js"></script>
+    <script src="https://unpkg.com/chart.js@4.5.0/dist/chart.umd.js"></script>
+    <script src="https://unpkg.com/plotly.js@3.0.1/dist/plotly.min.js"></script>
+    <script src="https://unpkg.com/swiper@11.2.10/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11.2.10/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.11.13/dayjs.min.js"></script>
+    <script src="https://unpkg.com/marked@15.0.10/marked.min.js"></script>
+    <script src="https://unpkg.com/uuid@11.1.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/browser-image-compression@2.0.2/dist/browser-image-compression.umd.js"></script>
+    <script src="https://unpkg.com/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+    <script src="https://unpkg.com/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="https://unpkg.com/formik@2.4.6/dist/formik.umd.min.js"></script>
+    <script src="https://unpkg.com/yup@1.6.1/dist/yup.umd.min.js"></script>
+    <script src="https://unpkg.com/react-hook-form@7.59.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@hookform/resolvers@5.1.1/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/slate@0.117.2/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/slate-react@0.117.3/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/slate-history@0.113.1/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@tiptap/react@2.25.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@tiptap/starter-kit@2.25.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@tiptap/extension-color@2.25.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@tiptap/extension-highlight@2.25.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@tiptap/extension-image@2.25.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@tiptap/extension-link@2.25.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@tiptap/extension-table@2.25.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@tiptap/extension-text-align@2.25.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@tiptap/extension-underline@2.25.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@dnd-kit/core@6.3.1/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@dnd-kit/sortable@10.0.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@dnd-kit/utilities@3.2.2/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/@visx/visx@3.12.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/victory@37.3.6/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/zustand@5.0.6/umd/index.production.min.js"></script>
+    <style>
+      /* Hero section styles */
+      .hero-section {
+        position: relative;
+        overflow: hidden;
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #2d0052, #4a0e7a);
+      }
+      
+      .hero-bg-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('assets/images/маршруты_1758612988781_f9woi5.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: blur(0.5px);
+        opacity: 0.6;
+        z-index: 1;
+      }
+      
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(45, 0, 82, 0.4), rgba(74, 14, 122, 0.4));
+        z-index: 2;
+      }
+      
+      .hero-content {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        animation: fadeInUp 1s ease-out;
+      }
+      
+      .hero-text-wrapper {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+        padding: 3rem 4rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      
+      .hero-title {
+        color: #e1bee7;
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+        font-family: 'Montserrat', sans-serif;
+        animation: slideInDown 1s ease-out 0.3s both;
+      }
+      
+      .hero-subtitle {
+        color: #ce93d8;
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+        font-family: 'Montserrat', sans-serif;
+        animation: slideInUp 1s ease-out 0.6s both;
+      }
+      
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes slideInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes slideInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Анимации для галереи */
+      .gallery-dot:hover {
+        background-color: #ffffff !important;
+        transform: scale(1.2);
+      }
+      
+      .service-block:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      }
+      
+      /* Адаптивность */
+      @media (max-width: 768px) {
+        .image-container,
+        .section-gallery {
+          height: 250px !important;
+          margin: 1rem auto !important;
+        }
+        
+        .service-block {
+          padding: 1.5rem !important;
+          margin-bottom: 1.5rem !important;
+        }
+        
+        .service-block h3 {
+          font-size: 1.3rem !important;
+        }
+        
+        .service-block p {
+          font-size: 1rem !important;
+        }
+      }
+    </style>
+</head>
+<body>
+    
+    <div class="background-image" style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, 
+        #2d0052, 
+        #4a0e7a);
+      z-index: -2;
+    "></div>
+    
+    
+    <header class="site-header" style="--header-bg-color: #1a0033; --header-title-color: #e1bee7; --header-link-color: #ce93d8">
+      <div class="header-content">
+        <div class="site-branding">
+          <h1 class="site-title">
+            <a href="index.html">ООО "Меркуриус"</a>
+          </h1>
+          <div class="site-domain" style="display: none;"></div>
+        </div>
+        <nav class="site-nav">
+          <button class="menu-toggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-menu">
+            <li><a href="about.html" class="nav-link">о_компании</a></li><li><a href="strengths.html" class="nav-link">сильные_стороны</a></li><li><a href="routes.html" class="nav-link active">маршруты</a></li><li><a href="movement.html" class="nav-link">движение</a></li><li><a href="faq.html" class="nav-link">вопросы</a></li><li><a href="services.html" class="nav-link">услуги</a></li><li><a href="contacts.html" class="nav-link">контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="hero-bg-image"></div>
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <div class="hero-text-wrapper">
+              <h1 class="hero-title">Надежные маршруты для перевозок по Кыргызстану</h1>
+              <p class="hero-subtitle">Компания предлагает безопасные и удобные маршруты для грузоперевозок по Бишкеку и всей республике, гарантируя клиентам точность сроков и прозрачность.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Main Content Section -->
+        <section class="section-content" style="
+          padding: 4rem 0;
+          background: transparent;
+          margin: 0;
+        ">
+          <div class="container" style="
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+          ">
+        
+            
+            <div class="cards-container">
+              
+            </div>
+            
+            <div class="elements-container">
+              
+          <style>
+            .typewriter-container {
+              min-height: 38.4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+              position: relative;
+            }
+            
+            .typewriter-text-content {
+              font-family: Courier New, monospace;
+              white-space: nowrap;
+              overflow: hidden;
+            }
+            
+            .typewriter-cursor {
+              animation: blink 1s infinite;
+              margin-left: 2px;
+              color: #ff3333;
+              font-family: Courier New, monospace;
+              user-select: none;
+            }
+            
+            @keyframes blink {
+              0%, 50% { opacity: 1; }
+              51%, 100% { opacity: 0; }
+            }
+          </style>
+          <div id="element-service_1" class="content-element typewriter-text" style="margin: 2rem 0; text-align: center; min-height: 60px; display: flex; align-items: center; justify-content: center; background: linear-gradient(to right, #001233, #000814); opacity: 1; padding: 24px;">
+            <div class="typewriter typewriter-container" 
+                data-texts='["Мы обеспечиваем доставку грузов по проверенным маршрутам, которые разработаны с учетом состояния дорог и особенностей региона. Наша цель – минимизировать время в пути и обеспечить полную сохранность перевозимого груза.","Каждое направление тщательно просчитывается нашими логистами, что позволяет клиентам быть уверенными в стабильности и точности сроков поставки. Мы несем ответственность за безопасность и надежность перевозок.","Компания предлагает широкий выбор направлений и услуг, которые помогают бизнесу и частным клиентам уверенно планировать доставку и расширять географию своей деятельности, используя современные инструменты логистики."]'
+                data-speed="150"
+                data-pause="2000"
+                data-repeat="true"
+                style="
+                  color: #ff3333;
+                  font-size: 32px;
+                  font-weight: normal;
+                  font-family: Courier New, monospace;
+                  margin: 0;
+                ">
+                <span class="typewriter-text-content"></span><span class="typewriter-cursor">|</span>
+            </div>
+          </div>
+        
+        <div id="element-service_2" class="content-element gradient-text" style="margin: 1rem 0; text-align: center; padding: 16px; border-radius: 8px; background: linear-gradient(to right, #001845, #000814); opacity: 1; border: 1px solid #e0e0e0; border-radius: 8px; padding: 24px;">
+            <h2 style="
+              background: linear-gradient(to right, #ffff00, #00ff88);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              font-size: 24px;
+              font-weight: bold;
+              margin: 0;
+              display: inline-block;
+              color: transparent;
+            ">Мы стремимся предоставлять маршруты, которые сочетают безопасность, скорость и надежность. Каждый заказ тщательно планируется и сопровождается специалистами. Это дает возможность клиентам сосредоточиться на своем бизнесе, доверяя нам все вопросы логистики. Мы понимаем важность каждой доставки и обеспечиваем точное соблюдение сроков. Наш опыт и знания помогают избегать задержек и создавать систему перевозок, на которую можно положиться в любых условиях.</h2>
+          </div>
+        
+          <div id="element-service_3" class="content-element data-table" style="
+            margin: 2rem 0;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+         background: linear-gradient(to right, #001233, #000814); opacity: 1; padding: 24px;">
+                      
+              <h3 style="
+                text-align: center;
+                color: #ffff00;
+                margin-bottom: 2rem;
+                font-size: 1.5rem;
+                font-weight: bold;
+                font-family: 'Montserrat', sans-serif;
+              background-color: transparent;
+              padding: 1rem;
+              border-radius: 8px;
+              border: none;
+            ">Таблица основных маршрутов и направлений доставки грузов компании с указанием расстояния, времени и дополнительных особенностей обслуживания, чтобы клиенты могли легко выбирать оптимальные варианты</h3>
+            
+            <div style="
+              overflow-x: auto;
+              border-radius: 8px;
+              box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+              background: white;
+              border: 1px solid rgba(0,0,0,0.12);
+              max-width: 100%;
+            ">
+              <table id="element-service_3" style="
+                width: 100%;
+                min-width: 600px;
+                border-collapse: collapse;
+                background: white;
+                font-family: 'Montserrat', sans-serif;
+                table-layout: fixed;
+              ">
+                
+                  <tr style="
+                    
+                      background: #0f1a3a;
+                      background-image: linear-gradient(135deg, #0f1a3a 0%, #0f1a3aDD 100%);
+                    
+                    border-bottom: 2px solid rgba(0,0,0,0.2);
+                    transition: background-color 0.2s ease;
+                  " >
+                    
+                      <th style="
+                        padding: 16px 20px;
+                        text-align: center;
+                        color: #ffff00;
+                        font-weight: bold;
+                        font-size: 14px;
+                        text-transform: uppercase; letter-spacing: 0.5px;
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        cursor: pointer; user-select: none;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " onclick="sortTable('element-service_3', 0)">Направление ↕</th>
+                    
+                      <th style="
+                        padding: 16px 20px;
+                        text-align: center;
+                        color: #ffff00;
+                        font-weight: bold;
+                        font-size: 14px;
+                        text-transform: uppercase; letter-spacing: 0.5px;
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        cursor: pointer; user-select: none;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " onclick="sortTable('element-service_3', 1)">Расстояние</th>
+                    
+                      <th style="
+                        padding: 16px 20px;
+                        text-align: center;
+                        color: #ffff00;
+                        font-weight: bold;
+                        font-size: 14px;
+                        text-transform: uppercase; letter-spacing: 0.5px;
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        cursor: pointer; user-select: none;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " onclick="sortTable('element-service_3', 2)">Время доставки</th>
+                    
+                      <th style="
+                        padding: 16px 20px;
+                        text-align: center;
+                        color: #ffff00;
+                        font-weight: bold;
+                        font-size: 14px;
+                        text-transform: uppercase; letter-spacing: 0.5px;
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        cursor: pointer; user-select: none;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " onclick="sortTable('element-service_3', 3)">Тип груза</th>
+                    
+                      <th style="
+                        padding: 16px 20px;
+                        text-align: center;
+                        color: #ffff00;
+                        font-weight: bold;
+                        font-size: 14px;
+                        text-transform: uppercase; letter-spacing: 0.5px;
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        cursor: pointer; user-select: none;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " onclick="sortTable('element-service_3', 4)">Дополнительные услуги</th>
+                    
+                      <th style="
+                        padding: 16px 20px;
+                        text-align: center;
+                        color: #ffff00;
+                        font-weight: bold;
+                        font-size: 14px;
+                        text-transform: uppercase; letter-spacing: 0.5px;
+                        
+                        border-right: none;
+                        cursor: pointer; user-select: none;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " onclick="sortTable('element-service_3', 5)">Примечание</th>
+                    
+                  </tr>
+                
+                  <tr style="
+                    
+                      background: #0a0f23;
+                    
+                    border-bottom: 1px solid rgba(0,0,0,0.08);
+                    transition: background-color 0.2s ease;
+                  " onmouseover="this.style.backgroundColor='#162042'" onmouseout="this.style.backgroundColor='#0a0f23'">
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        font-weight: 500;
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Бишкек – Ош</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >620 км</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >12 часов</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Общие грузы</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Страхование</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: none;
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Срочная доставка доступна</td>
+                    
+                  </tr>
+                
+                  <tr style="
+                    
+                      background: #0a0f23;
+                    
+                    border-bottom: 1px solid rgba(0,0,0,0.08);
+                    transition: background-color 0.2s ease;
+                  " onmouseover="this.style.backgroundColor='#162042'" onmouseout="this.style.backgroundColor='#0a0f23'">
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        font-weight: 500;
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Бишкек – Каракол</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >400 км</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >9 часов</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Хрупкие грузы</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Упаковка</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: none;
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Возможна ночная доставка</td>
+                    
+                  </tr>
+                
+                  <tr style="
+                    
+                      background: #0a0f23;
+                    
+                    border-bottom: 1px solid rgba(0,0,0,0.08);
+                    transition: background-color 0.2s ease;
+                  " onmouseover="this.style.backgroundColor='#162042'" onmouseout="this.style.backgroundColor='#0a0f23'">
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        font-weight: 500;
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Бишкек – Талас</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >310 км</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >7 часов</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Продукты</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Температурный контроль</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: none;
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Скидка при регулярных заказах</td>
+                    
+                  </tr>
+                
+                  <tr style="
+                    
+                      background: #0a0f23;
+                    
+                    border-bottom: 1px solid rgba(0,0,0,0.08);
+                    transition: background-color 0.2s ease;
+                  " onmouseover="this.style.backgroundColor='#162042'" onmouseout="this.style.backgroundColor='#0a0f23'">
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        font-weight: 500;
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Бишкек – Нарын</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >320 км</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >8 часов</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Строительные материалы</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Разгрузка</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: none;
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Возможна группировка заказов</td>
+                    
+                  </tr>
+                
+                  <tr style="
+                    
+                      background: #0a0f23;
+                    
+                    border-bottom: 1px solid rgba(0,0,0,0.08);
+                    transition: background-color 0.2s ease;
+                  " onmouseover="this.style.backgroundColor='#162042'" onmouseout="this.style.backgroundColor='#0a0f23'">
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        font-weight: 500;
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Бишкек – Джалал-Абад</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >570 км</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >11 часов</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Промышленные грузы</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: 1px solid rgba(0,0,0,0.08);
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Погрузка</td>
+                    
+                      <td style="
+                        padding: 14px 20px;
+                        text-align: left;
+                        color: #00ff88;
+                        font-weight: normal;
+                        font-size: 13px;
+                        
+                        
+                        border-right: none;
+                        
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        max-width: 0;
+                        white-space: normal;
+                      " >Дополнительные услуги по запросу</td>
+                    
+                  </tr>
+                
+              </table>
+            </div>
+            
+            <!-- Дополнительная информация удалена из экспорта -->
+            
+            <style>
+              @media (max-width: 768px) {
+                #element-service_3 {
+                  min-width: 400px !important;
+                }
+                #element-service_3 th,
+                #element-service_3 td {
+                  padding: 8px 12px !important;
+                  font-size: 12px !important;
+                }
+              }
+              @media (max-width: 480px) {
+                #element-service_3 {
+                  min-width: 300px !important;
+                }
+                #element-service_3 th,
+                #element-service_3 td {
+                  padding: 6px 8px !important;
+                  font-size: 11px !important;
+                }
+              }
+            </style>
+            
+            
+            <script>
+              // Функция сортировки таблицы
+              function sortTable(tableId, columnIndex) {
+                const table = document.getElementById(tableId);
+                const tbody = table.querySelector('tbody') || table;
+                const rows = Array.from(tbody.querySelectorAll('tr')).slice(1); // Пропускаем заголовок
+                const headerRow = tbody.querySelector('tr');
+                
+                // Определяем направление сортировки (по умолчанию desc - обратный порядок)
+                const currentDirection = table.getAttribute('data-sort-direction') || 'desc';
+                const newDirection = currentDirection === 'asc' ? 'desc' : 'asc';
+                
+                // Сортируем строки
+                rows.sort((a, b) => {
+                  const aValue = a.cells[columnIndex]?.textContent || '';
+                  const bValue = b.cells[columnIndex]?.textContent || '';
+                  
+                  // Пытаемся преобразовать в числа для числовой сортировки
+                  const aNum = parseFloat(aValue);
+                  const bNum = parseFloat(bValue);
+                  
+                  if (!isNaN(aNum) && !isNaN(bNum)) {
+                    return newDirection === 'asc' ? aNum - bNum : bNum - aNum;
+                  }
+                  
+                  // Строковая сортировка
+                  return newDirection === 'asc' 
+                    ? aValue.localeCompare(bValue, 'ru') 
+                    : bValue.localeCompare(aValue, 'ru');
+                });
+                
+                // Обновляем таблицу
+                rows.forEach(row => tbody.appendChild(row));
+                table.setAttribute('data-sort-direction', newDirection);
+                
+                // Обновляем заголовки - стрелка переходит к активному столбцу
+                const headers = headerRow.querySelectorAll('th');
+                headers.forEach((header, index) => {
+                  const baseText = header.textContent.replace(/ [↑↓↕]/g, ''); // Убираем все стрелки
+                  if (index === columnIndex) {
+                    // Активный столбец показывает направление сортировки
+                    header.innerHTML = baseText + (newDirection === 'asc' ? ' ↑' : ' ↓');
+                  } else {
+                    // Остальные столбцы без стрелок
+                    header.innerHTML = baseText;
+                  }
+                });
+              }
+              
+              // Автоматическая сортировка при загрузке страницы
+              document.addEventListener('DOMContentLoaded', function() {
+                const table = document.getElementById('element-service_3');
+                if (table) {
+                  // Автоматически сортируем по первому столбцу при загрузке
+                  setTimeout(() => sortTable('element-service_3', 0), 100);
+                }
+              });
+            </script>
+            
+          </div>
+        
+            </div>
+          </div>
+        </section>
+    </main>
+    
+    <footer class="site-footer" style="background: linear-gradient(135deg, 
+        #240041, 
+        #3b0b61)">
+      <div class="footer-container" style="color: #ffffff;">
+        <div class="footer-content">
+          <div class="footer-info">
+            <h3 style="color: #ffffff;">ООО "Меркуриус"</h3>
+            <p style="color: #ffffff;">📍 720033, Кыргызстан, город Бишкек, Ленинский район, улица Павлова, дом 19</p>
+            
+            <p style="color: #ffffff;">✉️ merkurius139@gmail.com</p>
+          </div>
+          
+            <div class="footer-links">
+              <h4 style="color: #ffffff;">Menu</h4>
+              <ul>
+                <li><a href="index.html" style="color: #ffffff;">ООО "Меркуриус"</a></li>
+                <li><a href="about.html" style="color: #ffffff;">о_компании</a></li><li><a href="strengths.html" style="color: #ffffff;">сильные_стороны</a></li><li><a href="routes.html" style="color: #ffffff;">маршруты</a></li><li><a href="movement.html" style="color: #ffffff;">движение</a></li><li><a href="faq.html" style="color: #ffffff;">вопросы</a></li><li><a href="services.html" style="color: #ffffff;">услуги</a></li>
+                <li><a href="contacts.html" style="color: #ffffff;">контакты</a></li>
+              </ul>
+            </div>
+          
+          <div class="footer-contact">
+            <h4 style="color: #ffffff;">Legal Information</h4>
+            <ul>
+              <li><a href="privacy-policy.html" style="color: #ffffff;">Privacy Policy</a></li>
+              <li><a href="terms-of-service.html" style="color: #ffffff;">Terms of Service</a></li>
+              <li><a href="cookie-policy.html" style="color: #ffffff;">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p style="color: #ffffff;">&copy; 2025 ООО "Меркуриус". All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="assets/js/script.js"></script>
+    <script>
+      // Инициализация галереи изображений
+      function initImageGalleries() {
+        const galleries = document.querySelectorAll('.section-gallery');
+        
+        galleries.forEach(gallery => {
+          const images = gallery.querySelectorAll('.gallery-img');
+          const dots = gallery.querySelectorAll('.gallery-dot');
+          let currentIndex = 0;
+          let interval = null;
+          
+          if (images.length < 2) return;
+          
+          function showSlide(index) {
+            images.forEach(img => img.style.display = 'none');
+            dots.forEach(dot => dot.style.backgroundColor = 'rgba(255,255,255,0.5)');
+            
+            if (images[index]) {
+              images[index].style.display = 'block';
+            }
+            
+            if (dots[index]) {
+              dots[index].style.backgroundColor = '#ffffff';
+            }
+            
+            currentIndex = index;
+          }
+          
+          dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+              clearInterval(interval);
+              showSlide(index);
+              startAutoScroll();
+            });
+          });
+          
+          function startAutoScroll() {
+            if (interval) clearInterval(interval);
+            interval = setInterval(() => {
+              const nextIndex = (currentIndex + 1) % images.length;
+              showSlide(nextIndex);
+            }, 3000);
+          }
+          
+          gallery.addEventListener('mouseenter', () => clearInterval(interval));
+          gallery.addEventListener('mouseleave', startAutoScroll);
+          
+          startAutoScroll();
+        });
+      }
+      
+      // Function to initialize AI elements
+      function initAIElements() {
+        // Initialize animated counters
+        const counters = document.querySelectorAll('.animated-counter .counter');
+        counters.forEach(counter => {
+          const startValue = parseInt(counter.dataset.start) || 0;
+          const endValue = parseInt(counter.dataset.end) || 100;
+          const duration = parseInt(counter.dataset.duration) || 2000;
+          
+          let startTime = null;
+          function animateCounter(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            const currentValue = Math.floor(startValue + (endValue - startValue) * progress);
+            counter.textContent = currentValue;
+            
+            if (progress < 1) {
+              requestAnimationFrame(animateCounter);
+            }
+          }
+          
+          // Start animation when element is visible
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                requestAnimationFrame(animateCounter);
+                observer.unobserve(entry.target);
+              }
+            });
+          });
+          observer.observe(counter);
+        });
+        
+        // Initialize typewriter text
+        const typewriters = document.querySelectorAll('.typewriter');
+        typewriters.forEach(typewriter => {
+          const texts = JSON.parse(typewriter.dataset.texts || '["Привет, мир!"]');
+          const speed = parseInt(typewriter.dataset.speed) || 150;
+          const pauseTime = parseInt(typewriter.dataset.pause) || 2000;
+          const repeat = typewriter.dataset.repeat !== 'false';
+          
+          let currentTextIndex = 0;
+          let currentCharIndex = 0;
+          let isDeleting = false;
+          
+          function typeWriter() {
+            const currentText = texts[currentTextIndex];
+            
+            if (isDeleting) {
+              typewriter.textContent = currentText.substring(0, currentCharIndex - 1);
+              currentCharIndex--;
+            } else {
+              typewriter.textContent = currentText.substring(0, currentCharIndex + 1);
+              currentCharIndex++;
+            }
+            
+            let typeSpeed = speed;
+            if (isDeleting) {
+              typeSpeed /= 2;
+            }
+            
+            if (!isDeleting && currentCharIndex === currentText.length) {
+              typeSpeed = pauseTime;
+              isDeleting = true;
+            } else if (isDeleting && currentCharIndex === 0) {
+              isDeleting = false;
+              currentTextIndex = (currentTextIndex + 1) % texts.length;
+              typeSpeed = 500;
+            }
+            
+            setTimeout(typeWriter, typeSpeed);
+          }
+          
+          // Start typewriter when element is visible
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                typeWriter();
+                observer.unobserve(entry.target);
+              }
+            });
+                     });
+           observer.observe(typewriter);
+         });
+         
+         // Initialize FAQ accordion functionality
+         window.toggleFAQ = function(index) {
+           const answer = document.getElementById('faq-answer-' + index);
+           const container = answer ? answer.parentElement : null;
+           const icon = container ? container.querySelector('span') : null;
+           
+           if (answer) {
+             const isVisible = answer.style.display !== 'none';
+             answer.style.display = isVisible ? 'none' : 'block';
+             
+             // Обновляем иконку
+             if (icon) {
+               icon.textContent = isVisible ? '▼' : '▲';
+             }
+             
+             // Применяем hover эффекты к контейнеру
+             if (container) {
+               const originalBg = container.style.backgroundColor;
+               const hoverBg = container.getAttribute('data-hover-bg') || '#f0f0f0';
+               
+               // Добавляем обработчики hover для развернутого состояния
+               container.onmouseover = function() {
+                 this.style.backgroundColor = hoverBg;
+                 if (answer.style.display !== 'none') {
+                   answer.style.backgroundColor = hoverBg;
+                 }
+               };
+               
+               container.onmouseout = function() {
+                 this.style.backgroundColor = originalBg;
+                 if (answer.style.display !== 'none') {
+                   answer.style.backgroundColor = originalBg;
+                 }
+               };
+             }
+           }
+         };
+         
+         // Initialize charts when libraries are loaded
+         function initializeCharts() {
+           const chartElements = document.querySelectorAll('.chart-component canvas, .chart-component div[id^="chart-"]');
+           chartElements.forEach(element => {
+             const scripts = element.parentElement.querySelectorAll('script');
+             scripts.forEach(script => {
+               if (script.textContent.includes('Chart(') || script.textContent.includes('ApexCharts')) {
+                 try {
+                   eval(script.textContent);
+                 } catch (e) {
+                   console.log('Chart initialization delayed:', e.message);
+                 }
+               }
+             });
+           });
+         }
+         
+         // Try to initialize charts after a delay to ensure libraries are loaded
+         setTimeout(initializeCharts, 1000);
+         setTimeout(initializeCharts, 2000);
+       }
+      
+      document.addEventListener('DOMContentLoaded', initImageGalleries);
+      
+      // Функция отправки формы контактов
+      function submitContactForm(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        
+        // Отправляем данные на Formspree
+        fetch('https://formspree.io/f/mvgwpqrr', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).finally(() => {
+          // Перенаправляем на страницу благодарности с параметрами
+          const thankYouMessage = encodeURIComponent('NAME PAGE: testimonials');
+          const closeButtonText = encodeURIComponent('ID: Отзывы');
+          window.location.href = `merci.html?message=${thankYouMessage}&closeButtonText=${closeButtonText}`;
+        });
+        
+        return false;
+      }
+    </script>
+</body>
+</html>
