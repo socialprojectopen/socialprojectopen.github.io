@@ -58,12 +58,6 @@
         opacity: 0.8;
       }
 
-      .site-domain {
-        font-size: 0.9rem;
-        color: var(--header-title-color, #666);
-        opacity: 0.8;
-        margin-top: 4px;
-      }
 
       .site-nav {
         position: relative;
@@ -408,14 +402,6 @@
         margin-right: 2rem;
       }
 
-      .domain {
-        display: block;
-        margin-top: 0.25rem;
-        font-size: 0.9rem;
-        font-weight: normal;
-        opacity: 0.8;
-        white-space: nowrap;
-      }
 
       .nav-menu {
         display: flex;
