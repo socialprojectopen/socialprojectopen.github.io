@@ -241,6 +241,74 @@
         .contact-info-container {
           padding: 1.5rem;
         }
+
+        /* Стили для мобильной версии форм */
+        .contact-content {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 2rem !important;
+        }
+
+        .contact-form-container,
+        .contact-info-container {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+          font-size: 16px !important; /* Предотвращает зум на iOS */
+        }
+
+        .contact-form label {
+          font-size: 14px !important;
+          margin-bottom: 0.5rem !important;
+        }
+
+        .contact-form button {
+          font-size: 16px !important;
+          padding: 1rem !important;
+        }
+
+        /* Карта в мобильной версии */
+        .contact-map-container {
+          margin: 2rem 0 !important;
+        }
+
+        .contact-map-container iframe {
+          height: 300px !important;
+        }
+      }
+
+      /* Дополнительные стили для очень маленьких экранов */
+      @media (max-width: 480px) {
+        .contact-section {
+          padding: 1rem 0.5rem !important;
+        }
+
+        .contact-container {
+          padding: 0 10px !important;
+        }
+
+        .contact-form-container,
+        .contact-info-container {
+          padding: 1rem !important;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+          padding: 0.6rem !important;
+        }
+
+        .contact-form button {
+          padding: 0.8rem !important;
+          font-size: 14px !important;
+        }
+
+        .contact-map-container iframe {
+          height: 250px !important;
+        }
       }
     </style>
 </head>
