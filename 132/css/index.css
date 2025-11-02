@@ -1,0 +1,465 @@
+/* Стили для главной страницы */
+
+/* Hero секция с фоновым изображением */
+.hero {
+    background-image: url('../images/Миграционная служба Краснодар.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 6rem 0;
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-mission {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero .btn {
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* Описание работы службы */
+.about-section {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+.about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.about-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Иконки услуг */
+.services-icons {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.services-icons h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+}
+
+.services-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-icon-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-icon-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #3498db;
+}
+
+.service-icon-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-icon-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.service-icon-card p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* Популярные услуги */
+.popular-services {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+.popular-services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+}
+
+.popular-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.popular-service-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.popular-service-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.popular-service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.popular-service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.popular-service-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.popular-service-card p {
+    color: #7f8c8d;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.popular-service-card ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    padding: 0;
+}
+
+.popular-service-card ul li {
+    color: #555;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+/* Последние новости */
+.latest-news {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.latest-news h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+}
+
+.latest-news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.latest-news-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.latest-news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.latest-news-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.latest-news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.latest-news-card:hover .latest-news-image img {
+    transform: scale(1.1);
+}
+
+.latest-news-content {
+    padding: 1.5rem;
+}
+
+.latest-news-date {
+    color: #95a5a6;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.latest-news-content h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+.latest-news-content p {
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.latest-news-action {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Куки-уведомление */
+.cookie-notification {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s;
+}
+
+.cookie-notification.show {
+    display: flex;
+}
+
+.cookie-content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2.5rem;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: slideIn 0.3s;
+}
+
+.cookie-text {
+    margin-bottom: 2rem;
+}
+
+.cookie-text h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.cookie-text p {
+    color: #555;
+    line-height: 1.8;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 0;
+        min-height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-mission {
+        font-size: 1rem;
+    }
+
+    .about-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        order: -1;
+    }
+
+    .services-icons-grid,
+    .popular-services-grid,
+    .latest-news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cookie-content {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .cookie-buttons {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .cookie-buttons .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .services-icons h2,
+    .popular-services h2,
+    .latest-news h2,
+    .about-text h2 {
+        font-size: 2rem;
+    }
+
+    .service-icon-card,
+    .popular-service-card {
+        padding: 1.5rem;
+    }
+
+    .cookie-content {
+        padding: 1rem;
+    }
+
+    .cookie-text h4 {
+        font-size: 1.2rem;
+    }
+
+    .cookie-text p {
+        font-size: 0.9rem;
+    }
+}

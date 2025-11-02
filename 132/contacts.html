@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Название компании</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/contacts.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">Миграционная служба Краснодар</a>
+                </div>
+                <nav class="nav">
+                    <button class="mobile-menu-toggle" aria-label="Меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="howto.html">Как оформить</a></li>
+                        <li><a href="news.html">Новости</a></li>
+                        <li><a href="contacts.html" class="active">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main">
+        <section class="page-header">
+            <div class="container">
+                <h1>Контакты</h1>
+                <p>Свяжитесь с нами любым удобным способом</p>
+            </div>
+        </section>
+
+        <section class="contact-info">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>Телефон</h3>
+                        <p><a href="tel:+78612456790">+7 (861) 245-67-90</a></p>
+                        <p>Звонки принимаются в рабочее время</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@migration-krasnodar.ru">info@migration-krasnodar.ru</a></p>
+                        <p>Ответим в течение 24 часов</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Адрес</h3>
+                        <p>г. Краснодар</p>
+                        <p>ул. Коммунаров, 266/Б</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">🕐</div>
+                        <h3>Режим работы</h3>
+                        <p>Пн-Пт: 9:00 - 18:00</p>
+                        <p>Сб-Вс: выходной</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-form-container">
+                        <h2>Напишите нам</h2>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Ваше имя *</label>
+                                <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Телефон *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Сообщение *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Опишите ваш вопрос или ситуацию..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                            <div class="form-message" id="form-message"></div>
+                        </form>
+                    </div>
+                    <div class="map-container">
+                        <h3>Как нас найти</h3>
+                        <div id="map" class="google-map"></div>
+                        <p class="map-address">г. Краснодар, ул. Коммунаров, 266/Б</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О компании</h3>
+                    <p>Мы предоставляем качественные услуги с 2020 года</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="howto.html">Как оформить</a></li>
+                        <li><a href="news.html">Новости</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                    <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Телефон: +7 (861) 245-67-90</p>
+                    <p>Email: info@migration-krasnodar.ru</p>
+                    <p>Адрес: г. Краснодар, ул. Коммунаров, 266/Б</p>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-buttons">
+                    <button class="footer-btn" data-modal="cookie-modal">Политика куков</button>
+                    <button class="footer-btn" data-modal="terms-modal">Terms</button>
+                    <button class="footer-btn" data-modal="privacy-modal">Privacy</button>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" data-social="vk" aria-label="ВКонтакте">
+                            <span class="social-icon">📱</span>
+                            <span class="social-name">ВКонтакте</span>
+                        </a>
+                        <a href="#" class="social-link" data-social="telegram" aria-label="Telegram">
+                            <span class="social-icon">✈️</span>
+                            <span class="social-name">Telegram</span>
+                        </a>
+                        <a href="#" class="social-link" data-social="youtube" aria-label="YouTube">
+                            <span class="social-icon">▶️</span>
+                            <span class="social-name">YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Миграционная служба Краснодар</p>
+            </div>
+        </div>
+        
+        <!-- Модальное окно для соцсетей -->
+        <div id="social-modal" class="social-modal">
+            <div class="social-modal-content">
+                <span class="social-modal-close">&times;</span>
+                <h2>Найдите нас в соцсетях</h2>
+                <p>Найдите нас в соцсетях по названию или хэштегу</p>
+                <button class="btn btn-primary social-modal-close-btn">Закрыть</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/contacts.js"></script>
+</body>
+</html>
+

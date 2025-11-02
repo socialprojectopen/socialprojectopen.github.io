@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как оформить - Название компании</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/howto.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">Миграционная служба Краснодар</a>
+                </div>
+                <nav class="nav">
+                    <button class="mobile-menu-toggle" aria-label="Меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="howto.html" class="active">Как оформить</a></li>
+                        <li><a href="news.html">Новости</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main">
+        <section class="page-header">
+            <div class="container">
+                <h1>Как оформить</h1>
+                <p>Пошаговая инструкция по оформлению наших услуг</p>
+            </div>
+        </section>
+
+        <!-- Интерактивные шаги -->
+        <section class="interactive-steps">
+            <div class="container">
+                <h2 class="section-title">Пошаговая инструкция</h2>
+                <div class="steps-navigation">
+                    <button class="step-nav-btn active" data-step="1">ШАГ 1</button>
+                    <span class="step-arrow">→</span>
+                    <button class="step-nav-btn" data-step="2">ШАГ 2</button>
+                    <span class="step-arrow">→</span>
+                    <button class="step-nav-btn" data-step="3">ШАГ 3</button>
+                </div>
+                
+                <div class="steps-container">
+                    <!-- Шаг 1 -->
+                    <div class="step-panel active" data-step="1">
+                        <div class="step-panel-content">
+                            <div class="step-panel-number">ШАГ 1</div>
+                            <h3>Выбор услуги</h3>
+                            <div class="step-description">
+                                <h4>Что нужно сделать:</h4>
+                                <ul>
+                                    <li>Выберите интересующую вас услугу из нашего каталога</li>
+                                    <li>Ознакомьтесь с описанием услуги и требованиями</li>
+                                    <li>Убедитесь, что у вас есть все необходимые документы</li>
+                                </ul>
+                                <h4>Требования:</h4>
+                                <ul>
+                                    <li>Действующий паспорт</li>
+                                    <li>Миграционная карта (для иностранных граждан)</li>
+                                    <li>Основания для получения услуги</li>
+                                </ul>
+                            </div>
+                            <div class="step-image">
+                                <img src="images/Заявление.jpg" alt="Образец заявления">
+                                <p class="image-caption">Образец заявления на услугу</p>
+                            </div>
+                            <div class="step-actions">
+                                <a href="services.html" class="btn btn-primary">Выбрать услугу</a>
+                                <button class="btn btn-secondary download-blank-btn" data-blank="form1">Скачать бланк</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 2 -->
+                    <div class="step-panel" data-step="2">
+                        <div class="step-panel-content">
+                            <div class="step-panel-number">ШАГ 2</div>
+                            <h3>Заполнение заявки</h3>
+                            <div class="step-description">
+                                <h4>Что нужно сделать:</h4>
+                                <ul>
+                                    <li>Заполните форму заявки с вашими контактными данными</li>
+                                    <li>Укажите выбранную услугу</li>
+                                    <li>Проверьте правильность заполненных данных</li>
+                                    <li>Отправьте заявку</li>
+                                </ul>
+                                <h4>Требования:</h4>
+                                <ul>
+                                    <li>Все поля должны быть заполнены корректно</li>
+                                    <li>Укажите актуальный телефон и email для связи</li>
+                                    <li>При необходимости приложите фотографии документов</li>
+                                </ul>
+                            </div>
+                            <div class="step-image">
+                                <img src="images/Заявление.jpg" alt="Образец заполнения заявки">
+                                <p class="image-caption">Пример заполнения заявки</p>
+                            </div>
+                            <div class="step-actions">
+                                <a href="contacts.html" class="btn btn-primary">Заполнить заявку</a>
+                                <button class="btn btn-secondary download-blank-btn" data-blank="form2">Скачать бланк</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 3 -->
+                    <div class="step-panel" data-step="3">
+                        <div class="step-panel-content">
+                            <div class="step-panel-number">ШАГ 3</div>
+                            <h3>Подготовка документов</h3>
+                            <div class="step-description">
+                                <h4>Что нужно сделать:</h4>
+                                <ul>
+                                    <li>Соберите все необходимые документы согласно требованиям</li>
+                                    <li>Проверьте срок действия документов</li>
+                                    <li>Подготовьте копии документов (при необходимости)</li>
+                                    <li>Переведите документы на русский язык с нотариальным заверением</li>
+                                </ul>
+                                <h4>Требования:</h4>
+                                <ul>
+                                    <li>Документы должны быть действительными на момент подачи</li>
+                                    <li>Все переводы должны быть нотариально заверены</li>
+                                    <li>Копии должны быть четкими и читаемыми</li>
+                                    <li>Документы должны соответствовать установленной форме</li>
+                                </ul>
+                            </div>
+                            <div class="step-image">
+                                <img src="images/Паспорт.jpeg" alt="Список документов">
+                                <p class="image-caption">Перечень необходимых документов</p>
+                            </div>
+                            <div class="step-actions">
+                                <button class="btn btn-primary" data-accordion="documents">Посмотреть документы</button>
+                                <button class="btn btn-secondary download-blank-btn" data-blank="checklist">Скачать бланк</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Дополнительные разделы с аккордеонами -->
+        <section class="additional-info">
+            <div class="container">
+                <h2 class="section-title">Дополнительная информация</h2>
+                <div class="info-accordion">
+                    <div class="info-accordion-item">
+                        <button class="info-accordion-header">
+                            <span>📄 Документы</span>
+                            <span class="info-accordion-icon">+</span>
+                        </button>
+                        <div class="info-accordion-content">
+                            <h4>Основные документы:</h4>
+                            <ul>
+                                <li><strong>Паспорт</strong> — документ, удостоверяющий личность (оригинал и копия)</li>
+                                <li><strong>Миграционная карта</strong> — для иностранных граждан</li>
+                                <li><strong>Заявление</strong> — заполненное по установленной форме</li>
+                                <li><strong>Фотографии</strong> — 2 шт. размером 3x4 см</li>
+                            </ul>
+                            <h4>Дополнительные документы (в зависимости от услуги):</h4>
+                            <ul>
+                                <li>Медицинские справки</li>
+                                <li>Справка о доходах</li>
+                                <li>Документы об образовании</li>
+                                <li>Сертификат о знании русского языка</li>
+                            </ul>
+                            <div class="download-section">
+                                <button class="btn btn-primary download-blank-btn" data-blank="documents-list">Скачать список документов</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-accordion-item">
+                        <button class="info-accordion-header">
+                            <span>⏰ Сроки</span>
+                            <span class="info-accordion-icon">+</span>
+                        </button>
+                        <div class="info-accordion-content">
+                            <h4>Сроки оформления различных услуг:</h4>
+                            <ul>
+                                <li><strong>Патент на работу:</strong> 10-14 рабочих дней с момента подачи всех документов</li>
+                                <li><strong>Регистрация:</strong> 3-7 рабочих дней</li>
+                                <li><strong>РВП:</strong> до 6 месяцев</li>
+                                <li><strong>ВНЖ:</strong> до 6 месяцев с момента подачи заявления</li>
+                            </ul>
+                            <h4>Важно:</h4>
+                            <p>Сроки могут варьироваться в зависимости от загруженности органов и полноты предоставленных документов. Рекомендуем подавать документы заранее, не дожидаясь окончания срока действия текущих документов.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-accordion-item">
+                        <button class="info-accordion-header">
+                            <span>💰 Стоимость</span>
+                            <span class="info-accordion-icon">+</span>
+                        </button>
+                        <div class="info-accordion-content">
+                            <h4>Стоимость услуг:</h4>
+                            <ul>
+                                <li><strong>Патент на работу:</strong> от 3 500 руб. (госпошлина + авансовый платеж)</li>
+                                <li><strong>Регистрация:</strong> бесплатно (госпошлина не взимается)</li>
+                                <li><strong>РВП:</strong> 1 600 руб. (госпошлина)</li>
+                                <li><strong>ВНЖ:</strong> 3 500 руб. (госпошлина)</li>
+                            </ul>
+                            <h4>Дополнительные расходы:</h4>
+                            <ul>
+                                <li>Медицинское освидетельствование: от 2 000 руб.</li>
+                                <li>Экзамены (русский язык, история, основы права): от 4 500 руб.</li>
+                                <li>Перевод документов: от 500 руб. за документ</li>
+                                <li>Нотариальное заверение: от 1 000 руб.</li>
+                            </ul>
+                            <p><strong>Консультация:</strong> Бесплатно при обращении в нашу службу.</p>
+                            <div class="step-image">
+                                <img src="images/Миграционная служба Краснодар.jpg" alt="Прайс-лист">
+                                <p class="image-caption">Прайс-лист услуг</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title">Часто задаваемые вопросы</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Какие документы нужны для оформления?</span>
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Для оформления большинства наших услуг вам понадобится паспорт, документы, подтверждающие право на получение услуги, и заполненная заявка. Точный список документов зависит от конкретной услуги.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Сколько времени занимает оформление?</span>
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Сроки оформления зависят от выбранной услуги. Обычно процесс занимает от 1 до 10 рабочих дней. Более точную информацию вы получите после подачи заявки.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Можно ли оформить онлайн?</span>
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Да, большинство наших услуг можно оформить онлайн через сайт или по телефону. Для некоторых услуг может потребоваться личное присутствие.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Какова стоимость услуг?</span>
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Стоимость зависит от выбранной услуги и ее особенностей. Точную цену вы можете узнать, связавшись с нашими специалистами или заполнив форму заявки.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="documents">
+            <div class="container">
+                <h2 class="section-title">Образцы бланков</h2>
+                <div class="documents-grid">
+                    <div class="document-card">
+                        <img src="images/Паспорт.jpeg" alt="Паспорт">
+                        <h3>Паспорт</h3>
+                        <p>Документ, удостоверяющий личность</p>
+                    </div>
+                    <div class="document-card">
+                        <img src="images/справка.jpg" alt="Справка">
+                        <h3>Справка</h3>
+                        <p>Справка установленной формы</p>
+                    </div>
+                    <div class="document-card">
+                        <img src="images/Заявление.jpg" alt="Заявление">
+                        <h3>Заявление</h3>
+                        <p>Заполненное заявление на получение услуги</p>
+                    </div>
+                    <div class="document-card">
+                        <img src="images/Дополнительные документы.webp" alt="Дополнительные документы">
+                        <h3>Дополнительные документы</h3>
+                        <p>Другие документы по требованию</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О компании</h3>
+                    <p>Мы предоставляем качественные услуги с 2020 года</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="howto.html">Как оформить</a></li>
+                        <li><a href="news.html">Новости</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Телефон: +7 (495) 123-45-67</p>
+                    <p>Email: info@company.ru</p>
+                    <p>Адрес: Москва, ул. Примерная, д. 1</p>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-buttons">
+                    <button class="footer-btn" data-modal="cookie-modal">Политика куков</button>
+                    <button class="footer-btn" data-modal="terms-modal">Terms</button>
+                    <button class="footer-btn" data-modal="privacy-modal">Privacy</button>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" data-social="vk" aria-label="ВКонтакте">
+                            <span class="social-icon">📱</span>
+                            <span class="social-name">ВКонтакте</span>
+                        </a>
+                        <a href="#" class="social-link" data-social="telegram" aria-label="Telegram">
+                            <span class="social-icon">✈️</span>
+                            <span class="social-name">Telegram</span>
+                        </a>
+                        <a href="#" class="social-link" data-social="youtube" aria-label="YouTube">
+                            <span class="social-icon">▶️</span>
+                            <span class="social-name">YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Миграционная служба Краснодар</p>
+            </div>
+        </div>
+        
+        <!-- Модальное окно для соцсетей -->
+        <div id="social-modal" class="social-modal">
+            <div class="social-modal-content">
+                <span class="social-modal-close">&times;</span>
+                <h2>Найдите нас в соцсетях</h2>
+                <p>Найдите нас в соцсетях по названию или хэштегу</p>
+                <button class="btn btn-primary social-modal-close-btn">Закрыть</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/howto.js"></script>
+</body>
+</html>
+
