@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontaktieren Sie uns. IT-Coaching Portal in Österreich.">
+    <title>Kontakte - IT-Coaching Portal</title>
+    <base href="../">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">IT-Coaching</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Startseite</a></li>
+                    <li><a href="../kurse/kurse.html">Kurse</a></li>
+                    <li><a href="../ueber-uns/ueber-uns.html">Über uns</a></li>
+                    <li><a href="../blog/blog.html">Blog</a></li>
+                    <li><a href="../faq/faq.html">FAQ</a></li>
+                    <li><a href="kontakte.html">Kontakte</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menü öffnen">☰</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main style="min-height: 60vh; padding: 4rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h1 style="text-align: center; margin-bottom: 1rem;">Kontakte</h1>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">Wir freuen uns auf Ihre Nachricht</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
+                <!-- Контактная информация -->
+                <div>
+                    <h2 style="margin-bottom: 1.5rem;">Kontaktinformationen</h2>
+                    
+                    <div class="card" style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--accent-orange);">Adresse</h3>
+                        <p style="margin: 0;">
+                            IT-Coaching Portal<br>
+                            Stumpergasse<br>
+                            1060 Wien<br>
+                            Österreich
+                        </p>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--accent-orange);">E-Mail</h3>
+                        <p style="margin: 0;">
+                            <a href="mailto:coaching_it-at2025@gmail.com" style="color: var(--text-light);">coaching_it-at2025@gmail.com</a>
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--accent-orange);">Telefon</h3>
+                        <p style="margin: 0;">
+                            <a href="tel:+43346173689" style="color: var(--text-light);">+43 3 461 736 89</a><br>
+                            Mo-Fr: 9:00 - 18:00 Uhr
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Форма обратной связи -->
+                <div>
+                    <h2 style="margin-bottom: 1.5rem;">Nachricht senden</h2>
+                    <form id="contact-form" style="background-color: var(--card-dark); padding: 2rem; border-radius: 10px;">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Betreff *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Bitte wählen Sie...</option>
+                                <option value="kurs">Frage zu einem Kurs</option>
+                                <option value="anmeldung">Anmeldung</option>
+                                <option value="support">Support</option>
+                                <option value="sonstiges">Sonstiges</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Nachricht *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Nachricht senden</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Карта -->
+            <h2 style="margin-bottom: 2rem;">So finden Sie uns</h2>
+            <div style="width: 100%; height: 500px; border-radius: 10px; margin-bottom: 2rem; overflow: hidden; border: 1px solid rgba(255, 140, 66, 0.2);">
+                <iframe 
+                    src="https://www.google.com/maps?q=Stumpergasse+1060+Wien+Austria&output=embed&hl=de&zoom=16" 
+                    width="100%" 
+                    height="500" 
+                    style="border:0; display: block;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="IT-Coaching Portal - Stumpergasse, 1060 Wien">
+                </iframe>
+            </div>
+
+            <!-- Дополнительная информация -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="card">
+                    <h3>Öffnungszeiten</h3>
+                    <p style="margin: 0;">
+                        <strong>Montag - Freitag:</strong><br>
+                        9:00 - 18:00 Uhr<br><br>
+                        <strong>Samstag:</strong><br>
+                        10:00 - 14:00 Uhr<br><br>
+                        <strong>Sonntag:</strong><br>
+                        Geschlossen
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Parkmöglichkeiten</h3>
+                    <p>In der Nähe befinden sich mehrere Parkplätze und Parkhäuser. 
+                    Die nächste U-Bahn-Station ist nur 5 Gehminuten entfernt.</p>
+                </div>
+                <div class="card">
+                    <h3>Öffentliche Verkehrsmittel</h3>
+                    <p>
+                        <strong>U-Bahn:</strong> U3, U6 - Station Stumpergasse<br>
+                        <strong>Bus:</strong> Linien 13A, 14A<br>
+                        <strong>Tram:</strong> Linien 5, 6, 18
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IT-Coaching</h3>
+                    <p>Bildungsportal für IT-Technologien und digitale Fähigkeiten. Coaching für IT-Spezialisten in Österreich.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="../index.html">Startseite</a></li>
+                        <li><a href="../kurse/kurse.html">Kurse</a></li>
+                        <li><a href="../ueber-uns/ueber-uns.html">Über uns</a></li>
+                        <li><a href="../blog/blog.html">Blog</a></li>
+                        <li><a href="../faq/faq.html">FAQ</a></li>
+                        <li><a href="kontakte.html">Kontakte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Rechtliches</h3>
+                    <ul>
+                        <li><a href="../datenschutz.html">Datenschutzerklärung</a></li>
+                        <li><a href="../cookie-richtlinie.html">Cookie-Richtlinie</a></li>
+                        <li><a href="../nutzungsbedingungen.html">Nutzungsbedingungen</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IT-Coaching Portal. Alle Rechte vorbehalten.</p>
+                <div class="footer-legal">
+                    <a href="../datenschutz.html">Datenschutzerklärung</a>
+                    <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+                    <a href="../nutzungsbedingungen.html">Nutzungsbedingungen</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- COOKIE CONSENT POPUP -->
+    <div id="cookie-consent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>.</p>
+            </div>
+            <div class="cookie-consent-buttons">
+                <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Akzeptieren</button>
+                <button id="cookie-decline" class="cookie-btn cookie-btn-decline">Ablehnen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/cookie-consent.js"></script>
+    <script>
+        // Обработка формы (после загрузки DOM)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Перенаправляем на страницу благодарности
+                    window.location.href = '../danke.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

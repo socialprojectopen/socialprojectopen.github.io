@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IT-Schulungskurse für Spezialisten. Erhöhen Sie Ihre Qualifikation mit unseren Kursen.">
+    <title>Kurse - IT-Coaching Portal</title>
+    <base href="../">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">IT-Coaching</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Startseite</a></li>
+                    <li><a href="kurse.html">Kurse</a></li>
+                    <li><a href="../ueber-uns/ueber-uns.html">Über uns</a></li>
+                    <li><a href="../blog/blog.html">Blog</a></li>
+                    <li><a href="../faq/faq.html">FAQ</a></li>
+                    <li><a href="../kontakte/kontakte.html">Kontakte</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menü öffnen">☰</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main style="min-height: 60vh; padding: 4rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h1 style="text-align: center; margin-bottom: 1rem;">Unsere Kurse</h1>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">Entdecken Sie unsere Auswahl an IT-Schulungskursen für Spezialisten</p>
+
+            <!-- Карточки курсов -->
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="../images/web.webp" alt="Webentwicklung" class="card-image">
+                        <span class="card-badge">POPULÄR</span>
+                    </div>
+                    <h3>Webentwicklung Masterclass</h3>
+                    <p>Umfassender Kurs für moderne Webentwicklung mit HTML5, CSS3, JavaScript und React. Lernen Sie, professionelle Webanwendungen zu erstellen.</p>
+                    <div class="card-footer">
+                        <p><strong>Dauer:</strong> 12 Wochen</p>
+                        <p><strong>Level:</strong> Fortgeschritten</p>
+                        <p><strong>Preis:</strong> €899</p>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" data-modal="modal-webdev">Details anzeigen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="../images/AWS.jfif" alt="Cloud Computing" class="card-image">
+                        <span class="card-badge">NEU</span>
+                    </div>
+                    <h3>Cloud Computing & AWS</h3>
+                    <p>Mastern Sie Cloud-Technologien mit Amazon Web Services. Von Grundlagen bis zu fortgeschrittenen Architekturen und DevOps-Praktiken.</p>
+                    <div class="card-footer">
+                        <p><strong>Dauer:</strong> 10 Wochen</p>
+                        <p><strong>Level:</strong> Mittelstufe</p>
+                        <p><strong>Preis:</strong> €1,199</p>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" data-modal="modal-cloud">Details anzeigen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="../images/Python.webp" alt="Python Data Science" class="card-image">
+                    </div>
+                    <h3>Python für Data Science</h3>
+                    <p>Lernen Sie Python für Datenanalyse, Machine Learning und künstliche Intelligenz. Praktische Projekte mit realen Datensätzen.</p>
+                    <div class="card-footer">
+                        <p><strong>Dauer:</strong> 8 Wochen</p>
+                        <p><strong>Level:</strong> Anfänger bis Fortgeschritten</p>
+                        <p><strong>Preis:</strong> €749</p>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" data-modal="modal-python">Details anzeigen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="../images/securyty.webp" alt="Cybersecurity" class="card-image">
+                    </div>
+                    <h3>Cybersecurity Fundamentals</h3>
+                    <p>Schützen Sie Systeme vor Bedrohungen. Lernen Sie Penetration Testing, Netzwerksicherheit und Incident Response.</p>
+                    <div class="card-footer">
+                        <p><strong>Dauer:</strong> 14 Wochen</p>
+                        <p><strong>Level:</strong> Mittelstufe</p>
+                        <p><strong>Preis:</strong> €1,299</p>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" data-modal="modal-security">Details anzeigen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="../images/DevOps.jfif" alt="DevOps" class="card-image">
+                    </div>
+                    <h3>DevOps & CI/CD</h3>
+                    <p>Automatisieren Sie Entwicklung und Deployment. Docker, Kubernetes, Jenkins und moderne DevOps-Tools im praktischen Einsatz.</p>
+                    <div class="card-footer">
+                        <p><strong>Dauer:</strong> 9 Wochen</p>
+                        <p><strong>Level:</strong> Fortgeschritten</p>
+                        <p><strong>Preis:</strong> €999</p>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" data-modal="modal-devops">Details anzeigen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="../images/mobile.jpg" alt="Mobile App Entwicklung" class="card-image">
+                    </div>
+                    <h3>Mobile App Entwicklung</h3>
+                    <p>Erstellen Sie native und Cross-Platform Mobile Apps mit React Native, Flutter und Swift. Von Konzept bis App Store.</p>
+                    <div class="card-footer">
+                        <p><strong>Dauer:</strong> 11 Wochen</p>
+                        <p><strong>Level:</strong> Mittelstufe</p>
+                        <p><strong>Preis:</strong> €949</p>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" data-modal="modal-mobile">Details anzeigen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-badge">NEU</span>
+                    <h3>Full-Stack JavaScript Development</h3>
+                    <p>Mastern Sie die komplette JavaScript-Stack: Node.js, Express, MongoDB, React. Werden Sie zum Full-Stack-Entwickler.</p>
+                    <div class="card-footer">
+                        <p><strong>Dauer:</strong> 13 Wochen</p>
+                        <p><strong>Level:</strong> Mittelstufe bis Fortgeschritten</p>
+                        <p><strong>Preis:</strong> €1,099</p>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" data-modal="modal-fullstack">Details anzeigen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>SQL & Datenbanken Masterclass</h3>
+                    <p>Von SQL-Grundlagen bis zu fortgeschrittenen Datenbankdesigns. PostgreSQL, MySQL, MongoDB und Datenbankoptimierung.</p>
+                    <div class="card-footer">
+                        <p><strong>Dauer:</strong> 7 Wochen</p>
+                        <p><strong>Level:</strong> Anfänger bis Mittelstufe</p>
+                        <p><strong>Preis:</strong> €699</p>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" data-modal="modal-sql">Details anzeigen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>UI/UX Design für Entwickler</h3>
+                    <p>Lernen Sie Design-Prinzipien, Prototyping-Tools und wie Sie benutzerfreundliche Interfaces erstellen. Figma, Adobe XD, Design Thinking.</p>
+                    <div class="card-footer">
+                        <p><strong>Dauer:</strong> 6 Wochen</p>
+                        <p><strong>Level:</strong> Anfänger</p>
+                        <p><strong>Preis:</strong> €599</p>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" data-modal="modal-uiux">Details anzeigen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Linux System Administration</h3>
+                    <p>Werden Sie zum Linux-Experten. Shell-Scripting, System-Management, Netzwerkkonfiguration und Server-Administration.</p>
+                    <div class="card-footer">
+                        <p><strong>Dauer:</strong> 9 Wochen</p>
+                        <p><strong>Level:</strong> Mittelstufe</p>
+                        <p><strong>Preis:</strong> €849</p>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" data-modal="modal-linux">Details anzeigen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Agile & Scrum Methodologie</h3>
+                    <p>Mastern Sie agile Entwicklung und Scrum. Lernen Sie, wie Sie Projekte effizient managen und Teams erfolgreich führen.</p>
+                    <div class="card-footer">
+                        <p><strong>Dauer:</strong> 5 Wochen</p>
+                        <p><strong>Level:</strong> Anfänger</p>
+                        <p><strong>Preis:</strong> €549</p>
+                        <button class="btn" style="margin-top: 1rem; width: 100%;" data-modal="modal-agile">Details anzeigen</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Таблица сравнения курсов -->
+            <h2 style="margin-top: 4rem; margin-bottom: 2rem;">Kursvergleich</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kurs</th>
+                            <th>Dauer</th>
+                            <th>Level</th>
+                            <th>Preis</th>
+                            <th>Zertifikat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Webentwicklung Masterclass</strong></td>
+                            <td>12 Wochen</td>
+                            <td>Fortgeschritten</td>
+                            <td>€899</td>
+                            <td>Ja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cloud Computing & AWS</strong></td>
+                            <td>10 Wochen</td>
+                            <td>Mittelstufe</td>
+                            <td>€1,199</td>
+                            <td>Ja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Python für Data Science</strong></td>
+                            <td>8 Wochen</td>
+                            <td>Anfänger bis Fortgeschritten</td>
+                            <td>€749</td>
+                            <td>Ja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cybersecurity Fundamentals</strong></td>
+                            <td>14 Wochen</td>
+                            <td>Mittelstufe</td>
+                            <td>€1,299</td>
+                            <td>Ja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DevOps & CI/CD</strong></td>
+                            <td>9 Wochen</td>
+                            <td>Fortgeschritten</td>
+                            <td>€999</td>
+                            <td>Ja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobile App Entwicklung</strong></td>
+                            <td>11 Wochen</td>
+                            <td>Mittelstufe</td>
+                            <td>€949</td>
+                            <td>Ja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Full-Stack JavaScript Development</strong></td>
+                            <td>13 Wochen</td>
+                            <td>Mittelstufe bis Fortgeschritten</td>
+                            <td>€1,099</td>
+                            <td>Ja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SQL & Datenbanken Masterclass</strong></td>
+                            <td>7 Wochen</td>
+                            <td>Anfänger bis Mittelstufe</td>
+                            <td>€699</td>
+                            <td>Ja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>UI/UX Design für Entwickler</strong></td>
+                            <td>6 Wochen</td>
+                            <td>Anfänger</td>
+                            <td>€599</td>
+                            <td>Ja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Linux System Administration</strong></td>
+                            <td>9 Wochen</td>
+                            <td>Mittelstufe</td>
+                            <td>€849</td>
+                            <td>Ja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Agile & Scrum Methodologie</strong></td>
+                            <td>5 Wochen</td>
+                            <td>Anfänger</td>
+                            <td>€549</td>
+                            <td>Ja</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Модальные окна для деталей курсов -->
+    <div id="modal-webdev" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Webentwicklung Masterclass</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Beschreibung:</strong> Dieser umfassende Kurs führt Sie durch die moderne Webentwicklung von Grund auf. Sie lernen HTML5, CSS3, JavaScript ES6+, React, Node.js und vieles mehr.</p>
+                <p><strong>Inhalte:</strong></p>
+                <ul style="margin-left: 2rem; color: var(--text-gray);">
+                    <li>HTML5 & CSS3 Grundlagen und Fortgeschrittenes</li>
+                    <li>JavaScript ES6+ und moderne Patterns</li>
+                    <li>React Framework und State Management</li>
+                    <li>Backend-Entwicklung mit Node.js</li>
+                    <li>Datenbanken (MongoDB, PostgreSQL)</li>
+                    <li>RESTful APIs und GraphQL</li>
+                    <li>Deployment und DevOps-Grundlagen</li>
+                </ul>
+                <p><strong>Voraussetzungen:</strong> Grundkenntnisse in Programmierung empfohlen</p>
+                <p><strong>Zertifikat:</strong> Ja, nach erfolgreichem Abschluss</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-cloud" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Cloud Computing & AWS</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Beschreibung:</strong> Lernen Sie Cloud Computing mit Amazon Web Services von Grund auf. Dieser Kurs deckt alle wichtigen AWS-Services ab.</p>
+                <p><strong>Inhalte:</strong></p>
+                <ul style="margin-left: 2rem; color: var(--text-gray);">
+                    <li>AWS Grundlagen und Architektur</li>
+                    <li>EC2, S3, RDS, Lambda</li>
+                    <li>VPC und Netzwerksicherheit</li>
+                    <li>Auto Scaling und Load Balancing</li>
+                    <li>CloudFormation und Infrastructure as Code</li>
+                    <li>Monitoring mit CloudWatch</li>
+                    <li>Best Practices und Cost Optimization</li>
+                </ul>
+                <p><strong>Voraussetzungen:</strong> Grundkenntnisse in IT-Infrastruktur</p>
+                <p><strong>Zertifikat:</strong> Ja, AWS Certified Solutions Architect Vorbereitung</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-python" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Python für Data Science</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Beschreibung:</strong> Mastern Sie Python für Datenanalyse und Machine Learning. Praktische Projekte mit realen Datensätzen.</p>
+                <p><strong>Inhalte:</strong></p>
+                <ul style="margin-left: 2rem; color: var(--text-gray);">
+                    <li>Python Grundlagen und fortgeschrittene Konzepte</li>
+                    <li>NumPy, Pandas für Datenanalyse</li>
+                    <li>Matplotlib und Seaborn für Visualisierung</li>
+                    <li>Machine Learning mit Scikit-learn</li>
+                    <li>Deep Learning Grundlagen</li>
+                    <li>Datenbanken und SQL</li>
+                    <li>Praktische Projekte</li>
+                </ul>
+                <p><strong>Voraussetzungen:</strong> Keine, für Anfänger geeignet</p>
+                <p><strong>Zertifikat:</strong> Ja, nach erfolgreichem Abschluss</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-security" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Cybersecurity Fundamentals</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Beschreibung:</strong> Lernen Sie, Systeme vor Cyber-Bedrohungen zu schützen. Von Grundlagen bis zu fortgeschrittenen Techniken.</p>
+                <p><strong>Inhalte:</strong></p>
+                <ul style="margin-left: 2rem; color: var(--text-gray);">
+                    <li>Netzwerksicherheit Grundlagen</li>
+                    <li>Penetration Testing</li>
+                    <li>Vulnerability Assessment</li>
+                    <li>Incident Response und Forensik</li>
+                    <li>Kryptographie</li>
+                    <li>Security Policies und Compliance</li>
+                    <li>Praktische Labs und Szenarien</li>
+                </ul>
+                <p><strong>Voraussetzungen:</strong> Grundkenntnisse in Netzwerken und Systemen</p>
+                <p><strong>Zertifikat:</strong> Ja, nach erfolgreichem Abschluss</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-devops" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>DevOps & CI/CD</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Beschreibung:</strong> Automatisieren Sie Entwicklung und Deployment mit modernen DevOps-Tools und Praktiken.</p>
+                <p><strong>Inhalte:</strong></p>
+                <ul style="margin-left: 2rem; color: var(--text-gray);">
+                    <li>Docker Containerisierung</li>
+                    <li>Kubernetes Orchestrierung</li>
+                    <li>Jenkins CI/CD Pipelines</li>
+                    <li>Git und Git Workflows</li>
+                    <li>Infrastructure as Code (Terraform)</li>
+                    <li>Monitoring und Logging</li>
+                    <li>Best Practices</li>
+                </ul>
+                <p><strong>Voraussetzungen:</strong> Erfahrung mit Linux und Programmierung</p>
+                <p><strong>Zertifikat:</strong> Ja, nach erfolgreichem Abschluss</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-mobile" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Mobile App Entwicklung</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Beschreibung:</strong> Erstellen Sie native und Cross-Platform Mobile Apps für iOS und Android.</p>
+                <p><strong>Inhalte:</strong></p>
+                <ul style="margin-left: 2rem; color: var(--text-gray);">
+                    <li>React Native Grundlagen</li>
+                    <li>Flutter Entwicklung</li>
+                    <li>Native iOS mit Swift</li>
+                    <li>Native Android mit Kotlin</li>
+                    <li>App Design und UX</li>
+                    <li>App Store Deployment</li>
+                    <li>Backend-Integration</li>
+                </ul>
+                <p><strong>Voraussetzungen:</strong> Grundkenntnisse in JavaScript oder einer Programmiersprache</p>
+                <p><strong>Zertifikat:</strong> Ja, nach erfolgreichem Abschluss</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-fullstack" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Full-Stack JavaScript Development</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Beschreibung:</strong> Werden Sie zum Full-Stack-Entwickler mit dem kompletten JavaScript-Ökosystem.</p>
+                <p><strong>Inhalte:</strong></p>
+                <ul>
+                    <li>Node.js und Express.js Backend</li>
+                    <li>MongoDB und Mongoose</li>
+                    <li>RESTful APIs entwickeln</li>
+                    <li>React Frontend-Entwicklung</li>
+                    <li>State Management mit Redux</li>
+                    <li>Authentication und Authorization</li>
+                    <li>Deployment und Hosting</li>
+                </ul>
+                <p><strong>Voraussetzungen:</strong> Grundkenntnisse in JavaScript und HTML/CSS</p>
+                <p><strong>Zertifikat:</strong> Ja, nach erfolgreichem Abschluss</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-sql" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>SQL & Datenbanken Masterclass</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Beschreibung:</strong> Mastern Sie SQL und Datenbankdesign von Grund auf.</p>
+                <p><strong>Inhalte:</strong></p>
+                <ul>
+                    <li>SQL Grundlagen und fortgeschrittene Queries</li>
+                    <li>Datenbankdesign und Normalisierung</li>
+                    <li>PostgreSQL und MySQL</li>
+                    <li>NoSQL mit MongoDB</li>
+                    <li>Datenbankoptimierung und Indexing</li>
+                    <li>Transaktionen und ACID-Prinzipien</li>
+                    <li>Datenbankadministration</li>
+                </ul>
+                <p><strong>Voraussetzungen:</strong> Keine, für Anfänger geeignet</p>
+                <p><strong>Zertifikat:</strong> Ja, nach erfolgreichem Abschluss</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-uiux" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>UI/UX Design für Entwickler</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Beschreibung:</strong> Lernen Sie Design-Prinzipien und erstellen Sie benutzerfreundliche Interfaces.</p>
+                <p><strong>Inhalte:</strong></p>
+                <ul>
+                    <li>Design-Prinzipien und Gestaltgesetze</li>
+                    <li>User Experience Design</li>
+                    <li>Prototyping mit Figma und Adobe XD</li>
+                    <li>Design Thinking Methodik</li>
+                    <li>Accessibility und Usability</li>
+                    <li>Design Systems</li>
+                    <li>Von Design zu Code</li>
+                </ul>
+                <p><strong>Voraussetzungen:</strong> Keine, für Anfänger geeignet</p>
+                <p><strong>Zertifikat:</strong> Ja, nach erfolgreichem Abschluss</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-linux" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Linux System Administration</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Beschreibung:</strong> Werden Sie zum Linux-Experten und meistern Sie System-Administration.</p>
+                <p><strong>Inhalte:</strong></p>
+                <ul>
+                    <li>Linux Grundlagen und Distributionen</li>
+                    <li>Shell-Scripting (Bash)</li>
+                    <li>System-Management und Services</li>
+                    <li>Netzwerkkonfiguration</li>
+                    <li>User- und Berechtigungsverwaltung</li>
+                    <li>Server-Administration</li>
+                    <li>Troubleshooting und Performance-Tuning</li>
+                </ul>
+                <p><strong>Voraussetzungen:</strong> Grundkenntnisse in Computer-Bedienung</p>
+                <p><strong>Zertifikat:</strong> Ja, nach erfolgreichem Abschluss</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-agile" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Agile & Scrum Methodologie</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Beschreibung:</strong> Mastern Sie agile Entwicklung und Scrum für erfolgreiche Projekte.</p>
+                <p><strong>Inhalte:</strong></p>
+                <ul>
+                    <li>Agile Manifest und Prinzipien</li>
+                    <li>Scrum Framework</li>
+                    <li>Sprint Planning und Execution</li>
+                    <li>Product Backlog Management</li>
+                    <li>Team-Rollen und Verantwortlichkeiten</li>
+                    <li>Retrospektiven und kontinuierliche Verbesserung</li>
+                    <li>Scaling Agile für große Teams</li>
+                </ul>
+                <p><strong>Voraussetzungen:</strong> Keine, für Anfänger geeignet</p>
+                <p><strong>Zertifikat:</strong> Ja, nach erfolgreichem Abschluss</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IT-Coaching</h3>
+                    <p>Bildungsportal für IT-Technologien und digitale Fähigkeiten. Coaching für IT-Spezialisten in Österreich.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="../index.html">Startseite</a></li>
+                        <li><a href="kurse.html">Kurse</a></li>
+                        <li><a href="../ueber-uns/ueber-uns.html">Über uns</a></li>
+                        <li><a href="../blog/blog.html">Blog</a></li>
+                        <li><a href="../faq/faq.html">FAQ</a></li>
+                        <li><a href="../kontakte/kontakte.html">Kontakte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Rechtliches</h3>
+                    <ul>
+                        <li><a href="../datenschutz.html">Datenschutzerklärung</a></li>
+                        <li><a href="../cookie-richtlinie.html">Cookie-Richtlinie</a></li>
+                        <li><a href="../nutzungsbedingungen.html">Nutzungsbedingungen</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IT-Coaching Portal. Alle Rechte vorbehalten.</p>
+                <div class="footer-legal">
+                    <a href="../datenschutz.html">Datenschutzerklärung</a>
+                    <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+                    <a href="../nutzungsbedingungen.html">Nutzungsbedingungen</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- COOKIE CONSENT POPUP -->
+    <div id="cookie-consent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>.</p>
+            </div>
+            <div class="cookie-consent-buttons">
+                <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Akzeptieren</button>
+                <button id="cookie-decline" class="cookie-btn cookie-btn-decline">Ablehnen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/cookie-consent.js"></script>
+</body>
+</html>

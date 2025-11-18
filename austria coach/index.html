@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bildungsportal für IT-Technologien und digitale Fähigkeiten. Coaching für IT-Spezialisten in Österreich.">
+    <meta name="keywords" content="IT-Coaching, IT-Schulung, digitale Fähigkeiten, Österreich, IT-Technologien">
+    <title>IT-Coaching Portal - Bildungsportal für IT-Technologien</title>
+    <base href="./">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER (ШАПКА) -->
+    <header>
+        <div class="header-container">
+            <div class="logo">IT-Coaching</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="kurse/kurse.html">Kurse</a></li>
+                    <li><a href="ueber-uns/ueber-uns.html">Über uns</a></li>
+                    <li><a href="blog/blog.html">Blog</a></li>
+                    <li><a href="faq/faq.html">FAQ</a></li>
+                    <li><a href="kontakte/kontakte.html">Kontakte</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menü öffnen">☰</button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>IT-Coaching für Spezialisten</h1>
+                <p>Bildungsportal für IT-Technologien und digitale Fähigkeiten. Erhöhen Sie Ihre Qualifikation, erhalten Sie neue Informationen und absolvieren Sie Schulungskurse.</p>
+                <a href="kurse/kurse.html" class="btn">Kurse entdecken</a>
+            </div>
+            <div class="hero-image-card">
+                <img src="images/hero.jpg" alt="IT-Coaching" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SERVICE SECTION (О СЕРВИСЕ) -->
+    <section class="about-service-section">
+        <div class="about-service-container">
+            <div class="about-service-content">
+                <div class="about-service-text">
+                    <h2>Ihr Partner für IT-Exzellenz</h2>
+                    <p class="about-service-intro">
+                        Willkommen bei unserem IT-Coaching Portal – Ihrer zentralen Anlaufstelle für professionelle Weiterbildung und Karriereentwicklung in der IT-Branche.
+                    </p>
+                    <div class="about-service-features">
+                        <div class="feature-item">
+                            <div class="feature-text">
+                                <h3>Zielgerichtetes Lernen</h3>
+                                <p>Maßgeschneiderte Kurse und Coaching-Programme, die genau auf Ihre Bedürfnisse und Karriereziele abgestimmt sind.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-text">
+                                <h3>Praktische Erfahrung</h3>
+                                <p>Lernen Sie von erfahrenen IT-Experten und wenden Sie Ihr Wissen in realen Projektszenarien an.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-text">
+                                <h3>Karrierewachstum</h3>
+                                <p>Erhöhen Sie Ihre Marktfähigkeit und beschleunigen Sie Ihre Karriere mit zertifizierten Qualifikationen.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-text">
+                                <h3>Moderne Technologien</h3>
+                                <p>Bleiben Sie auf dem neuesten Stand mit Kursen zu den aktuellsten IT-Trends und Technologien.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-service-cta">
+                        <a href="ueber-uns/ueber-uns.html" class="btn">Mehr erfahren</a>
+                        <a href="kurse/kurse.html" class="btn btn-outline">Kurse ansehen</a>
+                    </div>
+                </div>
+                <div class="about-service-image">
+                    <div class="service-image-card">
+                        <img src="images/home.webp" alt="IT-Coaching Service" class="service-image">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3>Professionelles IT-Coaching</h3>
+                                <p>Von Experten für Experten</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUIZ SECTION (ТЕСТИРОВАНИЕ) -->
+    <section class="quiz-section" style="padding: 4rem 2rem; background-color: var(--bg-darker);">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="text-align: center; margin-bottom: 1rem; color: var(--text-light);">Testen Sie Ihre IT-Qualifikation</h2>
+            <p style="text-align: center; margin-bottom: 3rem; color: var(--text-gray); font-size: 1.1rem;">
+                Während Sie auf eine Antwort auf Ihre Anfrage warten, können Sie Ihre Qualifikation testen und Ihr Wissen in verschiedenen IT-Bereichen überprüfen.
+            </p>
+
+            <div id="quiz-container" class="quiz-container">
+                <div id="quiz-start" class="quiz-start">
+                    <div class="card" style="text-align: center; padding: 3rem;">
+                        <h3 style="color: var(--accent-orange); margin-bottom: 1rem;">IT-Wissenstest</h3>
+                        <p style="color: var(--text-gray); margin-bottom: 1rem;">
+                            Dieser erweiterte Test umfasst 22 Fragen zu verschiedenen IT-Themen und Bereichen:
+                        </p>
+                        <ul style="color: var(--text-gray); text-align: left; display: inline-block; margin-bottom: 2rem; line-height: 1.8;">
+                            <li>DevOps & Cloud</li>
+                            <li>Programming & Algorithms</li>
+                            <li>Web Development</li>
+                            <li>Security & Networking</li>
+                            <li>Data Science & AI</li>
+                            <li>System Design & Architecture</li>
+                        </ul>
+                        <p style="color: var(--text-gray); margin-bottom: 2rem; font-size: 0.95rem;">
+                            Testen Sie Ihr Wissen und erhalten Sie eine detaillierte Auswertung Ihrer Qualifikation mit Analyse nach Kategorien und Schwierigkeitsgraden.
+                        </p>
+                        <button id="start-quiz" class="btn" style="font-size: 1.1rem; padding: 1rem 2rem;">Test starten</button>
+                    </div>
+                </div>
+
+                <div id="quiz-questions" class="quiz-questions" style="display: none;">
+                    <div class="quiz-progress">
+                        <div class="quiz-progress-bar">
+                            <div id="progress-fill" class="quiz-progress-fill"></div>
+                        </div>
+                        <p id="progress-text" style="text-align: center; margin-top: 1rem; color: var(--text-gray); font-size: 0.9rem;">Frage 1 von 22</p>
+                    </div>
+
+                    <div id="question-container" class="question-container"></div>
+                </div>
+
+                <div id="quiz-results" class="quiz-results" style="display: none;">
+                    <div class="card" style="text-align: center; padding: 3rem;">
+                        <h3 style="color: var(--accent-orange); margin-bottom: 1.5rem;">Ihr Testergebnis</h3>
+                        <div id="result-percentage" style="font-size: 4rem; font-weight: bold; color: var(--accent-orange); margin-bottom: 1rem;">0%</div>
+                        <div id="result-level" style="font-size: 1.5rem; color: var(--text-light); margin-bottom: 2rem;">Level</div>
+                        <div id="result-description" style="color: var(--text-gray); margin-bottom: 2rem; line-height: 1.8;"></div>
+                        <button id="restart-quiz" class="btn">Test erneut starten</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION (ОСОБЕННОСТИ) -->
+    <section class="features-section" style="padding: 6rem 2rem; background-color: var(--bg-dark);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; margin-bottom: 1rem; color: var(--text-light); font-size: clamp(2rem, 4vw, 2.5rem);">Warum IT-Coaching Portal?</h2>
+            <p style="text-align: center; margin-bottom: 4rem; color: var(--text-gray); font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Professionelle Umgebung für Ihre IT-Weiterbildung und Karriereentwicklung
+            </p>
+
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="images/obuchenie.jfif" alt="Moderne Lernumgebung" class="card-image">
+                    </div>
+                    <h3>Moderne Lernumgebung</h3>
+                    <p>Unsere Schulungsräume sind mit modernster Technologie ausgestattet. Hier lernen Sie in einer professionellen Umgebung, die optimal auf die Bedürfnisse von IT-Spezialisten zugeschnitten ist.</p>
+                    <div class="card-footer">
+                        <ul style="list-style: none; padding: 0; margin: 0; color: var(--text-gray);">
+                            <li style="margin-bottom: 0.5rem;">Hochmoderne Arbeitsplätze</li>
+                            <li style="margin-bottom: 0.5rem;">Professionelle Ausstattung</li>
+                            <li style="margin-bottom: 0.5rem;">Optimale Lernatmosphäre</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="images/proekt.webp" alt="Praktische Projekte" class="card-image">
+                    </div>
+                    <h3>Praktische Projekte</h3>
+                    <p>Lernen Sie durch praktische Arbeit an realen Projekten. Unsere Kurse kombinieren Theorie mit praktischer Anwendung, sodass Sie sofort das Gelernte in der Praxis umsetzen können.</p>
+                    <div class="card-footer">
+                        <ul style="list-style: none; padding: 0; margin: 0; color: var(--text-gray);">
+                            <li style="margin-bottom: 0.5rem;">Reale Projektszenarien</li>
+                            <li style="margin-bottom: 0.5rem;">Praktische Übungen</li>
+                            <li style="margin-bottom: 0.5rem;">Sofortige Anwendung</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="images/opitnii.jpg" alt="Erfahrene Experten" class="card-image">
+                    </div>
+                    <h3>Erfahrene Experten</h3>
+                    <p>Lernen Sie von erfahrenen IT-Profis, die in führenden Unternehmen arbeiten. Unsere Dozenten bringen jahrelange praktische Erfahrung und aktuelles Branchenwissen mit.</p>
+                    <div class="card-footer">
+                        <ul style="list-style: none; padding: 0; margin: 0; color: var(--text-gray);">
+                            <li style="margin-bottom: 0.5rem;">Branchenerfahrene Dozenten</li>
+                            <li style="margin-bottom: 0.5rem;">Aktuelles Wissen</li>
+                            <li style="margin-bottom: 0.5rem;">Individuelle Betreuung</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (ФУТЕР) -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IT-Coaching</h3>
+                    <p>Bildungsportal für IT-Technologien und digitale Fähigkeiten. Coaching für IT-Spezialisten in Österreich.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="kurse/kurse.html">Kurse</a></li>
+                        <li><a href="ueber-uns/ueber-uns.html">Über uns</a></li>
+                        <li><a href="blog/blog.html">Blog</a></li>
+                        <li><a href="faq/faq.html">FAQ</a></li>
+                        <li><a href="kontakte/kontakte.html">Kontakte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Rechtliches</h3>
+                    <ul>
+                        <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+                        <li><a href="cookie-richtlinie.html">Cookie-Richtlinie</a></li>
+                        <li><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IT-Coaching Portal. Alle Rechte vorbehalten.</p>
+                <div class="footer-legal">
+                    <a href="datenschutz.html">Datenschutzerklärung</a>
+                    <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>
+                    <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- COOKIE CONSENT POPUP -->
+    <div id="cookie-consent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer <a href="cookie-richtlinie.html">Cookie-Richtlinie</a>.</p>
+            </div>
+            <div class="cookie-consent-buttons">
+                <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Akzeptieren</button>
+                <button id="cookie-decline" class="cookie-btn cookie-btn-decline">Ablehnen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog über IT-Technologien und digitale Fähigkeiten.">
+    <title>Blog - IT-Coaching Portal</title>
+    <base href="../">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">IT-Coaching</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Startseite</a></li>
+                    <li><a href="../kurse/kurse.html">Kurse</a></li>
+                    <li><a href="../ueber-uns/ueber-uns.html">Über uns</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="../faq/faq.html">FAQ</a></li>
+                    <li><a href="../kontakte/kontakte.html">Kontakte</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menü öffnen">☰</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main style="min-height: 60vh; padding: 4rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h1 style="text-align: center; margin-bottom: 1rem;">Blog</h1>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">Aktuelle Artikel über IT-Technologien, digitale Fähigkeiten und Trends</p>
+
+            <!-- Карточки статей -->
+            <div class="cards-grid">
+                <div class="card">
+                    <span class="card-badge">NEU</span>
+                    <h3>Die Zukunft der Cloud-Technologien</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">12. November 2025</p>
+                    <p>Cloud Computing entwickelt sich rasant weiter. Erfahren Sie mehr über die neuesten Trends, 
+                    Multi-Cloud-Strategien und wie Unternehmen von modernen Cloud-Lösungen profitieren können.</p>
+                    <div class="card-footer">
+                        <button class="btn" style="width: 100%;" data-modal="modal-blog-1">Weiterlesen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-badge">POPULÄR</span>
+                    <h3>Machine Learning für Einsteiger</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">5. November 2025</p>
+                    <p>Machine Learning ist keine Magie mehr. In diesem Artikel erklären wir die Grundlagen, 
+                    zeigen praktische Anwendungsfälle und geben Tipps für den Einstieg in die Welt der KI.</p>
+                    <div class="card-footer">
+                        <button class="btn" style="width: 100%;" data-modal="modal-blog-2">Weiterlesen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Cybersecurity Best Practices 2025</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">28. Oktober 2025</p>
+                    <p>Die Bedrohungslage im Cyberspace wird immer komplexer. Lernen Sie die wichtigsten 
+                    Sicherheitspraktiken kennen, die jedes Unternehmen implementieren sollte.</p>
+                    <div class="card-footer">
+                        <button class="btn" style="width: 100%;" data-modal="modal-blog-3">Weiterlesen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>React vs. Vue vs. Angular: Welches Framework?</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">15. Oktober 2025</p>
+                    <p>Ein detaillierter Vergleich der drei beliebtesten JavaScript-Frameworks. 
+                    Wir helfen Ihnen bei der Entscheidung, welches Framework für Ihr Projekt am besten geeignet ist.</p>
+                    <div class="card-footer">
+                        <button class="btn" style="width: 100%;" data-modal="modal-blog-4">Weiterlesen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>DevOps: Von Theorie zur Praxis</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">2. Oktober 2025</p>
+                    <p>DevOps ist mehr als nur Tools. Erfahren Sie, wie Sie DevOps-Praktiken erfolgreich 
+                    in Ihrem Unternehmen implementieren und welche Herausforderungen Sie erwarten.</p>
+                    <div class="card-footer">
+                        <button class="btn" style="width: 100%;" data-modal="modal-blog-5">Weiterlesen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Python für Data Science: Ein kompletter Leitfaden</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">18. September 2025</p>
+                    <p>Python ist die Sprache der Wahl für Data Science. Dieser umfassende Leitfaden 
+                    führt Sie durch die wichtigsten Bibliotheken und Tools für Datenanalyse und Machine Learning.</p>
+                    <div class="card-footer">
+                        <button class="btn" style="width: 100%;" data-modal="modal-blog-6">Weiterlesen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Docker und Containerisierung: Ein praktischer Guide</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">5. September 2025</p>
+                    <p>Containerisierung revolutioniert die Softwareentwicklung. Lernen Sie Docker von Grund auf 
+                    kennen und verstehen Sie, wie Container die Deployment-Prozesse vereinfachen.</p>
+                    <div class="card-footer">
+                        <button class="btn" style="width: 100%;" data-modal="modal-blog-7">Weiterlesen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>API-Design: Best Practices für moderne Anwendungen</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">22. August 2025</p>
+                    <p>Gut designede APIs sind das Rückgrat moderner Anwendungen. Erfahren Sie, wie Sie 
+                    RESTful APIs erstellen, die skalierbar, wartbar und benutzerfreundlich sind.</p>
+                    <div class="card-footer">
+                        <button class="btn" style="width: 100%;" data-modal="modal-blog-8">Weiterlesen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>TypeScript: Warum JavaScript-Entwickler es lieben sollten</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">8. August 2025</p>
+                    <p>TypeScript bringt Typsicherheit in JavaScript. Entdecken Sie die Vorteile und 
+                    lernen Sie, wie TypeScript Ihre Entwicklung produktiver und weniger fehleranfällig macht.</p>
+                    <div class="card-footer">
+                        <button class="btn" style="width: 100%;" data-modal="modal-blog-9">Weiterlesen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Kubernetes Orchestrierung: Von Grundlagen zu Production</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">25. Juli 2025</p>
+                    <p>Kubernetes ist der Standard für Container-Orchestrierung. Dieser Artikel führt Sie 
+                    durch die Grundlagen und zeigt, wie Sie Kubernetes in Production einsetzen.</p>
+                    <div class="card-footer">
+                        <button class="btn" style="width: 100%;" data-modal="modal-blog-10">Weiterlesen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Microservices-Architektur: Vor- und Nachteile</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">10. Juli 2025</p>
+                    <p>Microservices sind nicht immer die beste Lösung. Lernen Sie, wann Microservices 
+                    sinnvoll sind und welche Herausforderungen sie mit sich bringen.</p>
+                    <div class="card-footer">
+                        <button class="btn" style="width: 100%;" data-modal="modal-blog-11">Weiterlesen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Git Workflows: Effiziente Versionskontrolle im Team</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">28. Juni 2025</p>
+                    <p>Git ist mehr als nur Versionskontrolle. Erfahren Sie, wie verschiedene Git-Workflows 
+                    Ihre Teamarbeit verbessern und Konflikte minimieren können.</p>
+                    <div class="card-footer">
+                        <button class="btn" style="width: 100%;" data-modal="modal-blog-12">Weiterlesen</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Blockchain-Technologie: Über Kryptowährungen hinaus</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">15. Juni 2025</p>
+                    <p>Blockchain hat weit mehr Anwendungen als nur Kryptowährungen. Entdecken Sie 
+                    praktische Anwendungsfälle in verschiedenen Branchen und wie Blockchain Probleme löst.</p>
+                    <div class="card-footer">
+                        <button class="btn" style="width: 100%;" data-modal="modal-blog-13">Weiterlesen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Модальные окна для статей -->
+    <div id="modal-blog-1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Die Zukunft der Cloud-Technologien</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">12. November 2025</p>
+                <p>Cloud Computing entwickelt sich rasant weiter und wird zur Grundlage moderner IT-Infrastrukturen. 
+                In diesem Artikel beleuchten wir die wichtigsten Trends und Entwicklungen.</p>
+                <h3 style="margin-top: 1.5rem;">Multi-Cloud-Strategien</h3>
+                <p>Immer mehr Unternehmen setzen auf Multi-Cloud-Strategien, um Abhängigkeiten zu reduzieren 
+                und die besten Services verschiedener Anbieter zu nutzen. Dies erfordert jedoch sorgfältige 
+                Planung und Management-Tools.</p>
+                <h3 style="margin-top: 1.5rem;">Serverless Computing</h3>
+                <p>Serverless Computing gewinnt weiter an Bedeutung. Entwickler können sich vollständig auf 
+                den Code konzentrieren, während die Infrastruktur automatisch verwaltet wird.</p>
+                <h3 style="margin-top: 1.5rem;">Edge Computing</h3>
+                <p>Mit der wachsenden Bedeutung von IoT und Echtzeit-Anwendungen wird Edge Computing immer wichtiger. 
+                Datenverarbeitung findet näher am Endgerät statt, was Latenz reduziert und Effizienz steigert.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-blog-2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Machine Learning für Einsteiger</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">5. November 2025</p>
+                <p>Machine Learning ist eine der aufregendsten Technologien unserer Zeit. Dieser Artikel 
+                führt Sie in die Grundlagen ein und zeigt, wie Sie selbst beginnen können.</p>
+                <h3 style="margin-top: 1.5rem;">Was ist Machine Learning?</h3>
+                <p>Machine Learning ist ein Teilbereich der künstlichen Intelligenz, bei dem Algorithmen 
+                aus Daten lernen, ohne explizit programmiert zu werden. Systeme verbessern sich automatisch 
+                durch Erfahrung.</p>
+                <h3 style="margin-top: 1.5rem;">Erste Schritte</h3>
+                <p>Beginnen Sie mit Python und Bibliotheken wie Scikit-learn. Es gibt zahlreiche kostenlose 
+                Ressourcen und Datensätze, mit denen Sie experimentieren können.</p>
+                <h3 style="margin-top: 1.5rem;">Praktische Anwendungen</h3>
+                <p>Von Bilderkennung über Sprachassistenten bis hin zu Empfehlungssystemen - Machine Learning 
+                ist bereits überall um uns herum präsent.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-blog-3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Cybersecurity Best Practices 2025</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">28. Oktober 2025</p>
+                <p>Cybersicherheit ist heute wichtiger denn je. Hier sind die wichtigsten Best Practices, 
+                die jedes Unternehmen kennen sollte.</p>
+                <h3 style="margin-top: 1.5rem;">Multi-Faktor-Authentifizierung</h3>
+                <p>Implementieren Sie MFA überall, wo möglich. Dies ist eine der effektivsten Maßnahmen 
+                gegen unbefugten Zugriff.</p>
+                <h3 style="margin-top: 1.5rem;">Regelmäßige Updates</h3>
+                <p>Halten Sie alle Systeme und Software auf dem neuesten Stand. Viele Angriffe nutzen 
+                bekannte Schwachstellen aus.</p>
+                <h3 style="margin-top: 1.5rem;">Schulung der Mitarbeiter</h3>
+                <p>Menschen sind oft das schwächste Glied in der Sicherheitskette. Regelmäßige Schulungen 
+                zu Phishing und anderen Bedrohungen sind essentiell.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-blog-4" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>React vs. Vue vs. Angular: Welches Framework?</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">15. Oktober 2025</p>
+                <p>Die Wahl des richtigen JavaScript-Frameworks kann über den Erfolg Ihres Projekts entscheiden. 
+                Hier ist ein detaillierter Vergleich.</p>
+                <h3 style="margin-top: 1.5rem;">React</h3>
+                <p>React ist flexibel und hat eine große Community. Ideal für Projekte, die maximale Kontrolle 
+                und Flexibilität benötigen. Perfekt für große Teams und komplexe Anwendungen.</p>
+                <h3 style="margin-top: 1.5rem;">Vue.js</h3>
+                <p>Vue.js ist leichtgewichtig und einfach zu erlernen. Perfekt für kleinere Projekte und 
+                Teams, die schnell produktiv sein müssen. Gute Dokumentation und sanfte Lernkurve.</p>
+                <h3 style="margin-top: 1.5rem;">Angular</h3>
+                <p>Angular bietet eine vollständige Lösung mit vielen eingebauten Features. Ideal für 
+                Enterprise-Anwendungen und Teams, die eine strukturierte Architektur bevorzugen.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-blog-5" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>DevOps: Von Theorie zur Praxis</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">2. Oktober 2025</p>
+                <p>DevOps ist mehr als nur eine Sammlung von Tools. Es ist eine Kultur und Methodik, 
+                die Entwicklung und Betrieb zusammenbringt.</p>
+                <h3 style="margin-top: 1.5rem;">Kultureller Wandel</h3>
+                <p>Der wichtigste Aspekt von DevOps ist der kulturelle Wandel. Teams müssen zusammenarbeiten 
+                und Verantwortung teilen.</p>
+                <h3 style="margin-top: 1.5rem;">Automatisierung</h3>
+                <p>Automatisieren Sie alles, was automatisiert werden kann. CI/CD-Pipelines reduzieren 
+                Fehler und beschleunigen Releases erheblich.</p>
+                <h3 style="margin-top: 1.5rem;">Monitoring und Feedback</h3>
+                <p>Kontinuierliches Monitoring und schnelles Feedback sind essentiell. Nur so können 
+                Probleme früh erkannt und behoben werden.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-blog-6" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Python für Data Science: Ein kompletter Leitfaden</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">18. September 2025</p>
+                <p>Python ist die Sprache der Wahl für Data Science. Dieser Leitfaden führt Sie durch 
+                die wichtigsten Bibliotheken und Konzepte.</p>
+                <h3 style="margin-top: 1.5rem;">NumPy und Pandas</h3>
+                <p>NumPy bietet effiziente numerische Operationen, während Pandas die Datenmanipulation 
+                und -analyse vereinfacht. Diese beiden Bibliotheken sind die Grundlage für fast alle 
+                Data Science-Projekte.</p>
+                <h3 style="margin-top: 1.5rem;">Visualisierung</h3>
+                <p>Matplotlib und Seaborn ermöglichen es, Daten visuell darzustellen. Gute Visualisierungen 
+                sind entscheidend für das Verständnis von Daten und die Kommunikation von Ergebnissen.</p>
+                <h3 style="margin-top: 1.5rem;">Machine Learning</h3>
+                <p>Scikit-learn bietet eine umfassende Sammlung von Machine Learning-Algorithmen. 
+                Perfekt für den Einstieg in ML und für viele praktische Anwendungen.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-blog-7" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Docker und Containerisierung: Ein praktischer Guide</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">5. September 2025</p>
+                <p>Containerisierung hat die Art und Weise verändert, wie wir Software entwickeln und deployen. 
+                Docker ist dabei der De-facto-Standard.</p>
+                <h3 style="margin-top: 1.5rem;">Was sind Container?</h3>
+                <p>Container sind isolierte Umgebungen, die Anwendungen mit allen ihren Abhängigkeiten 
+                zusammenpacken. Sie sind leichtgewichtig und können überall ausgeführt werden.</p>
+                <h3 style="margin-top: 1.5rem;">Docker Grundlagen</h3>
+                <p>Docker verwendet Images und Container. Images sind Vorlagen, Container sind laufende 
+                Instanzen dieser Images. Dockerfile definiert, wie Images erstellt werden.</p>
+                <h3 style="margin-top: 1.5rem;">Vorteile der Containerisierung</h3>
+                <p>Konsistenz zwischen Entwicklung und Production, einfacheres Deployment, bessere 
+                Ressourcennutzung und einfachere Skalierung sind die Hauptvorteile.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-blog-8" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>API-Design: Best Practices für moderne Anwendungen</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">22. August 2025</p>
+                <p>Gut designede APIs sind entscheidend für den Erfolg moderner Anwendungen. Hier sind 
+                die wichtigsten Best Practices.</p>
+                <h3 style="margin-top: 1.5rem;">RESTful Prinzipien</h3>
+                <p>REST APIs sollten stateless sein, klare Ressourcen-URLs verwenden und HTTP-Methoden 
+                korrekt einsetzen. GET für Abfragen, POST für Erstellung, PUT/PATCH für Updates, DELETE für Löschung.</p>
+                <h3 style="margin-top: 1.5rem;">Versionierung</h3>
+                <p>APIs sollten versioniert werden, um Rückwärtskompatibilität zu gewährleisten. 
+                Verwenden Sie URL-Versionierung oder Header-Versionierung konsequent.</p>
+                <h3 style="margin-top: 1.5rem;">Dokumentation</h3>
+                <p>Umfassende Dokumentation ist essentiell. Verwenden Sie Tools wie Swagger/OpenAPI 
+                für automatische Dokumentation und interaktive Tests.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-blog-9" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>TypeScript: Warum JavaScript-Entwickler es lieben sollten</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">8. August 2025</p>
+                <p>TypeScript bringt statische Typisierung zu JavaScript und macht die Entwicklung 
+                produktiver und weniger fehleranfällig.</p>
+                <h3 style="margin-top: 1.5rem;">Typsicherheit</h3>
+                <p>TypeScript fängt Fehler zur Compile-Zeit ab, bevor sie in Production auftreten. 
+                Dies spart Zeit und reduziert Bugs erheblich.</p>
+                <h3 style="margin-top: 1.5rem;">Bessere IDE-Unterstützung</h3>
+                <p>IDEs können dank TypeScript bessere Autovervollständigung, Refactoring-Tools und 
+                Navigation bieten. Dies verbessert die Entwicklerproduktivität deutlich.</p>
+                <h3 style="margin-top: 1.5rem;">Skalierbarkeit</h3>
+                <p>Für große Projekte ist TypeScript unverzichtbar. Es hilft Teams, Code besser zu 
+                verstehen und zu warten, besonders bei wachsenden Codebasen.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-blog-10" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Kubernetes Orchestrierung: Von Grundlagen zu Production</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">25. Juli 2025</p>
+                <p>Kubernetes ist das führende System für Container-Orchestrierung und ermöglicht 
+                die Verwaltung komplexer Container-Umgebungen.</p>
+                <h3 style="margin-top: 1.5rem;">Grundkonzepte</h3>
+                <p>Pods sind die kleinste Einheit, Services ermöglichen Netzwerkzugriff, Deployments 
+                verwalten Replikate. Diese Konzepte bilden die Grundlage von Kubernetes.</p>
+                <h3 style="margin-top: 1.5rem;">Skalierung und Load Balancing</h3>
+                <p>Kubernetes kann automatisch skalieren basierend auf Metriken. Horizontal Pod Autoscaler 
+                passt die Anzahl der Pods dynamisch an die Last an.</p>
+                <h3 style="margin-top: 1.5rem;">Production Best Practices</h3>
+                <p>Ressourcenlimits setzen, Health Checks konfigurieren, Secrets sicher verwalten und 
+                Monitoring einrichten sind essentiell für Production-Umgebungen.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-blog-11" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Microservices-Architektur: Vor- und Nachteile</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">10. Juli 2025</p>
+                <p>Microservices sind nicht immer die beste Lösung. Verstehen Sie die Trade-offs, 
+                bevor Sie sich für diese Architektur entscheiden.</p>
+                <h3 style="margin-top: 1.5rem;">Vorteile</h3>
+                <p>Unabhängige Entwicklung und Deployment, Technologievielfalt, bessere Skalierbarkeit 
+                und Fehlerisolierung sind die Hauptvorteile von Microservices.</p>
+                <h3 style="margin-top: 1.5rem;">Nachteile</h3>
+                <p>Erhöhte Komplexität, Netzwerk-Latenz, verteilte Transaktionen und mehr 
+                Infrastruktur-Overhead sind die Hauptnachteile.</p>
+                <h3 style="margin-top: 1.5rem;">Wann Microservices sinnvoll sind</h3>
+                <p>Microservices eignen sich für große Teams, komplexe Domänen und wenn verschiedene 
+                Teile unterschiedliche Skalierungsanforderungen haben.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-blog-12" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Git Workflows: Effiziente Versionskontrolle im Team</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">28. Juni 2025</p>
+                <p>Der richtige Git-Workflow kann die Teamproduktivität erheblich steigern und 
+                Konflikte minimieren.</p>
+                <h3 style="margin-top: 1.5rem;">Git Flow</h3>
+                <p>Git Flow verwendet separate Branches für Features, Releases und Hotfixes. 
+                Ideal für Projekte mit regelmäßigen Releases und klaren Versionsnummern.</p>
+                <h3 style="margin-top: 1.5rem;">GitHub Flow</h3>
+                <p>Ein einfacherer Workflow mit nur main Branch und Feature Branches. 
+                Perfekt für kontinuierliche Deployment-Prozesse und kleinere Teams.</p>
+                <h3 style="margin-top: 1.5rem;">Trunk-Based Development</h3>
+                <p>Alle Entwickler committen direkt in den main Branch mit kurzen Feature Branches. 
+                Erfordert gute Tests und CI/CD, aber reduziert Merge-Konflikte.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-blog-13" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Blockchain-Technologie: Über Kryptowährungen hinaus</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1rem;">15. Juni 2025</p>
+                <p>Blockchain-Technologie hat weit mehr Anwendungen als nur Kryptowährungen. 
+                Entdecken Sie praktische Use Cases.</p>
+                <h3 style="margin-top: 1.5rem;">Supply Chain Management</h3>
+                <p>Blockchain kann die Nachverfolgbarkeit von Produkten durch die gesamte 
+                Lieferkette ermöglichen, was Transparenz und Vertrauen schafft.</p>
+                <h3 style="margin-top: 1.5rem;">Digitale Identität</h3>
+                <p>Dezentralisierte Identitätssysteme geben Nutzern Kontrolle über ihre 
+                persönlichen Daten und reduzieren Identitätsbetrug.</p>
+                <h3 style="margin-top: 1.5rem;">Smart Contracts</h3>
+                <p>Automatisch ausführbare Verträge können Geschäftsprozesse automatisieren 
+                und Transaktionskosten reduzieren, ohne Mittelsmänner.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IT-Coaching</h3>
+                    <p>Bildungsportal für IT-Technologien und digitale Fähigkeiten. Coaching für IT-Spezialisten in Österreich.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="../index.html">Startseite</a></li>
+                        <li><a href="../kurse/kurse.html">Kurse</a></li>
+                        <li><a href="../ueber-uns/ueber-uns.html">Über uns</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="../faq/faq.html">FAQ</a></li>
+                        <li><a href="../kontakte/kontakte.html">Kontakte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Rechtliches</h3>
+                    <ul>
+                        <li><a href="../datenschutz.html">Datenschutzerklärung</a></li>
+                        <li><a href="../cookie-richtlinie.html">Cookie-Richtlinie</a></li>
+                        <li><a href="../nutzungsbedingungen.html">Nutzungsbedingungen</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IT-Coaching Portal. Alle Rechte vorbehalten.</p>
+                <div class="footer-legal">
+                    <a href="../datenschutz.html">Datenschutzerklärung</a>
+                    <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>
+                    <a href="../nutzungsbedingungen.html">Nutzungsbedingungen</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- COOKIE CONSENT POPUP -->
+    <div id="cookie-consent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-text">
+                <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer <a href="../cookie-richtlinie.html">Cookie-Richtlinie</a>.</p>
+            </div>
+            <div class="cookie-consent-buttons">
+                <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Akzeptieren</button>
+                <button id="cookie-decline" class="cookie-btn cookie-btn-decline">Ablehnen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/cookie-consent.js"></script>
+</body>
+</html>
