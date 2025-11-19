@@ -1,0 +1,24 @@
+# robots.txt для сайта ООО «ЦАТИ»
+# https://cati.pro
+
+User-agent: *
+Allow: /
+
+# Запрещаем индексацию служебных файлов и папок
+Disallow: /css/
+Disallow: /js/
+Disallow: /*.pdf$
+
+# Разрешаем индексацию изображений
+Allow: /images/
+
+# Указываем расположение sitemap
+Sitemap: https://cati.pro/sitemap.xml
+
+# Crawl-delay для некоторых ботов (опционально)
+User-agent: Yandex
+Crawl-delay: 1
+
+User-agent: Googlebot
+Crawl-delay: 0
+

@@ -69,6 +69,100 @@
 })();
 
 // ============================================
+// CERTIFICATE PREVIEW MODAL
+// ============================================
+
+(function() {
+    'use strict';
+
+    const modal = document.getElementById('certificateModal');
+    if (!modal) return;
+
+    const overlay = modal.querySelector('.modal__overlay');
+    const closeBtn = document.getElementById('certificateModalClose');
+    const titleEl = document.getElementById('certificateModalTitle');
+    const frameEl = document.getElementById('certificateModalFrame');
+    const newTabLink = document.getElementById('certificateModalNewTab');
+    const downloadLink = document.getElementById('certificateModalDownload');
+    const certificateImages = document.querySelectorAll('.certificate-card__image');
+
+    function openModal(pdfUrl, title) {
+        if (!pdfUrl) return;
+
+        if (titleEl) {
+            titleEl.textContent = title || 'Сертификат';
+        }
+
+        if (frameEl) {
+            frameEl.src = pdfUrl + '#toolbar=0&navpanes=0&scrollbar=0';
+        }
+
+        if (newTabLink) {
+            newTabLink.href = pdfUrl;
+        }
+
+        if (downloadLink) {
+            downloadLink.href = pdfUrl;
+            const fileName = pdfUrl.split('/').pop() || 'certificate.pdf';
+            downloadLink.setAttribute('download', fileName);
+        }
+
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (frameEl) {
+            frameEl.src = '';
+        }
+    }
+
+    certificateImages.forEach(function(wrapper) {
+        wrapper.addEventListener('click', function() {
+            const card = this.closest('.certificate-card');
+            if (!card) return;
+
+            const pdfUrl = card.getAttribute('data-pdf');
+            const title = card.getAttribute('data-title');
+            if (pdfUrl) {
+                openModal(pdfUrl, title);
+            }
+        });
+
+        wrapper.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                const card = this.closest('.certificate-card');
+                if (!card) return;
+                const pdfUrl = card.getAttribute('data-pdf');
+                const title = card.getAttribute('data-title');
+                if (pdfUrl) {
+                    openModal(pdfUrl, title);
+                }
+            }
+        });
+    });
+
+    if (overlay) {
+        overlay.addEventListener('click', closeModal);
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+})();
+
+// ============================================
 // SMOOTH SCROLL FOR ANCHOR LINKS
 // ============================================
 
@@ -191,7 +285,8 @@
                 if (linkFileName === currentPage) {
                     if (linkFileName === 'products.html' || 
                         linkFileName === 'certificates.html' || 
-                        linkFileName === 'news.html') {
+                        linkFileName === 'news.html' ||
+                        linkFileName === 'vacancies.html') {
                         link.classList.add('active');
                     } else if (linkFileName === 'index.html' && linkHash) {
                         if (currentHash === linkHash) {
@@ -468,6 +563,62 @@
 
     // Предотвращаем закрытие при клике на содержимое модалки
     const modalContent = modal.querySelector('.modal__content');
+    if (modalContent) {
+        modalContent.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+})();
+
+// ============================================
+// RESUME MODAL FUNCTIONALITY
+// ============================================
+
+(function() {
+    'use strict';
+
+    const resumeModal = document.getElementById('resumeModal');
+    if (!resumeModal) return;
+
+    const openButton = document.getElementById('openResumeModal');
+    const closeButton = document.getElementById('resumeModalClose');
+    const overlay = resumeModal.querySelector('.modal__overlay');
+
+    function openModal() {
+        resumeModal.classList.add('active');
+        resumeModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        resumeModal.classList.remove('active');
+        resumeModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    if (openButton) {
+        openButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal();
+        });
+    }
+
+    if (closeButton) {
+        closeButton.addEventListener('click', closeModal);
+    }
+
+    if (overlay) {
+        overlay.addEventListener('click', closeModal);
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    // Предотвращаем закрытие при клике на содержимое модалки
+    const modalContent = resumeModal.querySelector('.modal__content');
     if (modalContent) {
         modalContent.addEventListener('click', function(e) {
             e.stopPropagation();
