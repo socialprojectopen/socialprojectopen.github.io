@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anubis Tarih Araştırması - Antik Mısır'ın en gizemli tanrısı hakkındaki bilginizi test edin!">
+    <title>Anubis Tarih Araştırması - Bilgi Yarışması</title>
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpeg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon"></span>
+                        <span class="logo-text">Anubis</span>
+                    </a>
+                    <button class="mobile-menu-toggle" aria-label="Menüyü aç/kapat" type="button" onclick="toggleMobileMenu(event)">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="hakkimizda.html">Hakkında Anubis</a></li>
+                        <li><a href="rituel.html">Ritüeller ve İnançlar</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Anubis Tarih Araştırması Kısa Oyunu -->
+        <section class="quiz-section">
+            <div class="container">
+                <div class="quiz-wrapper">
+                    <h2 class="quiz-title">Anubis Tarih Araştırması</h2>
+                    <p class="quiz-subtitle">Antik Mısır'ın en gizemli tanrısı hakkındaki bilginizi test edin! Anubis'in tarihini, sembollerini ve mitolojisini keşfedin.</p>
+                    
+                    <div class="quiz-container" id="quizContainer">
+                        <div class="quiz-start-screen" id="quizStartScreen" style="display: none;">
+                            <h3>Anubis Bilgi Yarışması</h3>
+                            <p>Bu kısa oyunda, Anubis hakkında 22 soru cevaplayacaksınız. Her doğru cevap size puan kazandıracak. Hazır mısınız?</p>
+                            <button class="btn btn-primary quiz-start-btn" id="quizStartBtn">Araştırmaya Başla</button>
+                        </div>
+
+                        <div class="quiz-game-screen" id="quizGameScreen">
+                            <div class="quiz-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="quizProgress"></div>
+                                </div>
+                                <div class="quiz-stats">
+                                    <span class="question-counter">
+                                        <span id="currentQuestion">1</span> / <span id="totalQuestions">22</span>
+                                    </span>
+                                    <span class="score-counter">
+                                        Puan: <span id="quizScore">0</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="question-container">
+                                <h3 class="question-text" id="questionText"></h3>
+                                <div class="answers-container" id="answersContainer"></div>
+                            </div>
+
+                            <div class="quiz-feedback" id="quizFeedback" style="display: none;">
+                                <div class="feedback-content" id="feedbackContent"></div>
+                                <button class="btn btn-primary quiz-next-btn" id="quizNextBtn" style="display: none;">Sonraki Soru</button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-results-screen" id="quizResultsScreen" style="display: none;">
+                            <div class="results-content">
+                                <div class="results-icon" id="resultsIcon">🏆</div>
+                                <h3 id="resultsTitle">Tebrikler!</h3>
+                                <p class="results-score">Puanınız: <span id="finalScore">0</span> / <span id="maxScore">22</span></p>
+                                <p class="results-message" id="resultsMessage"></p>
+                                <div class="results-details" id="resultsDetails"></div>
+                                <button class="btn btn-primary quiz-restart-btn" id="quizRestartBtn">Tekrar Oyna</button>
+                                <a href="index.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Ana Sayfaya Dön</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Anubis</h3>
+                    <p>Antik Mısır'ın geçit bekçisi</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Sayfalar</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="hakkimizda.html">Hakkında Anubis</a></li>
+                        <li><a href="rituel.html">Ritüeller</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Yasal</h4>
+                    <ul>
+                        <li><a href="#" class="modal-trigger" data-modal="cookie" onclick="openModal('cookieModal', event)">Çerez Politikası</a></li>
+                        <li><a href="#" class="modal-trigger" data-modal="terms" onclick="openModal('termsModal', event)">Kullanım Şartları</a></li>
+                        <li><a href="#" class="modal-trigger" data-modal="privacy" onclick="openModal('privacyModal', event)">Gizlilik Politikası</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Anubis. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global function for mobile menu toggle (backup)
+        function toggleMobileMenu(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            const navMenu = document.querySelector('.nav-menu');
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (navMenu && mobileMenuToggle) {
+                const isOpen = navMenu.classList.contains('active');
+                
+                if (isOpen) {
+                    mobileMenuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    document.body.style.overflow = '';
+                    document.body.style.position = '';
+                    document.body.style.width = '';
+                } else {
+                    mobileMenuToggle.classList.add('active');
+                    navMenu.classList.add('active');
+                    document.body.classList.add('menu-open');
+                    document.body.style.overflow = 'hidden';
+                    document.body.style.position = 'fixed';
+                    document.body.style.width = '100%';
+                }
+            }
+            return false;
+        }
+
+        // Global function for opening modals (backup)
+        function openModal(modalId, e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
+            }
+            return false;
+        }
+
+        // Global function for closing modals
+        function closeModal(modal) {
+            if (typeof modal === 'string') {
+                modal = document.getElementById(modal);
+            }
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
+        }
+    </script>
+    
+    <script src="js/quiz.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

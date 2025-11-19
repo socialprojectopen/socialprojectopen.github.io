@@ -1,627 +1,509 @@
-// ============================================
-// MOBILE MENU FUNCTIONALITY
-// ============================================
-
+// Mobile Menu Toggle Function - Simple and Reliable
 (function() {
     'use strict';
+    
+    let mobileMenuToggle, navMenu, navLinks;
+    
+    function initMobileMenu() {
+        mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        navMenu = document.querySelector('.nav-menu');
+        navLinks = document.querySelectorAll('.nav-menu a');
 
-    const burgerMenu = document.querySelector('.burger-menu');
-    const mobileMenu = document.querySelector('.nav-mobile');
+        console.log('Initializing mobile menu...');
+        console.log('Toggle button:', mobileMenuToggle);
+        console.log('Nav menu:', navMenu);
 
-    if (burgerMenu && mobileMenu) {
-        // Функция для открытия/закрытия меню
-        function toggleMenu() {
-            const isExpanded = burgerMenu.getAttribute('aria-expanded') === 'true';
-            const newState = !isExpanded;
+        if (!mobileMenuToggle || !navMenu) {
+            console.error('Mobile menu elements not found!');
+            return;
+        }
+
+        // Toggle menu function
+        function toggleMenu(e) {
+            console.log('Toggle menu called!');
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
             
-            burgerMenu.setAttribute('aria-expanded', newState);
-            mobileMenu.setAttribute('aria-hidden', !newState);
-            burgerMenu.classList.toggle('active', newState);
-            mobileMenu.classList.toggle('active', newState);
+            const isOpen = navMenu.classList.contains('active');
+            console.log('Menu is open:', isOpen);
             
-            // Блокируем скролл страницы при открытом меню
-            if (newState) {
-                document.body.style.overflow = 'hidden';
-            } else {
+            if (isOpen) {
+                // Close menu
+                console.log('Closing menu...');
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
                 document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            } else {
+                // Open menu
+                console.log('Opening menu...');
+                mobileMenuToggle.classList.add('active');
+                navMenu.classList.add('active');
+                document.body.classList.add('menu-open');
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
             }
         }
 
-        // Функция для закрытия меню
+        // Close menu function
         function closeMenu() {
-            burgerMenu.setAttribute('aria-expanded', 'false');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-            burgerMenu.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            if (mobileMenuToggle && navMenu) {
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
         }
 
-        // Обработчик клика по бургер-меню
-        burgerMenu.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleMenu();
-        });
+        // Remove any existing listeners by cloning the button
+        const newToggle = mobileMenuToggle.cloneNode(true);
+        mobileMenuToggle.parentNode.replaceChild(newToggle, mobileMenuToggle);
+        mobileMenuToggle = newToggle;
 
-        // Закрытие меню при клике на ссылки (обработчики добавляются один раз)
-        const mobileLinks = mobileMenu.querySelectorAll('.nav__link');
-        mobileLinks.forEach(function(link) {
+        // Toggle button click - use capture phase
+        mobileMenuToggle.addEventListener('click', function(e) {
+            console.log('Button clicked!');
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            toggleMenu(e);
+            return false;
+        }, true);
+
+        // Also add touch event
+        mobileMenuToggle.addEventListener('touchend', function(e) {
+            console.log('Button touched!');
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu(e);
+            return false;
+        }, true);
+
+        // Make button definitely clickable
+        mobileMenuToggle.style.pointerEvents = 'auto';
+        mobileMenuToggle.style.cursor = 'pointer';
+        mobileMenuToggle.style.zIndex = '1005';
+        mobileMenuToggle.setAttribute('tabindex', '0');
+        
+        // Test click handler
+        mobileMenuToggle.onclick = function(e) {
+            console.log('onclick handler fired!');
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu(e);
+            return false;
+        };
+
+        // Close menu when clicking on a link
+        navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                closeMenu();
+                if (window.innerWidth <= 768) {
+                    setTimeout(closeMenu, 100);
+                }
             });
         });
 
-        // Закрытие меню при клике вне его области
-        document.addEventListener('click', function(event) {
-            if (burgerMenu.getAttribute('aria-expanded') === 'true') {
-                if (!burgerMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 && navMenu && navMenu.classList.contains('active')) {
+                const isClickInsideMenu = navMenu.contains(e.target);
+                const isClickOnToggle = mobileMenuToggle && mobileMenuToggle.contains(e.target);
+                
+                if (!isClickInsideMenu && !isClickOnToggle) {
+                    closeMenu();
+                }
+            }
+        }, true);
+
+        // Close menu on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && window.innerWidth <= 768) {
+                if (navMenu && navMenu.classList.contains('active')) {
                     closeMenu();
                 }
             }
         });
 
-        // Закрытие меню при нажатии Escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && burgerMenu.getAttribute('aria-expanded') === 'true') {
-                closeMenu();
-            }
-        });
-    }
-})();
-
-// ============================================
-// CERTIFICATE PREVIEW MODAL
-// ============================================
-
-(function() {
-    'use strict';
-
-    const modal = document.getElementById('certificateModal');
-    if (!modal) return;
-
-    const overlay = modal.querySelector('.modal__overlay');
-    const closeBtn = document.getElementById('certificateModalClose');
-    const titleEl = document.getElementById('certificateModalTitle');
-    const frameEl = document.getElementById('certificateModalFrame');
-    const newTabLink = document.getElementById('certificateModalNewTab');
-    const downloadLink = document.getElementById('certificateModalDownload');
-    const certificateImages = document.querySelectorAll('.certificate-card__image');
-
-    function openModal(pdfUrl, title) {
-        if (!pdfUrl) return;
-
-        if (titleEl) {
-            titleEl.textContent = title || 'Сертификат';
-        }
-
-        if (frameEl) {
-            frameEl.src = pdfUrl + '#toolbar=0&navpanes=0&scrollbar=0';
-        }
-
-        if (newTabLink) {
-            newTabLink.href = pdfUrl;
-        }
-
-        if (downloadLink) {
-            downloadLink.href = pdfUrl;
-            const fileName = pdfUrl.split('/').pop() || 'certificate.pdf';
-            downloadLink.setAttribute('download', fileName);
-        }
-
-        modal.classList.add('active');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        modal.classList.remove('active');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        if (frameEl) {
-            frameEl.src = '';
-        }
-    }
-
-    certificateImages.forEach(function(wrapper) {
-        wrapper.addEventListener('click', function() {
-            const card = this.closest('.certificate-card');
-            if (!card) return;
-
-            const pdfUrl = card.getAttribute('data-pdf');
-            const title = card.getAttribute('data-title');
-            if (pdfUrl) {
-                openModal(pdfUrl, title);
-            }
-        });
-
-        wrapper.addEventListener('keydown', function(event) {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                const card = this.closest('.certificate-card');
-                if (!card) return;
-                const pdfUrl = card.getAttribute('data-pdf');
-                const title = card.getAttribute('data-title');
-                if (pdfUrl) {
-                    openModal(pdfUrl, title);
+        // Close menu on window resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                if (window.innerWidth > 768) {
+                    closeMenu();
                 }
-            }
+            }, 100);
         });
-    });
 
-    if (overlay) {
-        overlay.addEventListener('click', closeModal);
+        console.log('Mobile menu initialized successfully!');
     }
 
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
-    }
-
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
-        }
-    });
-})();
-
-// ============================================
-// SMOOTH SCROLL FOR ANCHOR LINKS
-// ============================================
-
-(function() {
-    'use strict';
-
-    // Глобальная переменная для отслеживания автоматической прокрутки
-    window.isAutoScrolling = false;
-
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            if (href === '#' || href === '#!') {
-                return;
-            }
-
-            const target = document.querySelector(href);
-            
-            if (target) {
-                e.preventDefault();
-                window.isAutoScrolling = true; // Устанавливаем флаг автоматической прокрутки
-                
-                // Сразу подсвечиваем нужную ссылку при клике
-                const navLinks = document.querySelectorAll('.nav__link');
-                navLinks.forEach(function(link) {
-                    if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
-                        link.classList.remove('active');
-                    }
-                });
-                const clickedLink = document.querySelector('a.nav__link[href="' + href + '"]');
-                if (clickedLink) {
-                    clickedLink.classList.add('active');
-                }
-                
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-
-                // Сбрасываем флаг после завершения прокрутки (отслеживаем остановку скролла)
-                let scrollEndTimer;
-                const checkScrollEnd = function() {
-                    clearTimeout(scrollEndTimer);
-                    scrollEndTimer = setTimeout(function() {
-                        window.isAutoScrolling = false;
-                    }, 150);
-                };
-                
-                const scrollListener = function() {
-                    checkScrollEnd();
-                };
-                window.addEventListener('scroll', scrollListener, { once: false, passive: true });
-                
-                // Также сбрасываем через максимальное время (на случай если что-то пойдет не так)
-                setTimeout(function() {
-                    window.removeEventListener('scroll', scrollListener);
-                    window.isAutoScrolling = false;
-                }, 2000);
-            }
-        });
-    });
-})();
-
-// ============================================
-// ACTIVE NAVIGATION LINK HIGHLIGHTING
-// ============================================
-
-(function() {
-    'use strict';
-
-    function getCurrentPageName() {
-        let path = window.location.pathname;
-        if (path.endsWith('/')) {
-            path = path.slice(0, -1);
-        }
-        const fileName = path.split('/').pop();
-        return fileName || 'index.html';
-    }
-
-    function updateActiveLinks() {
-        const currentPage = getCurrentPageName();
-        const currentHash = window.location.hash;
-        const navLinks = document.querySelectorAll('.nav__link');
-
-        navLinks.forEach(function(link) {
-            link.classList.remove('active');
-        });
-
-        navLinks.forEach(function(link) {
-            const href = link.getAttribute('href');
-            if (!href) return;
-            
-            if (href.startsWith('mailto:') || href.startsWith('tel:')) return;
-
-            if (href.startsWith('#')) {
-                if (currentPage === 'index.html' && currentHash === href) {
-                    link.classList.add('active');
-                }
-                return;
-            }
-
-            if (!href.includes('://')) {
-                const parts = href.split('#');
-                const pathPart = parts[0] || '';
-                const linkHash = parts[1] ? '#' + parts[1] : '';
-                
-                let linkFileName = '';
-                if (!pathPart || pathPart === '' || pathPart === '/') {
-                    linkFileName = 'index.html';
-                } else {
-                    const cleanPath = pathPart.replace(/^\/+|\/+$/g, '');
-                    linkFileName = cleanPath.split('/').pop() || 'index.html';
-                }
-
-                if (linkFileName === currentPage) {
-                    if (linkFileName === 'products.html' || 
-                        linkFileName === 'certificates.html' || 
-                        linkFileName === 'news.html' ||
-                        linkFileName === 'vacancies.html') {
-                        link.classList.add('active');
-                    } else if (linkFileName === 'index.html' && linkHash) {
-                        if (currentHash === linkHash) {
-                            link.classList.add('active');
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-    updateActiveLinks();
-    window.addEventListener('hashchange', updateActiveLinks);
-
-    // Update active link on scroll for hash links
-    let scrollTimeout;
-    let lastActiveSection = null;
-    let isAutoScrolling = false;
-    
-    function updateActiveSectionOnScroll() {
-        const sections = document.querySelectorAll('section[id]');
-        const scrollPosition = window.scrollY + 150;
-        const navLinks = document.querySelectorAll('.nav__link');
-        let currentActiveSection = null;
-
-        // Находим текущую активную секцию
-        sections.forEach(function(section) {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                currentActiveSection = sectionId;
-            }
-        });
-
-        // Если секция изменилась, обновляем подсветку
-        if (currentActiveSection !== lastActiveSection) {
-            lastActiveSection = currentActiveSection;
-            
-            // Убираем все активные классы с якорных ссылок
-            navLinks.forEach(function(link) {
-                const href = link.getAttribute('href');
-                if (href && href.startsWith('#')) {
-                    link.classList.remove('active');
-                }
-            });
-
-            // Подсвечиваем активную ссылку
-            if (currentActiveSection) {
-                navLinks.forEach(function(link) {
-                    if (link.getAttribute('href') === '#' + currentActiveSection) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        }
-    }
-    
-    window.addEventListener('scroll', function() {
-        // Проверяем, идет ли автоматическая прокрутка (из глобальной переменной или через проверку)
-        if (window.isAutoScrolling !== undefined) {
-            isAutoScrolling = window.isAutoScrolling;
-        }
-        
-        // При ручной прокрутке обновляем сразу
-        if (!isAutoScrolling) {
-            updateActiveSectionOnScroll();
-        }
-        
-        // Обновляем после остановки прокрутки (работает для обеих случаев)
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(function() {
-            // После остановки всегда обновляем активную секцию
-            isAutoScrolling = false;
-            if (window.isAutoScrolling !== undefined) {
-                window.isAutoScrolling = false;
-            }
-            updateActiveSectionOnScroll();
-        }, 200);
-    });
-})();
-
-// ============================================
-// LAZY LOADING IMAGES
-// ============================================
-
-(function() {
-    'use strict';
-
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                    }
-                    observer.unobserve(img);
-                }
-            });
-        });
-
-        document.querySelectorAll('img[data-src]').forEach(function(img) {
-            imageObserver.observe(img);
-        });
-    }
-})();
-
-// ============================================
-// HEADER SCROLL EFFECT
-// ============================================
-
-(function() {
-    'use strict';
-
-    const header = document.querySelector('.header');
-    let lastScroll = 0;
-
-    if (header) {
-        window.addEventListener('scroll', function() {
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 50) {
-                header.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.15)';
-            } else {
-                header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
-            }
-
-            lastScroll = currentScroll;
-        });
-    }
-})();
-
-// ============================================
-// PAGE LOAD ANIMATION
-// ============================================
-
-(function() {
-    'use strict';
-
-    // Плавное появление элементов при загрузке страницы
-    function initPageAnimations() {
-        // Добавляем класс для анимации после загрузки DOM
-        document.body.classList.add('page-loaded');
-        
-        // Анимация для элементов, которые появляются при скролле
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Наблюдаем за секциями
-        const sections = document.querySelectorAll('section');
-        sections.forEach(function(section) {
-            observer.observe(section);
-        });
-    }
-
-    // Плавный переход при навигации
-    document.addEventListener('click', function(e) {
-        const link = e.target.closest('a');
-        if (link && link.href && !link.hash && !link.target && link.hostname === window.location.hostname) {
-            // Плавное исчезновение при переходе на другую страницу
-            document.body.style.transition = 'opacity 0.3s ease-out';
-            document.body.style.opacity = '0.7';
-        }
-    });
-
-    // Инициализация после загрузки DOM
+    // Try multiple initialization methods
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initPageAnimations);
+        document.addEventListener('DOMContentLoaded', initMobileMenu);
     } else {
-        initPageAnimations();
+        // DOM already loaded
+        setTimeout(initMobileMenu, 0);
+    }
+    
+    // Also try on window load as backup
+    window.addEventListener('load', function() {
+        if (!mobileMenuToggle || !navMenu) {
+            console.log('Retrying mobile menu initialization on window load...');
+            initMobileMenu();
+        }
+    });
+})();
+
+// Accordion fonksiyonu
+document.addEventListener('DOMContentLoaded', function() {
+    function initAccordions() {
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        if (accordionHeaders.length > 0) {
+            accordionHeaders.forEach((header) => {
+                header.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const accordionItem = this.closest('.accordion-item');
+                    if (!accordionItem) return;
+                    
+                    const accordionContent = accordionItem.querySelector('.accordion-content');
+                    if (!accordionContent) return;
+                    
+                    const isActive = this.classList.contains('active');
+                    const allHeaders = document.querySelectorAll('.accordion-header');
+
+                    // Tüm accordion'ları kapat
+                    allHeaders.forEach(h => {
+                        if (h !== this) {
+                            h.classList.remove('active');
+                            const item = h.closest('.accordion-item');
+                            if (item) {
+                                const content = item.querySelector('.accordion-content');
+                                if (content) {
+                                    content.classList.remove('active');
+                                    content.style.maxHeight = '0';
+                                    // Clean up inline style after transition
+                                    setTimeout(() => {
+                                        if (!content.classList.contains('active')) {
+                                            content.style.maxHeight = '';
+                                        }
+                                    }, 400);
+                                }
+                            }
+                        }
+                    });
+
+                    // Tıklanan accordion'u aç/kapat
+                    if (isActive) {
+                        // Kapat
+                        this.classList.remove('active');
+                        // Mevcut yüksekliği al ve animasyon için kullan
+                        const currentHeight = accordionContent.scrollHeight;
+                        accordionContent.style.maxHeight = currentHeight + 'px';
+                        // Force reflow for smooth animation
+                        void accordionContent.offsetHeight;
+                        // Şimdi kapat
+                        accordionContent.style.maxHeight = '0';
+                        setTimeout(() => {
+                            accordionContent.classList.remove('active');
+                            accordionContent.style.maxHeight = '';
+                        }, 400);
+                    } else {
+                        // Aç
+                        this.classList.add('active');
+                        accordionContent.classList.add('active');
+                        // Önce yüksekliği 0 yap
+                        accordionContent.style.maxHeight = '0';
+                        // Force reflow
+                        void accordionContent.offsetHeight;
+                        // Şimdi gerçek yüksekliğe ayarla
+                        const height = accordionContent.scrollHeight;
+                        accordionContent.style.maxHeight = height + 'px';
+                        // Transition bittikten sonra maxHeight'ı kaldır (CSS'e bırak)
+                        setTimeout(() => {
+                            if (accordionContent.classList.contains('active')) {
+                                accordionContent.style.maxHeight = '';
+                            }
+                        }, 400);
+                    }
+                });
+            });
+        }
+    }
+    
+    // Initialize accordions
+    initAccordions();
+});
+
+// Modal trigger'ları (Cookie, Terms, Privacy) - Global initialization
+(function() {
+    'use strict';
+    
+    function initModalTriggers() {
+        const modalTriggers = document.querySelectorAll('.modal-trigger');
+        
+        console.log('Initializing modal triggers, found:', modalTriggers.length);
+        
+        if (modalTriggers.length > 0) {
+            modalTriggers.forEach((trigger) => {
+                // Remove any existing listeners
+                const newTrigger = trigger.cloneNode(true);
+                trigger.parentNode.replaceChild(newTrigger, trigger);
+                
+                newTrigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const modalName = this.getAttribute('data-modal');
+                    const modalId = modalName + 'Modal';
+                    const modal = document.getElementById(modalId);
+                    
+                    console.log('Modal trigger clicked:', modalName, 'Modal ID:', modalId, 'Modal found:', modal);
+                    
+                    if (modal) {
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                        document.body.style.position = 'fixed';
+                        document.body.style.width = '100%';
+                    } else {
+                        console.error('Modal not found:', modalId);
+                    }
+                });
+            });
+        }
+    }
+    
+    // Modal kapatma fonksiyonu
+    function initModalClose() {
+        const closeModalButtons = document.querySelectorAll('.close-modal');
+        if (closeModalButtons.length > 0) {
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const modal = this.closest('.modal');
+                    if (modal) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                        document.body.style.position = '';
+                        document.body.style.width = '';
+                    }
+                });
+            });
+        }
+
+        // Modal dışına tıklandığında kapat
+        const modals = document.querySelectorAll('.modal');
+        if (modals.length > 0) {
+            modals.forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                        document.body.style.overflow = '';
+                        document.body.style.position = '';
+                        document.body.style.width = '';
+                    }
+                });
+            });
+        }
+
+        // ESC tuşu ile modal kapat
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const activeModals = document.querySelectorAll('.modal.active');
+                activeModals.forEach(modal => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    document.body.style.position = '';
+                    document.body.style.width = '';
+                });
+            }
+        });
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            initModalTriggers();
+            initModalClose();
+        });
+    } else {
+        initModalTriggers();
+        initModalClose();
     }
 })();
 
-// ============================================
-// MODAL FUNCTIONALITY
-// ============================================
-
-(function() {
-    'use strict';
-
-    const modal = document.getElementById('aboutModal');
-    const modalOverlay = modal ? modal.querySelector('.modal__overlay') : null;
-    const modalClose = document.getElementById('modalClose');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalBody = document.getElementById('modalBody');
-    const modalIcon = document.getElementById('modalIcon');
-    const aboutCards = document.querySelectorAll('.about__card[data-modal]');
-
-    if (!modal) return;
-
-    // Данные для модальных окон
-    const modalData = {
-        production: {
-            title: 'Производственные возможности',
-            icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 21V13H8V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 7H18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-            content: '<p>Собственные производственные и технологические площади компании оснащены всем необходимым современным оборудованием. Производственная линия ЦАТИ обеспечивает выпуск до <strong>6 трёхслойных сотовых панелей в сутки</strong>, размером <strong>1250х2750 мм</strong>, толщиной от <strong>3 до 25 миллиметров</strong>.</p><p>Изготовление полимерных деталей авиационного и другого назначения, любой конфигурации, толщины и габаритами (до <strong>1220 х 2440 мм</strong>).</p><p>Производственная линия ЦАТИ оснащена современным оборудованием для формования панелей из ПКМ прессовым и вакуумным способами. Компания использует передовые технологии производства трёхслойных сотовых панелей с различными наполнителями, включая алюминиевый и арамидный сотовый заполнитель.</p><p>Наше производство позволяет выполнять заказы любой сложности и объёма, обеспечивая высокое качество продукции и соблюдение всех технических требований заказчика. Мы работаем как с серийным производством, так и с индивидуальными проектами.</p>'
+// Galeri görsel modal'ı
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryItemsForModal = document.querySelectorAll('.gallery-item[data-gallery]');
+    const galleryModal = document.getElementById('galleryModal');
+    
+    // Galeri verileri
+    const galleryData = {
+        1: {
+            title: 'Anubis Heykeli - Tapınak Girişi',
+            history: 'Bu heykel, antik Mısır tapınaklarının girişlerinde bulunan Anubis heykellerini temsil eder. Şakal başlı tanrı, ölülerin koruyucusu olarak tapınakları gözetler. Heykeller, siyah renkli taşlardan yapılır ve altın detaylarla süslenir, tanrının ilahi doğasını yansıtır.',
+            symbol: 'Anubis heykeli, koruma ve rehberlik sembolizmini taşır. Şakal başı, keskin görüşü ve gece görüşünü temsil eder. Tapınak girişlerindeki bu heykeller, ziyaretçileri karşılar ve kutsal alanın korunmasını sağlar.'
         },
-        technology: {
-            title: 'Технология производства',
-            icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-            content: '<p>ЦАТИ изготавливает продукцию из панелей с <strong>алюминиевым сотовым наполнителем</strong> и различными обшивками. Внешние стороны панелей имеют защитно-декоративное покрытие, обеспечивающее свойства долговечности, коррозионной стойкости, фактуры, лёгкости, теплоизоляции, жёсткости и прочности.</p><p>Компания использует современные методы формования панелей из полимерных композитных материалов (ПКМ) прессовым и вакуумным способами. Технология позволяет изготавливать панели с точными геометрическими параметрами и требуемыми характеристиками прочности и веса.</p><p>Применение трёхслойных сотовых панелей обеспечивает оптимальное соотношение веса и прочности, что критически важно для авиационной и космической отрасли. Панели ПАНПОЛ и ПАНТИН производятся с использованием качественных материалов и проходят строгий контроль качества на всех этапах производства.</p><p>Мы используем <strong>арамидный сотовый заполнитель</strong> для создания высокопрочных и лёгких конструкций. Формование панелей из ПКМ осуществляется как прессовым, так и вакуумным способами, что позволяет изготавливать изделия различной конфигурации и сложности. Разработка конструкторской документации выполняется нашими специалистами с учётом всех требований заказчика и стандартов отрасли.</p>'
+        2: {
+            title: 'Mısır Duvar Freskleri',
+            history: 'Antik Mısır tapınaklarının duvarlarında bulunan freskler, tanrıların hikayelerini ve ritüelleri tasvir eder. Bu sanat eserleri, binlerce yıl boyunca korunmuştur. Fresklerde Anubis, genellikle mumyalama sürecinde veya kalbin tartılması ritüelinde tasvir edilir.',
+            symbol: 'Freskler, antik Mısır'ın dini inançlarını ve kültürel değerlerini yansıtır. Her sembol, derin bir anlam taşır. Bu sahneler, Anubis'in ölülerin koruyucusu ve adaletin gözlemcisi olarak rolünü gösterir.'
         },
-        certification: {
-            title: 'Сертификация и качество',
-            icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-            content: '<p>Выпускаемая ЦАТИ продукция <strong>сертифицирована в РФ</strong>. Компания осуществляет лицензированную деятельность в соответствии с полученными лицензиями, сертификатами и допусками регулирующих органов:</p><ul class="modal__list"><li>Министерство транспорта РФ</li><li>ФАВТ (Федеральное агентство воздушного транспорта)</li><li>РОСКОСМОС — лицензия на создание космических аппаратов, кораблей и станций, а также разработку и изготовление панелей солнечных батарей</li><li>МИНПРОМТОРГ РОССИИ</li><li>УФСБ России</li><li>Институт испытаний и сертификации вооружений и военной техники («Военный Стандарт»)</li></ul><p>Система управления качеством производства ООО «ЦАТИ» соответствует <strong>ГОСТ РИСО 9001-2015</strong> и <strong>ГОСТ РВ 0015-002-2020</strong>. Все производственные процессы проходят строгий контроль качества, продукция соответствует требованиям международных стандартов и допускам для работы с авиационной, космической и оборонной отраслью.</p><p>Наличие всех необходимых лицензий и сертификатов позволяет компании работать с оборонными заказами, выполнять специальные задачи для государственных структур и обеспечивать поставки продукции для критически важных объектов авиационной и космической инфраструктуры.</p>'
+        3: {
+            title: 'Anubis Hiyeroglifleri',
+            history: 'Hiyeroglif yazı, antik Mısır'ın en önemli kültürel miraslarından biridir. Anubis, bu yazılarda sıklıkla tasvir edilir ve ölülerin koruyucusu olarak anılır. Anubis'in hiyeroglif sembolü, şakal başlı bir figürdür ve genellikle "Anpu" olarak yazılır.',
+            symbol: 'Hiyerogliflerde Anubis, şakal başlı bir figür olarak gösterilir. Bu sembol, onun tanrısal kimliğini ve görevlerini ifade eder. Hiyeroglifler, Anubis'in antik Mısır inanç sistemindeki merkezi rolünü gösterir.'
         }
     };
 
-    function openModal(type) {
-        if (!modalData[type]) return;
+    if (galleryItemsForModal.length > 0) {
+        galleryItemsForModal.forEach(item => {
+            item.addEventListener('click', function() {
+                const galleryId = this.getAttribute('data-gallery');
+                const data = galleryData[galleryId];
 
-        const data = modalData[type];
-        
-        // Устанавливаем содержимое
-        if (modalTitle) modalTitle.textContent = data.title;
-        if (modalIcon) modalIcon.innerHTML = data.icon;
-        if (modalBody) modalBody.innerHTML = '<div class="modal__text">' + data.content + '</div>';
+                if (galleryModal && data) {
+                    const modalImage = document.getElementById('galleryModalImage');
+                    const modalTitle = document.getElementById('galleryModalTitle');
+                    const modalHistory = document.getElementById('galleryModalHistory');
+                    const modalSymbol = document.getElementById('galleryModalSymbol');
 
-        // Показываем модалку
-        modal.classList.add('active');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-    }
+                    if (modalImage) {
+                        const placeholder = this.querySelector('.gallery-placeholder');
+                        if (placeholder) {
+                            modalImage.textContent = placeholder.textContent;
+                        }
+                    }
+                    if (modalTitle) modalTitle.textContent = data.title;
+                    if (modalHistory) modalHistory.textContent = data.history;
+                    if (modalSymbol) modalSymbol.textContent = data.symbol;
 
-    function closeModal() {
-        modal.classList.remove('active');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-    }
-
-    // Обработчики для карточек
-    if (aboutCards.length > 0) {
-        aboutCards.forEach(function(card) {
-            card.addEventListener('click', function() {
-                const modalType = this.getAttribute('data-modal');
-                if (modalType) {
-                    openModal(modalType);
+                    galleryModal.classList.add('active');
                 }
             });
         });
     }
 
-    // Закрытие по клику на overlay
-    if (modalOverlay) {
-        modalOverlay.addEventListener('click', closeModal);
-    }
+    // Mini galeri görselleri (ana sayfa)
+    const miniGalleryItems = document.querySelectorAll('.gallery-item[data-image]');
+    const imageModal = document.getElementById('imageModal');
 
-    // Закрытие по кнопке
-    if (modalClose) {
-        modalClose.addEventListener('click', closeModal);
-    }
-
-    // Закрытие по клавише ESC
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
+    const miniGalleryData = {
+        4: {
+            title: 'Tapınak Kabartmaları',
+            desc: 'Antik Mısır tapınaklarının duvarlarındaki kabartmalar, tanrıların hikayelerini ve ritüelleri tasvir eder.'
+        },
+        5: {
+            title: 'Anubis Rölyefi',
+            desc: 'Şakal başlı Anubis, ölülerin koruyucusu ve rehberi olarak rölyeflerde sıklıkla tasvir edilir.'
+        },
+        6: {
+            title: 'Kutsal Şakal Sembolü',
+            desc: 'Şakal, Anubis'in en önemli sembolüdür ve koruma, rehberlik ve adalet anlamlarını taşır.'
         }
-    });
+    };
 
-    // Предотвращаем закрытие при клике на содержимое модалки
-    const modalContent = modal.querySelector('.modal__content');
-    if (modalContent) {
-        modalContent.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    }
-})();
+    if (miniGalleryItems.length > 0) {
+        miniGalleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const imageId = this.getAttribute('data-image');
+                const data = miniGalleryData[imageId];
 
-// ============================================
-// RESUME MODAL FUNCTIONALITY
-// ============================================
+                if (imageModal && data) {
+                    const modalImage = document.getElementById('modalImage');
+                    const modalTitle = document.getElementById('modalImageTitle');
+                    const modalDesc = document.getElementById('modalImageDesc');
 
-(function() {
-    'use strict';
+                    if (modalImage) {
+                        const placeholder = this.querySelector('.gallery-placeholder');
+                        if (placeholder) {
+                            modalImage.textContent = placeholder.textContent;
+                        }
+                    }
+                    if (modalTitle) modalTitle.textContent = data.title;
+                    if (modalDesc) modalDesc.textContent = data.desc;
 
-    const resumeModal = document.getElementById('resumeModal');
-    if (!resumeModal) return;
-
-    const openButton = document.getElementById('openResumeModal');
-    const closeButton = document.getElementById('resumeModalClose');
-    const overlay = resumeModal.querySelector('.modal__overlay');
-
-    function openModal() {
-        resumeModal.classList.add('active');
-        resumeModal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        resumeModal.classList.remove('active');
-        resumeModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-    }
-
-    if (openButton) {
-        openButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            openModal();
+                    imageModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
         });
     }
 
-    if (closeButton) {
-        closeButton.addEventListener('click', closeModal);
-    }
-
-    if (overlay) {
-        overlay.addEventListener('click', closeModal);
-    }
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
-            closeModal();
+    // Ritüel görselleri modal
+    const ritualImageItems = document.querySelectorAll('.ritual-image-item[data-image]');
+    const ritualImageData = {
+        ritual1: {
+            title: 'Terazi - Tapınak Sanatı',
+            desc: 'Kalbin tartılması ritüelini tasvir eden tapınak sanatı. Anubis, teraziyi yönetir ve adaleti sağlar.'
+        },
+        ritual2: {
+            title: 'Altın Maske',
+            desc: 'Antik Mısır'ın altın maskeleri, ölüm sonrası yaşam ve yeniden doğuş sembolizmini taşır.'
         }
-    });
+    };
 
-    // Предотвращаем закрытие при клике на содержимое модалки
-    const modalContent = resumeModal.querySelector('.modal__content');
-    if (modalContent) {
-        modalContent.addEventListener('click', function(e) {
-            e.stopPropagation();
+    if (ritualImageItems.length > 0) {
+        ritualImageItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const imageId = this.getAttribute('data-image');
+                const data = ritualImageData[imageId];
+
+                if (imageModal && data) {
+                    const modalImage = document.getElementById('modalImage');
+                    const modalTitle = document.getElementById('modalImageTitle');
+                    const modalDesc = document.getElementById('modalImageDesc');
+
+                    if (modalImage) {
+                        const placeholder = this.querySelector('.image-placeholder');
+                        if (placeholder) {
+                            modalImage.textContent = placeholder.textContent;
+                        }
+                    }
+                    if (modalTitle) modalTitle.textContent = data.title;
+                    if (modalDesc) modalDesc.textContent = data.desc;
+
+                    imageModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
         });
     }
-})();
+
+    // İletişim formu
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            // Form validasyonu burada yapılabilir
+            // Şu anda form doğrudan tesekkurler.html'e yönlendiriyor
+        });
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href.length > 1) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+});

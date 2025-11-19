@@ -1,134 +1,36 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Anubis: Antik Mısır'ın Geçit Bekçisi. Ölülerin rehberi ve kalbin tartılması geleneğinin koruyucusu hakkında bilgiler.">
-    <meta name="keywords" content="Anubis, Mısır tanrısı, antik Mısır, ölüler tanrısı, Duat, kalbin tartılması">
-    <title>Anubis: Antik Mısır'ın Geçit Bekçisi</title>
-    <link rel="icon" type="image/jpeg" href="images/favicon.jpeg">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a href="index.html" class="logo">
-                        <span class="logo-icon"></span>
-                        <span class="logo-text">Anubis</span>
-                    </a>
-                    <button class="mobile-menu-toggle" aria-label="Menüyü aç/kapat" type="button" onclick="toggleMobileMenu(event)">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <ul class="nav-menu">
-                        <li><a href="index.html" class="active">Ana Sayfa</a></li>
-                        <li><a href="hakkimizda.html">Hakkında Anubis</a></li>
-                        <li><a href="rituel.html">Ritüeller ve İnançlar</a></li>
-                        <li><a href="galeri.html">Galeri</a></li>
-                        <li><a href="iletisim.html">İletişim</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+<?php
+/**
+ * Универсальный футер сайта с автоматическим определением домена
+ */
 
-    <main>
-        <!-- Hero Bölümü -->
-        <section class="hero">
-            <div class="hero-overlay"></div>
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-image-wrapper">
-                        <img src="images/hero.png" alt="Anubis" class="hero-image">
-                    </div>
-                    <div class="hero-text">
-                        <h1 class="hero-title">Anubis: Antik Mısır'ın Geçit Bekçisi</h1>
-                        <p class="hero-subtitle">Ölülerin rehberi ve kalbin tartılması geleneğinin koruyucusu. Antik Mısır'ın en gizemli tanrılarından biri olan Anubis, geçitlerin bekçisi ve adaletin gözlemcisidir.</p>
-                        <div class="hero-cta-section">
-                            <p class="hero-facts-text">550 fakt ve sırrı Anubis hakkında öğrenebilirsiniz!</p>
-                            <a href="iletisim.html" class="btn btn-primary">Öğren</a>
-                        </div>
-                        <a href="#roles" class="btn btn-secondary">Keşfet</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+// Подключаем config.php если еще не подключен
+if (!function_exists('displayDomain')) {
+    $config_path = __DIR__ . '/config.php';
+    if (file_exists($config_path)) {
+        require_once $config_path;
+    }
+}
 
-        <!-- Anubis Tarih Araştırması Oyunu -->
-        <section class="quiz-launch-section">
-            <div class="container">
-                <div class="quiz-launch-wrapper">
-                    <h2 class="quiz-launch-title">Anubis Tarih Araştırması</h2>
-                    <p class="quiz-launch-subtitle">Antik Mısır'ın en gizemli tanrısı hakkındaki bilginizi test edin! Anubis'in tarihini, sembollerini ve mitolojisini keşfedin.</p>
-                    <p class="quiz-launch-description">22 soruluk interaktif bilgi yarışmasında Anubis hakkında ne kadar bilgili olduğunuzu öğrenin. Her doğru cevap size puan kazandıracak!</p>
-                    <a href="quiz.html" class="btn btn-primary quiz-launch-btn">Araştırmaya Başla</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Anubis'in Rolü -->
-        <section class="roles-section" id="roles">
-            <div class="container">
-                <h2 class="section-title">Anubis'in Rolü</h2>
-                <div class="roles-grid">
-                    <div class="role-card">
-                        <img src="images/1.jpg" alt="Ölülerin Rehberi" class="role-icon">
-                        <h3>Ölülerin Rehberi</h3>
-                        <p>Anubis, ölülerin ruhlarını Duat'a (ölüler dünyası) güvenli bir şekilde rehberlik eden tanrıdır. Onun koruması altında, ruhlar yeni yaşamlarına geçiş yapabilirler.</p>
-                    </div>
-                    <div class="role-card">
-                        <img src="images/2.jpg" alt="Kalbin Tartılması Geleneği" class="role-icon">
-                        <h3>Kalbin Tartılması Geleneği</h3>
-                        <p>Anubis, ölülerin kalplerini Maat'ın tüyü ile tartarak adaleti sağlar. Bu kutsal ritüel, ruhun ölüm sonrası yaşama geçişinde kritik bir rol oynar.</p>
-                    </div>
-                    <div class="role-card">
-                        <img src="images/3.jpg" alt="Geçişlerin Tanrısı" class="role-icon">
-                        <h3>Geçişlerin Tanrısı</h3>
-                        <p>Her geçişin bekçisi olan Anubis, yaşamdan ölüme, bilinmeyenden bilinene olan tüm yolları korur ve yönetir.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Mini Galeri -->
-        <section class="mini-gallery-section">
-            <div class="container">
-                <h2 class="section-title">Mini Galeri</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-image="4">
-                        <img src="images/4.jpeg" alt="Tapınak Kabartmaları" class="gallery-placeholder">
-                        <p class="gallery-caption">Tapınak Kabartmaları</p>
-                    </div>
-                    <div class="gallery-item" data-image="5">
-                        <img src="images/5.jpeg" alt="Anubis Rölyefi" class="gallery-placeholder">
-                        <p class="gallery-caption">Anubis Rölyefi</p>
-                    </div>
-                    <div class="gallery-item" data-image="6">
-                        <img src="images/6.jpeg" alt="Kutsal Şakal Sembolü" class="gallery-placeholder">
-                        <p class="gallery-caption">Kutsal Şakal Sembolü</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
+$base_path = function_exists('getBasePath') ? getBasePath() : '';
+$current_domain = function_exists('displayDomain') ? displayDomain() : 'localhost';
+?>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Anubis</h3>
                     <p>Antik Mısır'ın geçit bekçisi</p>
+                    <p style="font-size: 0.9rem; color: var(--text-gray); margin-top: 0.5rem;">
+                        <?php echo $current_domain; ?>
+                    </p>
                 </div>
                 <div class="footer-section">
                     <h4>Sayfalar</h4>
                     <ul>
-                        <li><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="hakkimizda.html">Hakkında Anubis</a></li>
-                        <li><a href="rituel.html">Ritüeller</a></li>
-                        <li><a href="galeri.html">Galeri</a></li>
+                        <li><a href="<?php echo $base_path; ?>/index.php">Ana Sayfa</a></li>
+                        <li><a href="<?php echo $base_path; ?>/hakkimizda.php">Hakkında Anubis</a></li>
+                        <li><a href="<?php echo $base_path; ?>/rituel.php">Ritüeller</a></li>
+                        <li><a href="<?php echo $base_path; ?>/galeri.php">Galeri</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -141,11 +43,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Anubis. Tüm hakları saklıdır.</p>
+                <p>&copy; 2024 Anubis - <?php echo $current_domain; ?>. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>
-
 
     <!-- Galeri Modal -->
     <div id="imageModal" class="modal">
@@ -277,7 +178,7 @@
                 
                 <h3>İletişim</h3>
                 <p>Gizlilik politikası hakkında sorularınız veya haklarınızı kullanmak istiyorsanız, lütfen bizimle iletişime geçin:</p>
-                <p><strong>E-posta:</strong> info@anubis.com<br>
+                <p><strong>E-posta:</strong> info@<?php echo $current_domain; ?><br>
                 <strong>Adres:</strong> Türkiye, İstanbul, Sultanahmet Mah., Kabasakal Cd. 7, 2025</p>
                 
                 <h3>Değişiklikler</h3>
