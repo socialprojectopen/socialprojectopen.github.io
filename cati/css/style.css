@@ -1430,6 +1430,9 @@ a {
     border-radius: 4px;
     overflow: hidden;
     transition: box-shadow var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .certificate-card:hover {
@@ -1454,6 +1457,9 @@ a {
 
 .certificate-card__content {
     padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .certificate-card__meta {
@@ -1487,25 +1493,63 @@ a {
     font-size: 0.95rem;
     line-height: 1.6;
     color: var(--color-text-light);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 0;
+}
+
+.certificate-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: var(--spacing-md);
 }
 
 .certificate-card__link {
     display: inline-block;
-    padding: 10px 24px;
+    padding: 8px 16px;
     background-color: var(--color-primary);
     color: var(--color-white);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     border-radius: 4px;
+    text-decoration: none;
     transition: background-color var(--transition);
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .certificate-card__link:hover,
 .certificate-card__link:focus {
     background-color: var(--color-primary-dark);
+}
+
+.certificate-card__source-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border: 1.5px solid var(--color-primary);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all var(--transition);
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.certificate-card__source-link:hover,
+.certificate-card__source-link:focus {
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
 
 /* ============================================
