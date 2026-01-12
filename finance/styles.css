@@ -360,6 +360,9 @@ img {
 /* ========== TRANSFER CALCULATOR ========== */
 .transfer {
   margin: var(--spacing-6xl) 0px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .transfer__wrapper {
@@ -367,12 +370,16 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-2xl);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .transfer__form {
   padding: var(--spacing-2xl);
   border-radius: var(--border-radius-sm);
   background-color: var(--color-background-light);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .transfer__title {
@@ -416,6 +423,8 @@ img {
   background-position: right 12px center;
   background-size: 12px;
   padding-right: 40px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .transfer__select-input:focus {
@@ -437,6 +446,8 @@ img {
   padding: var(--spacing-gap-xs) var(--spacing-gap-sm);
   background-color: var(--color-background);
   border-radius: var(--border-radius-sm);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .transfer__input {
@@ -446,12 +457,16 @@ img {
   font-size: var(--font-size-body);
   color: var(--color-text);
   font-weight: var(--font-weight-medium);
+  min-width: 0;
+  width: 100%;
 }
 
 .transfer__currency-label {
   font-size: var(--font-size-body);
   color: var(--color-text-secondary);
   font-weight: var(--font-weight-medium);
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .transfer__note {
@@ -473,6 +488,8 @@ img {
   padding: var(--spacing-2xl);
   border-radius: var(--border-radius-sm);
   background-color: var(--color-background-light);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .transfer__result-title {
@@ -1172,6 +1189,27 @@ img {
   
   .transfer__form {
     padding: var(--spacing-md);
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .transfer__wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .transfer__select-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .transfer__input-wrapper {
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .transfer__title {
@@ -1182,16 +1220,24 @@ img {
   
   .transfer__inputs {
     gap: var(--spacing-gap-sm);
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .transfer__note,
   .transfer__disclaimer {
     font-size: 12px;
     text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
   .transfer__result {
     padding: var(--spacing-md);
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
   }
   
   .transfer__result-title {
