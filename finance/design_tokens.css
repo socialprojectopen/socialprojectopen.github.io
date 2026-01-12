@@ -1,0 +1,242 @@
+/**
+ * Design Tokens для сайта A7-Agent.ru
+ * Цветовая палитра, типографика и другие дизайн-токены
+ */
+
+:root {
+  /* ========== ЦВЕТА ========== */
+  
+  /* Основные цвета */
+  --color-primary: #F88F35;              /* Оранжевый - основной акцент */
+  --color-primary-hover: #EA8127;        /* Оранжевый при наведении */
+  --color-secondary: #219096;             /* Бирюзовый - вторичный акцент */
+  --color-secondary-light: #CBEEEF;      /* Бирюзовый светлый - фон секций */
+  --color-secondary-very-light: #E9FAFB; /* Бирюзовый очень светлый - hover */
+  
+  /* Фоновые цвета */
+  --color-background: #FFFFFF;            /* Белый - основной фон */
+  --color-background-light: #F7F7F7;     /* Светло-серый - фон карточек */
+  
+  /* Текстовые цвета */
+  --color-text: #2B3233;                 /* Темно-серый - основной текст */
+  --color-text-secondary: #585858;        /* Серый - вторичный текст */
+  --color-text-tertiary: #7F7F7F;        /* Светло-серый - третичный текст */
+  --color-text-inverse: #FFFFFF;         /* Белый - текст на темном фоне */
+  
+  /* Границы */
+  --color-border: #219096;                /* Бирюзовый - границы кнопок */
+  
+  /* Тени */
+  --shadow-primary: 
+    rgba(248, 143, 53, 0) 0px 74px 21px 0px,
+    rgba(248, 143, 53, 0.01) 0px 47px 19px 0px,
+    rgba(248, 143, 53, 0.05) 0px 27px 16px 0px,
+    rgba(248, 143, 53, 0.09) 0px 12px 12px 0px,
+    rgba(248, 143, 53, 0.1) 0px 3px 7px 0px;
+  
+  --shadow-secondary:
+    rgba(33, 144, 150, 0.01) 0px 8px 10px 0px,
+    rgba(33, 144, 150, 0.03) 0px 7px 10px 0px,
+    rgba(33, 144, 150, 0.04) 0px 2px 10px 0px,
+    rgba(33, 144, 150, 0.05) 0px 5px 20px 0px;
+  
+  /* ========== ТИПОГРАФИКА ========== */
+  
+  /* Шрифты */
+  --font-primary: 'Raleway', sans-serif;  /* Для заголовков */
+  --font-body: 'Inter', sans-serif;       /* Для основного текста */
+  
+  /* Размеры шрифтов */
+  --font-size-h1: 50px;                   /* Главный заголовок */
+  --font-size-h1-modal: 36px;             /* H1 в модальных окнах */
+  --font-size-h2: 24px;                    /* Подзаголовки */
+  --font-size-h3: 24px;                   /* Заголовки карточек */
+  --font-size-body: 16px;                  /* Основной текст */
+  --font-size-small: 18px;                 /* Описания в карточках */
+  --font-size-button: 26px;                /* Текст кнопок */
+  --font-size-button-small: 20px;          /* Текст маленьких кнопок */
+  
+  /* Веса шрифтов */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Высота строк */
+  --line-height-tight: 120%;
+  --line-height-normal: 130%;
+  --line-height-relaxed: 150%;
+  
+  /* ========== ОТСТУПЫ ========== */
+  
+  /* Контейнер */
+  --container-max-width: 1320px;
+  --container-padding: 0px 20px;
+  
+  /* Вертикальные отступы */
+  --spacing-xs: 16px;
+  --spacing-sm: 20px;
+  --spacing-md: 30px;
+  --spacing-lg: 40px;
+  --spacing-xl: 50px;
+  --spacing-2xl: 80px;
+  --spacing-3xl: 90px;
+  --spacing-4xl: 100px;
+  --spacing-5xl: 120px;
+  --spacing-6xl: 170px;
+  
+  /* Горизонтальные отступы */
+  --spacing-gap-xs: 12px;
+  --spacing-gap-sm: 16px;
+  --spacing-gap-md: 38px;
+  --spacing-gap-lg: 210px;
+  
+  /* ========== СКРУГЛЕНИЯ ========== */
+  
+  --border-radius-sm: 30px;               /* Карточки, маленькие кнопки */
+  --border-radius-lg: 60px;                /* Большие кнопки, секции */
+  --border-radius-section: 60px 60px 0px 0px; /* Секции с закругленным верхом */
+  
+  /* ========== ПЕРЕХОДЫ ========== */
+  
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+  --transition-slow: 0.4s;
+  
+  /* ========== РАЗМЕРЫ ========== */
+  
+  /* Логотип */
+  --logo-width: 90px;
+  --logo-height: 70px;
+  
+  /* Иконки */
+  --icon-size-sm: 36px;
+  --icon-size-md: 60px;
+  
+  /* Карточки */
+  --card-max-width: 354px;
+  --card-height: 207px;
+  
+  /* Кнопки */
+  --button-padding-sm: 16px 22px;
+  --button-padding-md: 30px 60px;
+  
+  /* ========== SCROLL ========== */
+  
+  --scroll-padding-top: 150px;
+  --scroll-behavior: smooth;
+}
+
+/* ========== КОМПОНЕНТЫ ========== */
+
+/* Основная кнопка */
+.btn-main {
+  padding: var(--button-padding-md);
+  border-radius: var(--border-radius-lg);
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  transition: var(--transition-slow);
+  box-shadow: var(--shadow-primary);
+  border: none;
+}
+
+.btn-main:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Кнопка входа */
+.btn-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-gap-xs);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-button-small);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  padding: var(--button-padding-sm);
+  border: 2px solid var(--color-border);
+  width: fit-content;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: var(--transition-slow);
+  background: transparent;
+}
+
+.btn-header:hover {
+  background: var(--color-secondary-very-light);
+  box-shadow: var(--shadow-secondary);
+}
+
+/* Карточка баннера */
+.card-banner {
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: var(--card-max-width);
+  width: 100%;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-background-light);
+}
+
+/* Карточка преимуществ */
+.card-advantage {
+  padding: 24px 26px;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-background);
+  width: 100%;
+  height: var(--card-height);
+}
+
+/* Секция преимуществ */
+.section-advantages {
+  background-color: var(--color-secondary-light);
+  border-radius: var(--border-radius-section);
+  padding: var(--spacing-xl) 0px var(--spacing-4xl);
+}
+
+/* Контейнер */
+.container {
+  max-width: var(--container-max-width);
+  padding: var(--container-padding);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Типографика */
+h1 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+}
+
+h2 {
+  font-family: var(--font-body);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
