@@ -1,0 +1,1329 @@
+/**
+ * Основные стили сайта UBS Transit
+ * Доставка сборных грузов по России и странам СНГ
+ */
+
+:root {
+  /* Основные цвета */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-dark-gray: #212529;
+  --color-button-gray: #41464B;
+  --color-light-gray: #F5F5F5;
+  --color-medium-gray: #696969;
+  --color-text-gray: #666666;
+  --color-dark-text: #333333;
+  --color-light-border: #EEEEEE;
+  --color-disabled-gray: #CCCCCC;
+  
+  /* Акцентные цвета */
+  --color-orange: #ED7A00;
+  --color-green: #28A745;
+  
+  /* Прозрачности */
+  --overlay-dark: rgba(0, 0, 0, 0.47);
+  --card-background: rgba(245, 245, 245, 0.8);
+  --text-secondary: rgba(0, 0, 0, 0.58);
+  
+  /* Шрифты */
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
+  
+  /* Размеры */
+  --font-size-body: 16px;
+  --font-size-h1: 36.54px;
+  --font-size-h2: calc(1.325rem + 0.9vw);
+  --font-size-h3: calc(1.3rem + 0.6vw);
+  --spacing-section: 100px;
+  --spacing-hero: 200px;
+  --radius-small: 6px;
+  --radius-medium: 10px;
+  --shadow-card: rgba(0, 0, 0, 0.1) 0px 2px 5px 0px;
+  
+  /* Анимации */
+  --animation-duration: 0.6s;
+  --animation-delay: 0.1s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Анимации плавного появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Классы для анимации */
+.fade-in {
+  animation: fadeIn var(--animation-duration) ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in-up {
+  animation: fadeInUp var(--animation-duration) ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in-down {
+  animation: fadeInDown var(--animation-duration) ease-out forwards;
+  opacity: 0;
+}
+
+/* Задержки для последовательного появления */
+.fade-in-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.fade-in-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.fade-in-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.fade-in-delay-4 {
+  animation-delay: 0.4s;
+}
+
+.fade-in-delay-5 {
+  animation-delay: 0.5s;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body);
+  line-height: 1.5;
+  color: var(--color-dark-gray);
+  background-color: var(--color-white);
+}
+
+/* Типография */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-dark-gray);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-dark-gray);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-button-gray);
+}
+
+/* Контейнер */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Шапка сайта */
+.header {
+  background-color: var(--color-white);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo {
+  font-family: var(--font-secondary);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-dark-gray);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: var(--color-button-gray);
+}
+
+/* Бургер-меню */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.burger-menu span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-dark-gray);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.burger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-dark-gray);
+  transition: color 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--color-button-gray);
+  font-weight: 500;
+}
+
+.phone {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-dark-gray);
+}
+
+/* Hero секция */
+.hero {
+  background: linear-gradient(135deg, var(--overlay-dark) 0%, var(--overlay-dark) 100%),
+              url('../image/hero.webp') center/cover no-repeat;
+  background-color: var(--overlay-dark);
+  padding: var(--spacing-hero) 0;
+  color: var(--color-white);
+  text-align: center;
+  position: relative;
+}
+
+.hero h1 {
+  color: var(--color-white);
+  margin-bottom: 20px;
+  font-size: 42px;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Форма расчета */
+.calc-form {
+  background-color: var(--color-white);
+  padding: 40px;
+  border-radius: var(--radius-medium);
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-card);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--color-dark-gray);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-light-border);
+  border-radius: var(--radius-small);
+  font-size: 16px;
+  font-family: var(--font-primary);
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-button-gray);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--color-button-gray);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-small);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--font-primary);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: var(--color-dark-text);
+}
+
+.btn:disabled {
+  background-color: var(--color-disabled-gray);
+  color: var(--color-text-gray);
+  cursor: not-allowed;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Секции */
+.section {
+  padding: var(--spacing-section) 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.section-title p {
+  font-size: 18px;
+  color: var(--color-text-gray);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Карточки */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background-color: var(--color-white);
+  padding: 30px;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-card);
+  border: 0.8px solid var(--color-light-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.service-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.service-card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: var(--color-light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-card-image img {
+  transform: scale(1.05);
+}
+
+.service-card-content {
+  padding: 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card-content h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: var(--color-dark-gray);
+}
+
+.service-card-content p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* Футер */
+.footer {
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+  padding: 50px 0 30px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3 {
+  color: var(--color-white);
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.footer-section p,
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+}
+
+.footer-section a:hover {
+  color: var(--color-white);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Услуги список */
+.services-list {
+  list-style: none;
+  padding: 0;
+}
+
+.services-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-light-border);
+  position: relative;
+  padding-left: 25px;
+}
+
+.services-list li:before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-button-gray);
+}
+
+.services-list li:last-child {
+  border-bottom: none;
+}
+
+/* Отзывы */
+.review-card {
+  background-color: var(--color-white);
+  padding: 30px;
+  border-radius: var(--radius-medium);
+  border: 0.8px solid var(--color-light-border);
+  margin-bottom: 30px;
+}
+
+.review-author {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--color-dark-gray);
+}
+
+.review-text {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* Преимущества */
+.advantage-item {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.advantage-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-button-gray);
+  min-width: 60px;
+  font-family: var(--font-secondary);
+}
+
+.advantage-content h3 {
+  margin-bottom: 10px;
+}
+
+.advantage-content p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Статистика */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 30px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-card);
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-button-gray);
+  font-family: var(--font-secondary);
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* Аккордеон */
+.accordion {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-border);
+  border-radius: var(--radius-small);
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.accordion-item:hover {
+  box-shadow: var(--shadow-card);
+}
+
+.accordion-header {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-white);
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.accordion-header:hover {
+  background-color: var(--color-light-gray);
+}
+
+.accordion-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+}
+
+.accordion-icon {
+  font-size: 20px;
+  color: var(--color-button-gray);
+  transition: transform 0.3s ease;
+  font-weight: bold;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 20px;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 1000px;
+  padding: 20px;
+}
+
+.accordion-content p {
+  margin-bottom: 10px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.accordion-content ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.accordion-content li {
+  margin-bottom: 8px;
+}
+
+/* Этапы работы */
+.work-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.work-step {
+  position: relative;
+  padding: 30px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-step:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.step-number {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: var(--color-button-gray);
+  color: var(--color-white);
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: var(--font-secondary);
+}
+
+.work-step h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.work-step p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* География доставки */
+.geography-section {
+  margin-top: 50px;
+}
+
+.country-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.country-tab {
+  padding: 10px 20px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-light-border);
+  border-radius: var(--radius-small);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  color: var(--color-dark-gray);
+}
+
+.country-tab:hover {
+  border-color: var(--color-button-gray);
+  background-color: var(--color-light-gray);
+}
+
+.country-tab.active {
+  background-color: var(--color-button-gray);
+  color: var(--color-white);
+  border-color: var(--color-button-gray);
+}
+
+.country-content {
+  display: none;
+  background-color: var(--color-white);
+  padding: 30px;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-card);
+}
+
+.country-content.active {
+  display: block;
+}
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.city-item {
+  padding: 10px 15px;
+  background-color: var(--color-light-gray);
+  border-radius: var(--radius-small);
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-dark-gray);
+}
+
+/* Типы грузов */
+.cargo-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.cargo-type-card {
+  background-color: var(--color-white);
+  padding: 25px;
+  border-radius: var(--radius-medium);
+  border: 1px solid var(--color-light-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cargo-type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+}
+
+.cargo-type-card h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: var(--color-dark-gray);
+}
+
+.cargo-type-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cargo-type-card li {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.cargo-type-card li:before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-button-gray);
+}
+
+/* Партнеры */
+.partners-section {
+  margin: 50px 0;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.partner-card {
+  background-color: var(--color-white);
+  padding: 20px;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-light-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 150px;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.partner-card img {
+  max-width: 100%;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.partner-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Контакты */
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.contact-item {
+  padding: 30px;
+  background-color: var(--color-light-gray);
+  border-radius: var(--radius-medium);
+}
+
+.contact-item h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.contact-item p {
+  color: var(--color-dark-gray);
+  line-height: 1.8;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  :root {
+    --font-size-h1: 28px;
+    --spacing-section: 50px;
+    --spacing-hero: 100px;
+  }
+  
+  body {
+    text-align: center;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .header-content {
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: flex-start;
+  }
+  
+  .logo {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .burger-menu {
+    display: flex;
+    order: 2;
+  }
+  
+  .phone {
+    order: 3;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  .nav-menu {
+    display: none;
+    width: 100%;
+    order: 4;
+    margin-top: 15px;
+  }
+  
+  .nav-menu.active {
+    display: block;
+  }
+  
+  .nav {
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-small);
+    padding: 15px 0;
+  }
+  
+  .nav li {
+    border-bottom: 1px solid var(--color-light-border);
+  }
+  
+  .nav li:last-child {
+    border-bottom: none;
+  }
+  
+  .nav a {
+    display: block;
+    padding: 12px 20px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  .hero p {
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .section-title {
+    text-align: center;
+  }
+  
+  .section-title h2 {
+    text-align: center;
+  }
+  
+  .section-title p {
+    text-align: center;
+  }
+  
+  .calc-form {
+    padding: 25px;
+    margin: 0 auto;
+  }
+  
+  .cards {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .card {
+    text-align: center;
+  }
+  
+  .card h3 {
+    text-align: center;
+  }
+  
+  .card p {
+    text-align: center;
+  }
+  
+  .service-card {
+    text-align: center;
+  }
+  
+  .service-card-content {
+    text-align: center;
+  }
+  
+  .service-card-content h3 {
+    text-align: center;
+  }
+  
+  .service-card-content p {
+    text-align: center;
+  }
+  
+  .advantage-item {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .advantage-number {
+    font-size: 36px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .advantage-content {
+    text-align: center;
+  }
+  
+  .advantage-content h3 {
+    text-align: center;
+  }
+  
+  .advantage-content p {
+    text-align: center;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .footer-section h3 {
+    text-align: center;
+  }
+  
+  .footer-section p {
+    text-align: center;
+  }
+  
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .stat-number {
+    font-size: 36px;
+  }
+  
+  .work-steps {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .work-step {
+    text-align: center;
+  }
+  
+  .work-step h3 {
+    text-align: center;
+  }
+  
+  .work-step p {
+    text-align: center;
+  }
+  
+  .cargo-types {
+    grid-template-columns: 1fr;
+  }
+  
+  .cargo-type-card {
+    text-align: center;
+  }
+  
+  .cargo-type-card h4 {
+    text-align: center;
+  }
+  
+  .cargo-type-card ul {
+    text-align: left;
+    display: inline-block;
+  }
+  
+  .cities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .country-tabs {
+    flex-direction: column;
+  }
+  
+  .country-tab {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .country-content {
+    text-align: center;
+  }
+  
+  .country-content h3 {
+    text-align: center;
+  }
+  
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .partner-card {
+    min-height: 120px;
+    padding: 15px;
+  }
+  
+  .partner-card img {
+    max-height: 80px;
+  }
+  
+  .review-card {
+    text-align: center;
+  }
+  
+  .review-author {
+    text-align: center;
+  }
+  
+  .review-text {
+    text-align: center;
+  }
+  
+  .contact-info {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .contact-item {
+    text-align: center;
+  }
+  
+  .contact-item h3 {
+    text-align: center;
+  }
+  
+  .contact-item p {
+    text-align: center;
+  }
+  
+  .services-list {
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .services-list li {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .partner-card {
+    min-height: 100px;
+    padding: 10px;
+  }
+  
+  .partner-card img {
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+    text-align: center;
+  }
+  
+  .calc-form {
+    padding: 20px;
+    margin: 0 auto;
+  }
+  
+  .section {
+    padding: 40px 0;
+  }
+  
+  .section-title {
+    text-align: center;
+  }
+  
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .cities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .work-steps {
+    text-align: center;
+  }
+  
+  .cargo-types {
+    text-align: center;
+  }
+  
+  .advantage-item {
+    text-align: center;
+  }
+  
+  .advantage-content {
+    text-align: center;
+  }
+  
+  /* О компании - адаптивность для flex контейнеров */
+  .about-company-wrapper {
+    flex-direction: column !important;
+    text-align: center;
+  }
+  
+  .about-company-text {
+    order: 1;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .about-company-text h2 {
+    text-align: center;
+  }
+  
+  .about-company-text p {
+    text-align: center;
+  }
+  
+  .about-company-text .services-list {
+    text-align: left;
+    display: inline-block;
+  }
+  
+  .about-company-image {
+    order: 2;
+    position: static !important;
+    width: 100%;
+    margin: 30px 0 !important;
+    flex: none !important;
+  }
+  
+  .about-company-text-continued {
+    order: 3;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .about-company-text-continued h2 {
+    text-align: center;
+  }
+  
+  .about-company-text-continued p {
+    text-align: center;
+  }
+  
+  .about-company-text-continued .services-list {
+    text-align: left;
+    display: inline-block;
+  }
+}

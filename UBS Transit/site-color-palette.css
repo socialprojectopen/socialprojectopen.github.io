@@ -1,0 +1,216 @@
+/**
+ * Цветовая палитра и стили сайта tek-kub.ru
+ * Анализ выполнен на основе https://tek-kub.ru/
+ */
+
+:root {
+  /* Основные цвета */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-dark-gray: #212529;        /* rgb(33, 37, 41) - основной текст */
+  --color-button-gray: #41464B;      /* rgb(65, 70, 75) - активные кнопки */
+  --color-light-gray: #F5F5F5;       /* rgb(245, 245, 245) - фон карточек */
+  --color-medium-gray: #696969;      /* rgb(105, 105, 105) */
+  --color-text-gray: #666666;        /* rgb(102, 102, 102) */
+  --color-dark-text: #333333;       /* rgb(51, 51, 51) */
+  --color-light-border: #EEEEEE;    /* rgb(238, 238, 238) */
+  --color-disabled-gray: #CCCCCC;   /* rgb(204, 204, 204) - неактивные кнопки */
+  
+  /* Акцентные цвета */
+  --color-orange: #ED7A00;          /* rgb(237, 122, 0) */
+  --color-green: #28A745;           /* rgb(40, 167, 69) */
+  
+  /* Прозрачности и overlay */
+  --overlay-dark: rgba(0, 0, 0, 0.47);
+  --card-background: rgba(245, 245, 245, 0.8);
+  --text-secondary: rgba(0, 0, 0, 0.58);
+  --text-tertiary: rgba(51, 51, 51, 0.56);
+  
+  /* Шрифты */
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
+  
+  /* Размеры шрифтов */
+  --font-size-body: 16px;
+  --font-size-h1: 36.54px;
+  --font-size-h2: calc(1.325rem + 0.9vw);
+  --font-size-h3: calc(1.3rem + 0.6vw);
+  --font-size-h4: calc(1.275rem + 0.3vw);
+  --font-size-h5: 1.25rem;
+  --font-size-h6: 1rem;
+  
+  /* Отступы */
+  --spacing-section: 100px;
+  --spacing-hero: 200px;
+  --spacing-card: 20px;
+  
+  /* Скругления */
+  --radius-small: 6px;
+  --radius-medium: 10px;
+  --radius-large: 20px;
+  
+  /* Тени */
+  --shadow-card: rgba(0, 0, 0, 0.1) 0px 2px 5px 0px;
+  --shadow-none: none;
+  
+  /* Границы */
+  --border-thin: 0.8px solid;
+  --border-card: 0.8px solid rgb(0, 0, 0);
+}
+
+/* Основные стили текста */
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body);
+  line-height: 24px;
+  color: var(--color-dark-gray);
+  background-color: var(--color-white);
+}
+
+/* Заголовки */
+h1 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  line-height: 43.848px;
+  color: var(--color-white);
+}
+
+h2 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-h2);
+  font-weight: 500;
+  color: var(--color-dark-gray);
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  color: var(--color-dark-gray);
+}
+
+/* Карточки услуг */
+.service-item {
+  background-color: var(--card-background);
+  color: var(--color-black);
+  padding: 15px 20px;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-card);
+  width: 220.7px;
+  border: none;
+}
+
+/* Карточки преимуществ */
+.card {
+  background-color: var(--color-white);
+  color: var(--color-dark-gray);
+  padding: 0;
+  margin: 40px 78.2px 0;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-none);
+  border: var(--border-card);
+  width: 300px;
+}
+
+.card-wrapper {
+  background-color: transparent;
+  padding: var(--spacing-card);
+  border-radius: 0;
+  box-shadow: var(--shadow-none);
+  width: 298.4px;
+}
+
+/* Кнопки */
+.btn-primary,
+button:not(.disabled-button) {
+  background-color: var(--color-button-gray);
+  color: var(--color-white);
+  padding: 10px 12px;
+  border-radius: var(--radius-small);
+  border: none;
+  font-size: var(--font-size-body);
+  font-weight: 400;
+  font-family: var(--font-primary);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-dark-text);
+}
+
+.disabled-button {
+  background-color: var(--color-disabled-gray);
+  color: var(--color-text-gray);
+  padding: 10px 20px;
+  border-radius: var(--radius-small);
+  border: var(--border-thin) var(--color-text-gray);
+  font-size: var(--font-size-body);
+  font-weight: 400;
+  cursor: not-allowed;
+}
+
+/* Формы */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  background-color: var(--color-white);
+  padding: 8px 10px;
+  border-radius: var(--radius-small);
+  color: var(--color-dark-gray);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body);
+  border: 1px solid var(--color-light-border);
+}
+
+/* Секции */
+.section-hero {
+  background-color: var(--overlay-dark);
+  padding: var(--spacing-hero) 0;
+}
+
+.section-company {
+  padding: var(--spacing-section) 0;
+  background-color: transparent;
+}
+
+/* Утилиты */
+.text-white {
+  color: var(--color-white);
+}
+
+.text-dark {
+  color: var(--color-dark-gray);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.bg-light {
+  background-color: var(--color-light-gray);
+}
+
+.bg-overlay {
+  background-color: var(--overlay-dark);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  :root {
+    --font-size-h1: 28px;
+    --spacing-section: 50px;
+    --spacing-hero: 100px;
+  }
+  
+  .service-item {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .card {
+    width: 100%;
+    margin: 20px 0;
+  }
+}

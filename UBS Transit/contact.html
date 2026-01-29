@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - UBS Transit</title>
+    <meta name="description" content="Контактная информация компании UBS Transit. Свяжитесь с нами для заказа доставки сборных грузов.">
+    <link rel="icon" type="image/jpeg" href="image/favic.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="image/favic.jpg">
+    <link rel="apple-touch-icon" href="image/favic.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">UBS Transit</a>
+                <button class="burger-menu" id="burgerMenu" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav-menu" id="navMenu">
+                    <ul class="nav">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="reviews.html">Отзывы</a></li>
+                        <li><a href="advantages.html">Преимущества</a></li>
+                        <li><a href="contact.html" class="active">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="phone">+996 (312) 88-06-66</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Контакты -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h1>Контакты</h1>
+                <p>Свяжитесь с нами для расчета стоимости и оформления заказа</p>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Телефон</h3>
+                    <p style="font-size: 20px; font-weight: 500; margin-top: 15px;">
+                        <a href="tel:+996312880666" style="color: var(--color-dark-gray);">+996 (312) 88-06-66</a>
+                    </p>
+                    <p style="margin-top: 15px; color: var(--text-secondary);">
+                        Звонки принимаются в рабочее время
+                    </p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>Юридический адрес</h3>
+                    <p style="margin-top: 15px; line-height: 1.8;">
+                        Кыргызская Республика, Чуйская область,<br>
+                        Московский район, село АкСуу,<br>
+                        ул. Дружбы, 16B, 720011
+                    </p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>Почтовый адрес</h3>
+                    <p style="margin-top: 15px; line-height: 1.8;">
+                        Кыргызская Республика, Чуйская область,<br>
+                        Московский район, село АкСуу,<br>
+                        ул. Дружбы, 16B, 720011
+                    </p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>Адрес на английском</h3>
+                    <p style="margin-top: 15px; line-height: 1.8;">
+                        16B Druzhby Street,<br>
+                        Ak-Suu Village,<br>
+                        Moskovsky District,<br>
+                        Chuy Region,<br>
+                        Kyrgyz Republic, 720011
+                    </p>
+                </div>
+            </div>
+
+            <!-- Форма обратной связи -->
+            <div style="max-width: 700px; margin: 50px auto 0;" id="contact-form">
+                <div style="background-color: var(--color-white); padding: 40px; border-radius: var(--radius-medium); box-shadow: var(--shadow-card);">
+                    <h2 style="margin-bottom: 30px; text-align: center;">Оставить заявку</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Ваше имя</label>
+                            <input type="text" id="contactName" name="name" placeholder="Введите ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Телефон</label>
+                            <input type="tel" id="contactPhone" name="phone" placeholder="+996 (___) __-__-__" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" name="email" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Сообщение</label>
+                            <textarea id="contactMessage" name="message" rows="5" placeholder="Опишите ваш груз или задайте вопрос" style="width: 100%; padding: 12px; border: 1px solid var(--color-light-border); border-radius: var(--radius-small); font-size: 16px; font-family: var(--font-primary); resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-block">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Дополнительная информация -->
+            <div style="max-width: 900px; margin: 50px auto 0;">
+                <div style="background-color: var(--color-light-gray); padding: 40px; border-radius: var(--radius-medium);">
+                    <h2 style="margin-bottom: 30px;">Реквизиты для оплаты</h2>
+                    <div style="line-height: 2; color: var(--color-dark-gray);">
+                        <p><strong>Полное наименование:</strong><br>
+                        Закрытое акционерное общество «UBS Transit» («ЮуБиЭс Транзит»)</p>
+                        
+                        <p><strong>Сокращенное наименование:</strong><br>
+                        ЗАО «ЮуБиЭс Транзит»</p>
+                        
+                        <p><strong>ИНН:</strong> 02702200810268</p>
+                        
+                        <p><strong>ОКПО:</strong> 24628329</p>
+                        
+                        <p><strong>Регистрационный номер:</strong> 105660-3308-ЗАО</p>
+                        
+                        <p><strong>Расчетный счет:</strong> 1240020001549073 (мультивалютный)</p>
+                        
+                        <p><strong>БИК банка:</strong> 129001</p>
+                        
+                        <p><strong>SWIFT:</strong> FIKBKG22</p>
+                        
+                        <p><strong>Банк:</strong> OJSC FinanceCreditBank</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>UBS Transit</h3>
+                    <p>Профессиональная доставка сборных грузов по России и странам СНГ автотранспортом.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul class="services-list" style="list-style: none; padding: 0;">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="reviews.html">Отзывы</a></li>
+                        <li><a href="advantages.html">Преимущества</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Телефон: +996 (312) 88-06-66</p>
+                    <p>Адрес: Кыргызская Республика, Чуйская область, Московский район, село АкСуу, ул. Дружбы, 16B, 720011</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ЗАО «ЮуБиЭс Транзит». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        // Прокрутка к форме при переходе по якорю
+        window.addEventListener('DOMContentLoaded', function() {
+            if (window.location.hash === '#contact-form') {
+                setTimeout(function() {
+                    const formElement = document.getElementById('contact-form');
+                    if (formElement) {
+                        formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            }
+        });
+        
+        // Обработка формы обратной связи
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо за вашу заявку! Наш менеджер свяжется с вами в ближайшее время.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
