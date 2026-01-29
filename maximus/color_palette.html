@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цветовая палитра сайта g-logistic.ru</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #cc1a1a;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .color-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .color-preview {
+            height: 120px;
+            width: 100%;
+        }
+        
+        .color-info {
+            padding: 15px;
+        }
+        
+        .color-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        
+        .color-value {
+            font-size: 12px;
+            color: #666;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .header-demo {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .top-bar {
+            background: #333333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+        }
+        
+        .logo-area {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eeeeee;
+        }
+        
+        .menu-demo {
+            background: #333333;
+            padding: 0;
+        }
+        
+        .menu-items {
+            display: flex;
+            list-style: none;
+        }
+        
+        .menu-item {
+            padding: 15px 20px;
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .menu-item:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .menu-item.active {
+            background: rgba(204, 26, 26, 0.3);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: #333333;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-items {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Цветовая палитра и оформление сайта g-logistic.ru</h1>
+        
+        <!-- Демонстрация шапки -->
+        <div class="header-demo">
+            <div class="top-bar">
+                <span>Бесплатная горячая линия: <strong>8-800-700-33-13</strong></span>
+                <span>Ru | En | Viber | WhatsApp</span>
+            </div>
+            <div class="logo-area">
+                <strong>ЛОГОТИП</strong>
+            </div>
+            <div class="menu-demo">
+                <button class="mobile-menu-btn">☰ МЕНЮ</button>
+                <ul class="menu-items">
+                    <li class="menu-item">ГЛАВНАЯ</li>
+                    <li class="menu-item">О НАС</li>
+                    <li class="menu-item">УСЛУГИ</li>
+                    <li class="menu-item active">ЗАЯВКА</li>
+                    <li class="menu-item">ПОЛЕЗНОЕ</li>
+                    <li class="menu-item">КОНТАКТЫ</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Акцентные цвета -->
+        <div class="section">
+            <h2 class="section-title">Акцентные цвета (красный)</h2>
+            <div class="color-grid">
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgb(204, 26, 26);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Основной акцент</div>
+                        <div class="color-value">rgb(204, 26, 26)<br>#CC1A1A</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgb(197, 22, 5);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Темно-красный</div>
+                        <div class="color-value">rgb(197, 22, 5)<br>#C51605</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgb(219, 21, 21);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Ярко-красный</div>
+                        <div class="color-value">rgb(219, 21, 21)<br>#DB1515</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Темные цвета -->
+        <div class="section">
+            <h2 class="section-title">Темные цвета</h2>
+            <div class="color-grid">
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgb(51, 51, 51);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Темно-серый</div>
+                        <div class="color-value">rgb(51, 51, 51)<br>#333333</div>
+                        <div style="font-size: 11px; color: #999; margin-top: 5px;">Мобильное меню</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgb(26, 26, 26);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Почти черный</div>
+                        <div class="color-value">rgb(26, 26, 26)<br>#1A1A1A</div>
+                        <div style="font-size: 11px; color: #999; margin-top: 5px;">Текст подменю</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgb(41, 41, 41);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Темно-серый 2</div>
+                        <div class="color-value">rgb(41, 41, 41)<br>#292929</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Светлые цвета -->
+        <div class="section">
+            <h2 class="section-title">Светлые цвета</h2>
+            <div class="color-grid">
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgb(255, 255, 255); border: 1px solid #ddd;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Белый</div>
+                        <div class="color-value">rgb(255, 255, 255)<br>#FFFFFF</div>
+                        <div style="font-size: 11px; color: #999; margin-top: 5px;">Фон страницы</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgb(238, 238, 238);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Светло-серый</div>
+                        <div class="color-value">rgb(238, 238, 238)<br>#EEEEEE</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgb(244, 244, 244);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Очень светло-серый</div>
+                        <div class="color-value">rgb(244, 244, 244)<br>#F4F4F4</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgb(245, 245, 245);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Почти белый</div>
+                        <div class="color-value">rgb(245, 245, 245)<br>#F5F5F5</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgb(240, 240, 240);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Hover фон</div>
+                        <div class="color-value">rgb(240, 240, 240)<br>#F0F0F0</div>
+                        <div style="font-size: 11px; color: #999; margin-top: 5px;">Подменю hover</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Полупрозрачные цвета -->
+        <div class="section">
+            <h2 class="section-title">Полупрозрачные цвета и эффекты</h2>
+            <div class="color-grid">
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgba(0, 0, 0, 0.08);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Разделитель</div>
+                        <div class="color-value">rgba(0, 0, 0, 0.08)</div>
+                        <div style="font-size: 11px; color: #999; margin-top: 5px;">Границы меню</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgba(0, 0, 0, 0.1);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Граница</div>
+                        <div class="color-value">rgba(0, 0, 0, 0.1)</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgba(0, 0, 0, 0.15);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Тень</div>
+                        <div class="color-value">rgba(0, 0, 0, 0.15)</div>
+                        <div style="font-size: 11px; color: #999; margin-top: 5px;">Выпадающее меню</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgba(0, 0, 0, 0.3);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Средняя тень</div>
+                        <div class="color-value">rgba(0, 0, 0, 0.3)</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-preview" style="background: rgba(0, 0, 0, 0.6);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Приглушенный текст</div>
+                        <div class="color-value">rgba(0, 0, 0, 0.6)</div>
+                        <div style="font-size: 11px; color: #999; margin-top: 5px;">Hover подменю</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Типографика -->
+        <div class="section">
+            <h2 class="section-title">Типографика</h2>
+            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                <div style="margin-bottom: 20px;">
+                    <div style="font-size: 20px; font-weight: 600; color: #1a1a1a; margin-bottom: 10px;">Заголовок H1</div>
+                    <div style="font-size: 12px; color: #666;">font-size: 20px, font-weight: 600</div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <div style="font-size: 15px; font-weight: 600; color: #1a1a1a; margin-bottom: 10px;">Пункт подменю</div>
+                    <div style="font-size: 12px; color: #666;">font-size: 15px, font-weight: 600</div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <div style="font-size: 14px; font-weight: 600; text-transform: uppercase; color: #ffffff; background: #333333; padding: 10px; margin-bottom: 10px;">ПУНКТ МЕНЮ</div>
+                    <div style="font-size: 12px; color: #666;">font-size: 14px, font-weight: 600, text-transform: uppercase</div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <div style="font-size: 12px; color: #1a1a1a; margin-bottom: 10px;">Обычный текст</div>
+                    <div style="font-size: 12px; color: #666;">font-size: 12px, font-weight: 400</div>
+                </div>
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
+                    <strong>Шрифты:</strong><br>
+                    Основной: Arial, Helvetica, sans-serif<br>
+                    Меню: "Open Sans", sans-serif
+                </div>
+            </div>
+        </div>
+        
+        <!-- Мобильное меню -->
+        <div class="section">
+            <h2 class="section-title">Мобильное меню</h2>
+            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                <div style="background: #333333; color: white; padding: 15px 20px; font-size: 17px; margin-bottom: 10px;">
+                    ☰ Кнопка мобильного меню
+                </div>
+                <div style="font-size: 12px; color: #666;">
+                    <strong>Стили:</strong><br>
+                    background: rgb(51, 51, 51)<br>
+                    color: rgb(255, 255, 255)<br>
+                    font-size: 17px<br>
+                    padding: 10px 15px<br>
+                    min-height: 50px
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
