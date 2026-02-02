@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная — ОсОО «ЮуБиЭс Транзит» | Реклама на бортах</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">UBS Transit</a>
+        <nav class="nav">
+          <a href="index.html">Главная</a>
+          <a href="about.html">О нас</a>
+          <a href="services.html">Услуги</a>
+          <a href="contacts.html">Контакты</a>
+          <a href="tel:+996312880666" class="header-phone desktop">+996 (312) 88-06-66</a>
+        </nav>
+        <a href="tel:+996312880666" class="header-phone phone-mobile">+996 (312) 88-06-66</a>
+        <button type="button" class="burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="overlay" aria-hidden="true"></div>
+  <nav class="nav-mobile" aria-label="Мобильное меню">
+    <a href="index.html">Главная</a>
+    <a href="about.html">О нас</a>
+    <a href="services.html">Услуги</a>
+    <a href="contacts.html">Контакты</a>
+    <a href="tel:+996312880666">+996 (312) 88-06-66</a>
+  </nav>
+
+  <main class="main">
+    <!-- Hero: фон — картинка без блюра, одна карточка с текстом -->
+    <section class="hero-cards">
+      <div class="hero-cards__bg" aria-hidden="true">
+        <img src="image/heroglavnay.png" alt="" class="hero-cards__bg-img">
+      </div>
+      <div class="container hero-cards__container">
+        <div class="hero-card hero-card--image hero-card--image-mobile">
+          <img src="image/heroglavnay.png" alt="Реклама на бортах" class="hero-card__img">
+        </div>
+        <div class="hero-card hero-card--text">
+          <h1 class="hero-card__title">Реклама на бортах наших автомобилей</h1>
+          <p class="hero-card__text">Размещаем вашу рекламу на транспорте, который занимается автодоставкой сборных грузов по России и СНГ. Ваш бренд увидит вся трасса.</p>
+          <div>
+            <a href="services.html" class="btn btn-primary">Услуги и цены</a>
+            <a href="contacts.html" class="btn btn-outline">Связаться с нами</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Наши услуги -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Наши услуги</h2>
+        <p class="section-subtitle">Мы размещаем рекламу на бортах всего автопарка: не только на Газелях, но и на фурах, тентованных грузовиках и другом коммерческом транспорте. Автодоставка сборных грузов по России и СНГ.</p>
+
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card__img">
+              <img src="image/arenda%20borta.jpg" alt="Аренда борта">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Аренда борта</h3>
+              <p class="card__text">Размещение рекламы на бортах грузовиков разных категорий — от малых до фур и тентованных полуприцепов. Минимальный срок — 6 месяцев.</p>
+              <button type="button" class="card__btn" data-modal-open="modal-service-1">Подробнее</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__img">
+              <img src="image/reklama%20na%20gruzovom.jpg" alt="Реклама на грузовом транспорте">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Реклама на грузовом транспорте</h3>
+              <p class="card__text">Рекламный тент вместо стандартного (в т.ч. на Газель и другой коммерческий транспорт). В стоимость входят аренда кузова, изготовление тента, монтаж и дизайн.</p>
+              <button type="button" class="card__btn" data-modal-open="modal-service-3">Подробнее</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__img">
+              <img src="image/gotovie%20pakety.jpg" alt="Готовые пакеты">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Готовые пакеты</h3>
+              <p class="card__text">Пакетные предложения на 1, 5, 10 или 20 грузовиков на срок 6 или 12 месяцев.</p>
+              <button type="button" class="card__btn" data-modal-open="modal-service-4">Подробнее</button>
+            </div>
+          </article>
+        </div>
+
+        <p style="text-align: center; margin-top: 1.5rem;">
+          <a href="services.html" class="btn btn-primary">Все услуги и цены</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Почему мы -->
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="section-title">Почему мы</h2>
+        <p class="section-subtitle">Наш транспорт регулярно курсирует по маршрутам России и СНГ — ваша реклама работает на всю трассу.</p>
+        <div class="advantages advantages--cards">
+          <div class="advantage-card">
+            <h3 class="advantage-card__title">Маршруты по России и СНГ</h3>
+            <p class="advantage-card__text">Наши грузовики занимаются автодоставкой сборных грузов по России и странам СНГ. Реклама на бортах видна тысячам водителей и пассажиров на трассах и в населённых пунктах по всему маршруту.</p>
+          </div>
+          <div class="advantage-card">
+            <h3 class="advantage-card__title">Монтаж на борта</h3>
+            <p class="advantage-card__text">Размещение вашей рекламы на бортах и монтаж рекламных материалов. Рекламные материалы вы предоставляете или заказываете отдельно. Стоимость складывается из аренды борта на выбранный срок.</p>
+          </div>
+          <div class="advantage-card">
+            <h3 class="advantage-card__title">Сроки от 6 месяцев</h3>
+            <p class="advantage-card__text">Минимальный срок размещения на бортах — 6 месяцев. Готовые пакеты на 6 и 12 месяцев для одного или нескольких грузовиков.</p>
+          </div>
+          <div class="advantage-card">
+            <h3 class="advantage-card__title">От одного борта до парка</h3>
+            <p class="advantage-card__text">Аренда борта на грузовиках разных категорий (от 12 000 руб. в месяц), реклама на грузовом транспорте с заменой тента или готовые пакеты на 1, 5, 10 и 20 грузовиков.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Как это работает -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Как это работает</h2>
+        <p class="section-subtitle">От заявки до размещения рекламы на бортах наших грузовиков.</p>
+        <div class="advantages">
+          <div class="advantage">
+            <div class="advantage__icon">1</div>
+            <h3 class="advantage__title">Заявка</h3>
+            <p class="advantage__text">Оставьте заявку или позвоните нам. Обсудим формат и сроки размещения.</p>
+          </div>
+          <div class="advantage">
+            <div class="advantage__icon">2</div>
+            <h3 class="advantage__title">Расчёт и макет</h3>
+            <p class="advantage__text">Рассчитаем стоимость. При необходимости подготовим или доработаем макет.</p>
+          </div>
+          <div class="advantage">
+            <div class="advantage__icon">3</div>
+            <h3 class="advantage__title">Монтаж на борта</h3>
+            <p class="advantage__text">Монтируем ваши рекламные материалы на выбранные борта.</p>
+          </div>
+          <div class="advantage">
+            <div class="advantage__icon">4</div>
+            <h3 class="advantage__title">Размещение</h3>
+            <p class="advantage__text">Реклама едет по маршрутам России и СНГ вместе с нашим транспортом.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Стоимость (таблицы) -->
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="section-title">Стоимость</h2>
+        <p class="section-subtitle">Актуальные цены на размещение рекламы на бортах. Подробные условия — на странице <a href="services.html">Услуги</a>.</p>
+        <div class="pricing-tables-home">
+          <div class="pricing-table-block">
+            <h3 class="pricing-table-block__title">Аренда борта</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Категория</th><th>Аренда борта</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Маленькие грузовики</td><td>от 12 000 руб. / мес.</td></tr>
+                  <tr><td>Средние грузовики</td><td>от 18 000 руб. / мес.</td></tr>
+                  <tr><td>Большие грузовики</td><td>от 27 000 руб. / мес.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="pricing-table-block">
+            <h3 class="pricing-table-block__title">Реклама на грузовом транспорте (замена тента)</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Срок</th><th>Аренда кузова</th><th>Изготовление тента</th><th>Монтаж</th><th>Дизайн тента</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>6 месяцев</td><td>30 000 руб.</td><td>37 500 руб.</td><td>3 000 руб.</td><td>от 15 000 руб.</td></tr>
+                  <tr><td>12 месяцев</td><td>45 000 руб.</td><td>—</td><td>—</td><td>—</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="pricing-table-block">
+            <h3 class="pricing-table-block__title">Готовые пакеты на тентах</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Количество грузовиков</th><th>6 месяцев</th><th>12 месяцев</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1 грузовик</td><td>85 500 руб.</td><td>100 500 руб.</td></tr>
+                  <tr><td>5 грузовиков</td><td>367 500 руб.</td><td>442 500 руб.</td></tr>
+                  <tr><td>10 грузовиков</td><td>720 000 руб.</td><td>870 000 руб.</td></tr>
+                  <tr><td>20 грузовиков</td><td>по запросу</td><td>по запросу</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <p style="text-align: center; margin-top: 1.5rem;">
+          <a href="services.html" class="btn btn-primary">Подробнее: услуги и цены</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- С нами сотрудничают -->
+    <section class="section partners-section">
+      <div class="container">
+        <h2 class="section-title">С нами сотрудничают</h2>
+        <div class="partners-grid">
+          <div class="partner-card"><img src="partner/aliance-altyn-150x150.webp" alt="Альянс Алтын"></div>
+          <div class="partner-card"><img src="partner/asia-motors-150x150.webp" alt="Asia Motors"></div>
+          <div class="partner-card"><img src="partner/borusann-2-150x150.jpg" alt="Borusann"></div>
+          <div class="partner-card"><img src="partner/coca-cola-150x150.webp" alt="Coca-Cola"></div>
+          <div class="partner-card"><img src="partner/dastan-150x150.webp" alt="Дастан"></div>
+          <div class="partner-card"><img src="partner/euras-mashinery-150x150.webp" alt="Euras Machinery"></div>
+          <div class="partner-card"><img src="partner/gazprom-logo-200x200-150x150.webp" alt="Газпром"></div>
+          <div class="partner-card"><img src="partner/kazminerals-150x150.webp" alt="Kazminerals"></div>
+          <div class="partner-card"><img src="partner/kompozit-150x150.webp" alt="Композит"></div>
+          <div class="partner-card"><img src="partner/kulik-150x150.webp" alt="Кулик"></div>
+          <div class="partner-card"><img src="partner/kumtor-150x150.webp" alt="Кумтор"></div>
+          <div class="partner-card"><img src="partner/narodny-150x150.webp" alt="Народный"></div>
+          <div class="partner-card"><img src="partner/rosneft-150x150.webp" alt="Роснефть"></div>
+          <div class="partner-card"><img src="partner/sulpak-150x150.webp" alt="Сулпак"></div>
+          <div class="partner-card"><img src="partner/0576d410-0534-4a6d-bcff-b1df9b92156c-150x150.jpg" alt="Партнёр"></div>
+          <div class="partner-card"><img src="partner/0adedc77-9c45-46ce-bce3-ae174d94fd4c-150x150.jpg" alt="Партнёр"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-block">
+      <div class="container">
+        <div class="cta-block__inner">
+          <h2 class="cta-block__title">Оставить заявку или задать вопрос</h2>
+          <p class="cta-block__text">Свяжитесь с нами по телефону или оставьте заявку — мы перезвоним и рассчитаем стоимость размещения рекламы на бортах.</p>
+          <div class="cta-block__phone-wrap">
+            <a href="tel:+996312880666" class="cta-block__phone">+996 (312) 88-06-66</a>
+          </div>
+          <div class="cta-block__actions">
+            <a href="contacts.html" class="btn btn-cta btn-cta--outline">Страница контактов</a>
+            <button type="button" class="btn btn-cta btn-cta--fill" data-modal-open="modal-request">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <strong>ОсОО «ЮуБиЭс Транзит»</strong><br>
+          Реклама на бортах. Автодоставка сборных грузов по России и СНГ.
+        </div>
+        <div>
+          <strong>Контакты</strong><br>
+          <a href="tel:+996312880666">+996 (312) 88-06-66</a><br>
+          Кыргызская Республика, Чуйская область, Московский район, с. АкСуу, ул. Дружбы, 16B
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © ОсОО «ЮуБиЭс Транзит»
+      </div>
+    </div>
+  </footer>
+
+  <!-- Модалки -->
+  <div id="modal-service-1" class="modal-overlay" aria-hidden="true">
+    <div class="modal">
+      <button type="button" class="modal__close" data-modal-close="modal-service-1" aria-label="Закрыть">&times;</button>
+      <div class="modal__header"><h3 class="modal__title">Аренда борта</h3></div>
+      <div class="modal__body">
+        <p>Размещение вашей рекламы на бортах наших грузовиков. Три категории транспорта.</p>
+        <ul>
+          <li><strong>Маленькие грузовики</strong> — от 12 000 руб. / мес.</li>
+          <li><strong>Средние грузовики</strong> — от 18 000 руб. / мес.</li>
+          <li><strong>Большие грузовики</strong> — от 27 000 руб. / мес.</li>
+        </ul>
+        <p>Минимальный срок — 6 месяцев. Рекламные материалы вы предоставляете или заказываете отдельно.</p>
+        <p><a href="services.html">Подробнее на странице Услуги</a></p>
+        <a href="contacts.html" class="btn btn-primary" style="margin-top: 1rem;">Связаться с нами</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-service-3" class="modal-overlay" aria-hidden="true">
+    <div class="modal">
+      <button type="button" class="modal__close" data-modal-close="modal-service-3" aria-label="Закрыть">&times;</button>
+      <div class="modal__header"><h3 class="modal__title">Реклама на грузовом транспорте (замена тента)</h3></div>
+      <div class="modal__body">
+        <p>Рекламный тент вместо стандартного — в т.ч. на Газель. В стоимость входят аренда кузова, изготовление тента, монтаж и при необходимости дизайн.</p>
+        <ul>
+          <li><strong>6 месяцев:</strong> аренда кузова 30 000 руб., изготовление тента 37 500 руб., монтаж 3 000 руб., дизайн от 15 000 руб.</li>
+          <li><strong>12 месяцев:</strong> аренда кузова 45 000 руб.</li>
+        </ul>
+        <p><a href="services.html">Подробнее на странице Услуги</a></p>
+        <a href="contacts.html" class="btn btn-primary" style="margin-top: 1rem;">Связаться с нами</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-service-4" class="modal-overlay" aria-hidden="true">
+    <div class="modal">
+      <button type="button" class="modal__close" data-modal-close="modal-service-4" aria-label="Закрыть">&times;</button>
+      <div class="modal__header"><h3 class="modal__title">Готовые пакеты на тентах</h3></div>
+      <div class="modal__body">
+        <p>Готовые пакеты под ключ: 1 грузовик (6 мес. — 85 500 руб., 12 мес. — 100 500 руб.), 5 грузовиков (6 мес. — 367 500 руб., 12 мес. — 442 500 руб.), 10 грузовиков (6 мес. — 720 000 руб., 12 мес. — 870 000 руб.), 20 грузовиков — по запросу.</p>
+        <p><a href="services.html">Полная таблица на странице Услуги</a></p>
+        <a href="contacts.html" class="btn btn-primary" style="margin-top: 1rem;">Связаться с нами</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-request" class="modal-overlay" aria-hidden="true">
+    <div class="modal">
+      <button type="button" class="modal__close" data-modal-close="modal-request" aria-label="Закрыть">&times;</button>
+      <div class="modal__header"><h3 class="modal__title">Оставить заявку</h3></div>
+      <div class="modal__body">
+        <p>Свяжитесь с нами по телефону <a href="tel:+996312880666">+996 (312) 88-06-66</a> или напишите на странице контактов.</p>
+        <a href="contacts.html" class="btn btn-primary">Перейти на страницу контактов</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О нас — ОсОО «ЮуБиЭс Транзит»</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">UBS Transit</a>
+        <nav class="nav">
+          <a href="index.html">Главная</a>
+          <a href="about.html">О нас</a>
+          <a href="services.html">Услуги</a>
+          <a href="contacts.html">Контакты</a>
+          <a href="tel:+996312880666" class="header-phone desktop">+996 (312) 88-06-66</a>
+        </nav>
+        <a href="tel:+996312880666" class="header-phone phone-mobile">+996 (312) 88-06-66</a>
+        <button type="button" class="burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="overlay" aria-hidden="true"></div>
+  <nav class="nav-mobile" aria-label="Мобильное меню">
+    <a href="index.html">Главная</a>
+    <a href="about.html">О нас</a>
+    <a href="services.html">Услуги</a>
+    <a href="contacts.html">Контакты</a>
+    <a href="tel:+996312880666">+996 (312) 88-06-66</a>
+  </nav>
+
+  <main class="main">
+    <!-- Заголовок: фон — картинка без блюра, одна карточка с текстом -->
+    <section class="hero-cards">
+      <div class="hero-cards__bg" aria-hidden="true">
+        <img src="image/heroonas.png" alt="" class="hero-cards__bg-img">
+      </div>
+      <div class="container hero-cards__container">
+        <div class="hero-card hero-card--image hero-card--image-mobile">
+          <img src="image/heroonas.png" alt="О нас" class="hero-card__img">
+        </div>
+        <div class="hero-card hero-card--text">
+          <h1 class="hero-card__title">О нас</h1>
+          <p class="hero-card__text">ОсОО «ЮуБиЭс Транзит» (LLC UBS Transit) — компания, которая совмещает автодоставку сборных грузов по России и СНГ с размещением рекламы на бортах своего транспорта. Мы даём рекламодателям возможность показывать бренд тысячам людей на трассах и в населённых пунктах.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- О компании -->
+        <div class="about-block">
+          <h2 class="about-block__title">О компании</h2>
+          <p class="about-block__text">Мы занимаемся автодоставкой сборных грузов по России и странам СНГ. Наш автопарк регулярно курсирует по маршрутам, и борта грузовиков стали эффективной рекламной площадкой: ваше объявление видят водители и пассажиры по всему пути следования.</p>
+          <p class="about-block__text">Мы предлагаем услуги по размещению вашей рекламы на наших автомобилях: аренда борта на грузовиках разных категорий, монтаж рекламных материалов на борта, реклама на Газелях с заменой тента и готовые пакеты на несколько единиц транспорта. Минимальный срок размещения — 6 месяцев. Стоимость складывается из аренды бортов; рекламные материалы заказчик предоставляет или заказывает отдельно.</p>
+        </div>
+
+        <!-- Чем занимаемся -->
+        <div class="about-block">
+          <h2 class="about-block__title">Чем мы занимаемся</h2>
+          <div class="about-grid">
+            <div class="about-card">
+              <h3 class="about-card__title">Автодоставка сборных грузов</h3>
+              <p class="about-card__text">Наш транспорт осуществляет перевозку сборных грузов по России и странам СНГ. Регулярные маршруты охватывают трассы и населённые пункты — грузовики в пути видны большому числу людей.</p>
+            </div>
+            <div class="about-card">
+              <h3 class="about-card__title">Размещение рекламы на бортах</h3>
+              <p class="about-card__text">Мы предоставляем рекламодателям возможность размещать рекламу на бортах наших грузовиков. Монтаж рекламных материалов на борта, аренда на срок от 6 месяцев. При необходимости — рекламный тент на Газель или пакет на несколько машин.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Наши услуги (кратко) -->
+        <div class="about-block">
+          <h2 class="about-block__title">Наши услуги</h2>
+          <p class="about-block__text">Аренда борта (маленькие, средние и большие грузовики), монтаж рекламных материалов на борта, реклама на Газелях с заменой тента и готовые пакеты на 1, 5, 10 и 20 грузовиков на 6 или 12 месяцев. Подробные условия и цены — на странице <a href="services.html">Услуги</a>.</p>
+          <p><a href="services.html" class="btn btn-primary">Услуги и цены</a></p>
+        </div>
+
+        <!-- Примеры размещения -->
+        <div class="about-block gallery-block">
+          <h2 class="about-block__title">Примеры размещения</h2>
+          <p class="about-block__text">Фото размещения рекламы на бортах нашего транспорта.</p>
+          <div class="gallery-grid">
+            <button type="button" class="gallery-item" data-gallery-src="image/gallery/galery1.jpg" aria-label="Открыть фото">
+              <img src="image/gallery/galery1.jpg" alt="Пример размещения 1" class="gallery-thumb">
+            </button>
+            <button type="button" class="gallery-item" data-gallery-src="image/gallery/galery2.jpg" aria-label="Открыть фото">
+              <img src="image/gallery/galery2.jpg" alt="Пример размещения 2" class="gallery-thumb">
+            </button>
+            <button type="button" class="gallery-item" data-gallery-src="image/gallery/galery3.webp" aria-label="Открыть фото">
+              <img src="image/gallery/galery3.webp" alt="Пример размещения 3" class="gallery-thumb">
+            </button>
+            <button type="button" class="gallery-item" data-gallery-src="image/gallery/galery4.jpg" aria-label="Открыть фото">
+              <img src="image/gallery/galery4.jpg" alt="Пример размещения 4" class="gallery-thumb">
+            </button>
+            <button type="button" class="gallery-item" data-gallery-src="image/gallery/galery6.jpg" aria-label="Открыть фото">
+              <img src="image/gallery/galery6.jpg" alt="Пример размещения 5" class="gallery-thumb">
+            </button>
+            <button type="button" class="gallery-item" data-gallery-src="image/gallery/galery7.jpg" aria-label="Открыть фото">
+              <img src="image/gallery/galery7.jpg" alt="Пример размещения 6" class="gallery-thumb">
+            </button>
+            <button type="button" class="gallery-item" data-gallery-src="image/gallery/galery8.jpg" aria-label="Открыть фото">
+              <img src="image/gallery/galery8.jpg" alt="Пример размещения 7" class="gallery-thumb">
+            </button>
+            <button type="button" class="gallery-item" data-gallery-src="image/gallery/galery9.jpg" aria-label="Открыть фото">
+              <img src="image/gallery/galery9.jpg" alt="Пример размещения 8" class="gallery-thumb">
+            </button>
+            <button type="button" class="gallery-item" data-gallery-src="image/gallery/galery%2010.jpg" aria-label="Открыть фото">
+              <img src="image/gallery/galery%2010.jpg" alt="Пример размещения 9" class="gallery-thumb">
+            </button>
+          </div>
+        </div>
+
+        <div id="gallery-lightbox" class="gallery-lightbox" aria-hidden="true">
+          <button type="button" class="gallery-lightbox__close" aria-label="Закрыть">&times;</button>
+          <div class="gallery-lightbox__inner">
+            <img src="" alt="" class="gallery-lightbox__img">
+          </div>
+        </div>
+
+        <!-- Отзывы -->
+        <div class="about-block testimonials-block">
+          <h2 class="about-block__title">Отзывы</h2>
+          <div class="testimonials-grid">
+            <div class="testimonial-card">
+              <p class="testimonial-card__text">Размещали рекламу на бортах нескольких грузовиков. Монтаж сделали аккуратно, сроки соблюдены. Рекомендую.</p>
+              <div class="testimonial-card__author">Алексей К., рекламный менеджер</div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-card__text">Удобные пакеты на 5 машин, всё прозрачно по цене. Работаем уже второй год — никаких нареканий.</p>
+              <div class="testimonial-card__author">Ольга М., директор по маркетингу</div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-card__text">Заказывали замену тента на Газели под наш дизайн. Результат устраивает, охват по маршрутам чувствуется.</p>
+              <div class="testimonial-card__author">Дмитрий В., владелец компании</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Руководство и реквизиты -->
+        <div class="about-block">
+          <h2 class="about-block__title">Руководство</h2>
+          <p class="about-block__text">Директор компании — <strong>Сарыгулов Айбек Жамангулович</strong>. Компания действует на основании Устава.</p>
+        </div>
+
+        <div class="about-block">
+          <h2 class="about-block__title">Реквизиты</h2>
+          <div class="contact-grid">
+            <div class="contact-card">
+              <h3 class="contact-card__title">Наименование и адрес</h3>
+              <div class="contact-card__item">
+                <span class="contact-card__label">Полное наименование</span>
+                ЗАО «UBS Transit» («ЮуБиЭс Транзит»)
+              </div>
+              <div class="contact-card__item">
+                <span class="contact-card__label">Сокращённое</span>
+                ОсОО «ЮуБиЭс Транзит»
+              </div>
+              <div class="contact-card__item">
+                <span class="contact-card__label">На английском</span>
+                LLC UBS Transit
+              </div>
+              <div class="contact-card__item">
+                <span class="contact-card__label">Юридический адрес</span>
+                Кыргызская Республика, Чуйская область, Московский район, село АкСуу, ул. Дружбы, 16B, 720011
+              </div>
+              <div class="contact-card__item">
+                <span class="contact-card__label">Почтовый адрес</span>
+                Тот же
+              </div>
+              <div class="contact-card__item">
+                <span class="contact-card__label">Телефон</span>
+                <a href="tel:+996312880666">+996 (312) 88-06-66</a>
+              </div>
+            </div>
+            <div class="contact-card">
+              <h3 class="contact-card__title">Банковские реквизиты</h3>
+              <div class="contact-card__item">
+                <span class="contact-card__label">ИНН</span>
+                02702200810268
+              </div>
+              <div class="contact-card__item">
+                <span class="contact-card__label">ОКПО</span>
+                24628329
+              </div>
+              <div class="contact-card__item">
+                <span class="contact-card__label">Рег. номер</span>
+                105660-3308-ЗАО
+              </div>
+              <div class="contact-card__item">
+                <span class="contact-card__label">Расчётный счёт</span>
+                1240020001549073 (мультивалютный)
+              </div>
+              <div class="contact-card__item">
+                <span class="contact-card__label">Банк</span>
+                OJSC FinanceCreditBank
+              </div>
+              <div class="contact-card__item">
+                <span class="contact-card__label">БИК</span>
+                129001
+              </div>
+              <div class="contact-card__item">
+                <span class="contact-card__label">SWIFT</span>
+                FIKBKG22
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <strong>ОсОО «ЮуБиЭс Транзит»</strong><br>
+          Реклама на бортах. Автодоставка сборных грузов по России и СНГ.
+        </div>
+        <div>
+          <strong>Контакты</strong><br>
+          <a href="tel:+996312880666">+996 (312) 88-06-66</a><br>
+          Кыргызская Республика, Чуйская область, Московский район, с. АкСуу, ул. Дружбы, 16B
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © ОсОО «ЮуБиЭс Транзит»
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
