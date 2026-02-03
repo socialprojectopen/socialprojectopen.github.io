@@ -269,11 +269,14 @@ a:hover {
   color: var(--color-dark-gray);
 }
 
-/* Hero секция */
+/* Hero секция: тёмный фон до загрузки картинки, без серого мелькания */
 .hero {
-  background: linear-gradient(135deg, var(--overlay-dark) 0%, var(--overlay-dark) 100%),
-              url('../image/hero.webp') center/cover no-repeat;
-  background-color: var(--overlay-dark);
+  background-color: #1f2933;
+  background-image: linear-gradient(135deg, var(--overlay-dark) 0%, var(--overlay-dark) 100%),
+                    url('../image/hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: var(--spacing-hero) 0;
   color: var(--color-white);
   text-align: center;
