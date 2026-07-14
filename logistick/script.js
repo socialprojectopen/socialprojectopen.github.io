@@ -45,8 +45,11 @@ const revealGroups = [
   { selector: '.law__basis-full', stagger: 0 },
   { selector: '.law__doc-card', stagger: 0.1 },
   { selector: '.law__risks', stagger: 0 },
-  { selector: '.law__tax', stagger: 0 },
   { selector: '.law__ready', stagger: 0 },
+  { selector: '.hero__nds-head', stagger: 0 },
+  { selector: '.nds__gray', stagger: 0 },
+  { selector: '.nds__panel', stagger: 0.12 },
+  { selector: '.nds__ready', stagger: 0 },
   { selector: '.compliance-card', stagger: 0.12 },
   { selector: '.visual-block__grid > .image-slot', class: 'reveal reveal--left', stagger: 0 },
   { selector: '.visual-block__grid > .visual-block__text', class: 'reveal reveal--right', stagger: 0.15 },
@@ -102,41 +105,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     window.scrollTo({ top, behavior: 'smooth' });
   });
-});
-
-// Modal
-const modals = document.querySelectorAll('.modal');
-
-function openModal(id) {
-  const modal = document.getElementById(id);
-  if (!modal) return;
-  modal.classList.add('is-open');
-  modal.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('modal-open');
-}
-
-function closeModal(modal) {
-  modal.classList.remove('is-open');
-  modal.setAttribute('aria-hidden', 'true');
-  document.body.classList.remove('modal-open');
-}
-
-document.querySelectorAll('[data-modal]').forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    openModal(trigger.getAttribute('data-modal'));
-  });
-});
-
-modals.forEach(modal => {
-  modal.querySelectorAll('[data-modal-close]').forEach(el => {
-    el.addEventListener('click', () => closeModal(modal));
-  });
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    modals.forEach(modal => {
-      if (modal.classList.contains('is-open')) closeModal(modal);
-    });
-  }
 });
