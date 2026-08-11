@@ -2005,26 +2005,6 @@ section {
   font-weight: 700;
 }
 
-.welcome__quiet {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  padding: 8px;
-  font: inherit;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(75, 85, 99, 0.35);
-  transition: color 0.2s;
-}
-
-.welcome__quiet:hover {
-  color: var(--color-primary);
-}
-
 body.welcome-open {
   overflow: hidden;
 }
@@ -2048,12 +2028,12 @@ body.welcome-open {
 @media (max-width: 480px) {
   .welcome {
     padding: 16px;
-    align-items: flex-end;
+    place-items: center;
   }
 
   .welcome__panel {
     padding: 28px 22px 22px;
-    border-radius: 20px 20px 16px 16px;
+    border-radius: var(--radius-lg);
   }
 }
 

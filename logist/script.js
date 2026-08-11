@@ -190,8 +190,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   const toggle = document.getElementById('ambient-toggle');
   const gate = document.getElementById('welcome-gate');
   const okBtn = document.getElementById('welcome-ok');
-  const quietBtn = document.getElementById('welcome-quiet');
-  if (!audio || !toggle || !root || !gate || !okBtn || !quietBtn) return;
+  if (!audio || !toggle || !root || !gate || !okBtn) return;
 
   const STORAGE_KEY = 'ambient-music';
   const TARGET_VOLUME = 0.28;
@@ -363,22 +362,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     localStorage.setItem(STORAGE_KEY, 'on');
     playAmbient();
     closeGate();
-  });
-
-  quietBtn.addEventListener('click', e => {
-    e.preventDefault();
-    mutedByUser = true;
-    localStorage.setItem(STORAGE_KEY, 'off');
-    closeGate();
-  });
-
-  gate.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      mutedByUser = true;
-      localStorage.setItem(STORAGE_KEY, 'off');
-      closeGate();
-    }
   });
 
   toggle.addEventListener(
