@@ -183,7 +183,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Ambient music: starts on first scroll / touch / click (no hints)
+// Ambient music for desktop + mobile (Chrome/Safari): unlock on tap / scroll-touch
 (function initAmbientAudio() {
   const audio = document.getElementById('ambient-audio');
   const root = document.querySelector('[data-ambient]');
@@ -195,16 +195,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   let fadeTimer = null;
   let enabled = localStorage.getItem(STORAGE_KEY) !== 'off';
   let started = false;
+  let unlocking = false;
 
   audio.loop = true;
   audio.preload = 'auto';
+  audio.setAttribute('playsinline', '');
+  audio.setAttribute('webkit-playsinline', '');
   audio.volume = 0;
 
+  try {
+    audio.load();
+  } catch (e) {}
+
   function setUi(on) {
-    enabled = on;
     toggle.setAttribute('aria-pressed', on ? 'true' : 'false');
     toggle.setAttribute('aria-label', on ? 'Выключить фоновую музыку' : 'Включить фоновую музыку');
-    root.classList.toggle('is-playing', on);
+    root.classList.toggle('is-playing', on && started && !audio.paused);
   }
 
   function clearFade() {
@@ -216,73 +222,138 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   function fadeTo(target, ms) {
     clearFade();
+    // iOS may ignore volume changes — still try
     const start = audio.volume;
     const steps = Math.max(1, Math.round(ms / 40));
     let step = 0;
     fadeTimer = setInterval(() => {
       step += 1;
       const t = step / steps;
-      audio.volume = Math.max(0, Math.min(1, start + (target - start) * t));
+      try {
+        audio.volume = Math.max(0, Math.min(1, start + (target - start) * t));
+      } catch (e) {}
       if (step >= steps) {
         clearFade();
-        audio.volume = target;
+        try {
+          audio.volume = target;
+        } catch (e) {}
         if (target === 0) audio.pause();
       }
     }, 40);
   }
 
-  async function playAmbient() {
+  function onStarted() {
+    if (started) return;
+    started = true;
+    unlocking = false;
+    setUi(true);
+    localStorage.setItem(STORAGE_KEY, 'on');
+    fadeTo(TARGET_VOLUME, 1100);
+    removeUnlockListeners();
+  }
+
+  function playAmbient() {
+    if (!enabled) return Promise.resolve(false);
+    unlocking = true;
+
     try {
-      if (audio.paused) {
-        audio.volume = 0;
-        await audio.play();
-      }
-      started = true;
-      setUi(true);
-      localStorage.setItem(STORAGE_KEY, 'on');
-      fadeTo(TARGET_VOLUME, 1200);
-      return true;
+      audio.muted = false;
+      audio.volume = 0;
+    } catch (e) {}
+
+    let playPromise;
+    try {
+      // Must call play() synchronously inside user gesture (mobile Chrome/Safari)
+      playPromise = audio.play();
     } catch (err) {
+      unlocking = false;
       setUi(false);
-      return false;
+      return Promise.resolve(false);
     }
+
+    if (playPromise && typeof playPromise.then === 'function') {
+      return playPromise
+        .then(() => {
+          onStarted();
+          return true;
+        })
+        .catch(() => {
+          unlocking = false;
+          setUi(false);
+          return false;
+        });
+    }
+
+    onStarted();
+    return Promise.resolve(true);
   }
 
   function stopAmbient() {
     localStorage.setItem(STORAGE_KEY, 'off');
     enabled = false;
+    started = false;
     setUi(false);
-    fadeTo(0, 500);
+    fadeTo(0, 400);
   }
 
-  function tryStartFromGesture() {
-    if (!enabled || started) return;
+  function tryUnlock(e) {
+    if (!enabled || started || unlocking) return;
+    if (e && e.target && (toggle === e.target || toggle.contains(e.target))) return;
     playAmbient();
   }
 
-  toggle.addEventListener('pointerdown', e => e.stopPropagation());
-  toggle.addEventListener('touchstart', e => e.stopPropagation(), { passive: true });
+  const unlockEvents = [
+    ['touchstart', { capture: true, passive: true }],
+    ['touchend', { capture: true, passive: true }],
+    ['touchmove', { capture: true, passive: true }],
+    ['pointerdown', { capture: true, passive: true }],
+    ['click', { capture: true }],
+    ['keydown', { capture: true }],
+    ['wheel', { capture: true, passive: true }],
+    ['scroll', { capture: true, passive: true }],
+  ];
 
-  toggle.addEventListener('click', e => {
-    e.stopPropagation();
-    if (!audio.paused && started) stopAmbient();
-    else {
-      enabled = true;
-      playAmbient();
-    }
-  });
+  function removeUnlockListeners() {
+    unlockEvents.forEach(([type, opts]) => {
+      document.removeEventListener(type, tryUnlock, opts);
+      window.removeEventListener(type, tryUnlock, opts);
+    });
+  }
 
-  window.addEventListener('scroll', tryStartFromGesture, { passive: true });
-  document.addEventListener('touchstart', tryStartFromGesture, { passive: true });
-  document.addEventListener('pointerdown', tryStartFromGesture, { passive: true });
-  document.addEventListener('wheel', tryStartFromGesture, { passive: true });
-  document.addEventListener('keydown', tryStartFromGesture);
+  function bindUnlockListeners() {
+    unlockEvents.forEach(([type, opts]) => {
+      document.addEventListener(type, tryUnlock, opts);
+      window.addEventListener(type, tryUnlock, opts);
+    });
+  }
+
+  toggle.addEventListener(
+    'click',
+    e => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (started && !audio.paused && enabled) {
+        stopAmbient();
+      } else {
+        enabled = true;
+        localStorage.setItem(STORAGE_KEY, 'on');
+        playAmbient();
+      }
+    },
+    true
+  );
 
   document.addEventListener('visibilitychange', () => {
     if (!started || !enabled) return;
-    if (document.hidden) fadeTo(0.08, 300);
-    else if (!audio.paused) fadeTo(TARGET_VOLUME, 600);
+    if (document.hidden) fadeTo(0.08, 250);
+    else if (!audio.paused) fadeTo(TARGET_VOLUME, 500);
+  });
+
+  // Resume if returning to tab on mobile
+  window.addEventListener('pageshow', () => {
+    if (enabled && started && audio.paused) playAmbient();
   });
 
   setUi(enabled);
+  if (enabled) bindUnlockListeners();
 })();
