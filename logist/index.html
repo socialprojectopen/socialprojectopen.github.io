@@ -1010,10 +1010,36 @@
     </div>
   </footer>
 
+  <!-- Приветствие: жест для запуска фоновой музыки -->
+  <div class="welcome" id="welcome-gate" role="dialog" aria-modal="true" aria-labelledby="welcome-title" hidden>
+    <div class="welcome__backdrop" aria-hidden="true"></div>
+    <div class="welcome__panel">
+      <div class="welcome__brand">
+        <span class="welcome__mark">НК</span>
+        <span class="welcome__brand-text">Наша компания</span>
+      </div>
+      <p class="welcome__eyebrow">Логистика · Склады · Соответствие 2026</p>
+      <h2 class="welcome__title" id="welcome-title">Добро пожаловать</h2>
+      <p class="welcome__text">
+        Ознакомьтесь с нашей компанией: склады и логистика по России,
+        готовность к ГосЛог, СОРМ и ЭПД. Нажмите «Продолжить» — и мы включим
+        спокойный фон, пока вы изучаете материалы.
+      </p>
+      <div class="welcome__actions">
+        <button type="button" class="btn btn--primary welcome__ok" id="welcome-ok">
+          Продолжить
+        </button>
+        <button type="button" class="welcome__quiet" id="welcome-quiet">
+          Продолжить без музыки
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Фоновая мелодия -->
   <audio id="ambient-audio" src="gold.mp3" preload="auto" loop playsinline webkit-playsinline></audio>
 
-  <div class="ambient" data-ambient>
+  <div class="ambient" data-ambient hidden>
     <button
       type="button"
       class="ambient__toggle"

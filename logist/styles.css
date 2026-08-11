@@ -1898,6 +1898,165 @@ section {
   font-size: 0.86rem;
 }
 
+/* Welcome gate — music unlock */
+.welcome {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.welcome[hidden] {
+  display: none !important;
+}
+
+.welcome__backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(14, 165, 233, 0.22), transparent 55%),
+    linear-gradient(160deg, rgba(15, 23, 42, 0.72), rgba(26, 58, 107, 0.88));
+  backdrop-filter: blur(8px);
+  animation: welcomeFade 0.45s var(--ease-out) both;
+}
+
+.welcome__panel {
+  position: relative;
+  width: min(440px, 100%);
+  padding: 36px 32px 28px;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), #f8fbff 100%);
+  border: 1px solid rgba(219, 227, 238, 0.9);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 28px 64px rgba(15, 23, 42, 0.35);
+  text-align: center;
+  animation: welcomeRise 0.55s var(--ease-out) both;
+}
+
+.welcome__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.welcome__mark {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(145deg, #0ea5e9, #1a3a6b);
+  box-shadow: 0 10px 22px rgba(26, 58, 107, 0.28);
+}
+
+.welcome__brand-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+}
+
+.welcome__eyebrow {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+}
+
+.welcome__title {
+  margin: 0 0 12px;
+  font-size: clamp(1.55rem, 4vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.welcome__text {
+  margin: 0 0 28px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.welcome__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.welcome__ok {
+  width: 100%;
+  justify-content: center;
+  min-height: 48px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.welcome__quiet {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(75, 85, 99, 0.35);
+  transition: color 0.2s;
+}
+
+.welcome__quiet:hover {
+  color: var(--color-primary);
+}
+
+body.welcome-open {
+  overflow: hidden;
+}
+
+@keyframes welcomeFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes welcomeRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome {
+    padding: 16px;
+    align-items: flex-end;
+  }
+
+  .welcome__panel {
+    padding: 28px 22px 22px;
+    border-radius: 20px 20px 16px 16px;
+  }
+}
+
 /* Ambient background music control */
 .ambient {
   position: fixed;
@@ -1908,6 +2067,10 @@ section {
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
+}
+
+.ambient[hidden] {
+  display: none !important;
 }
 
 .ambient__toggle {
