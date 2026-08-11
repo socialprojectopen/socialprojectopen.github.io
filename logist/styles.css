@@ -1931,20 +1931,28 @@ section {
   border-color: rgba(125, 211, 252, 0.55);
 }
 
-.ambient__toggle[aria-pressed="true"] {
-  background: linear-gradient(160deg, #0ea5e9, #1a3a6b);
-  color: #fff;
-  border-color: transparent;
-}
-
 .ambient__icon {
   display: none;
   line-height: 0;
 }
 
-.ambient__toggle[aria-pressed="false"] .ambient__icon--off,
-.ambient__toggle[aria-pressed="true"] .ambient__icon--on {
+/* По умолчанию — нота (готова играть). Перечёркнутая — только если выключили вручную */
+.ambient__toggle .ambient__icon--on {
   display: block;
+}
+
+.ambient__toggle.is-muted .ambient__icon--on {
+  display: none;
+}
+
+.ambient__toggle.is-muted .ambient__icon--off {
+  display: block;
+}
+
+.ambient__toggle[aria-pressed="true"] {
+  background: linear-gradient(160deg, #0ea5e9, #1a3a6b);
+  color: #fff;
+  border-color: transparent;
 }
 
 .ambient__waves {
@@ -1956,7 +1964,7 @@ section {
   height: 10px;
 }
 
-.ambient__toggle[aria-pressed="true"] .ambient__waves {
+.ambient__toggle.is-playing .ambient__waves {
   display: flex;
 }
 

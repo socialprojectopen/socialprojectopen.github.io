@@ -183,7 +183,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Ambient music for desktop + mobile (Chrome/Safari): unlock on tap / scroll-touch
+// Ambient music: start on first real gesture (tap/touch). Never show "muted" on failed unlock.
 (function initAmbientAudio() {
   const audio = document.getElementById('ambient-audio');
   const root = document.querySelector('[data-ambient]');
@@ -193,7 +193,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   const STORAGE_KEY = 'ambient-music';
   const TARGET_VOLUME = 0.28;
   let fadeTimer = null;
-  let enabled = localStorage.getItem(STORAGE_KEY) !== 'off';
+  // Only explicit user mute turns music "off"
+  let mutedByUser = localStorage.getItem(STORAGE_KEY) === 'off';
   let started = false;
   let unlocking = false;
 
@@ -201,16 +202,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   audio.preload = 'auto';
   audio.setAttribute('playsinline', '');
   audio.setAttribute('webkit-playsinline', '');
-  audio.volume = 0;
+  try {
+    audio.muted = false;
+    audio.volume = 0;
+  } catch (e) {}
 
   try {
     audio.load();
   } catch (e) {}
 
-  function setUi(on) {
-    toggle.setAttribute('aria-pressed', on ? 'true' : 'false');
-    toggle.setAttribute('aria-label', on ? 'Выключить фоновую музыку' : 'Включить фоновую музыку');
-    root.classList.toggle('is-playing', on && started && !audio.paused);
+  function syncUi() {
+    const playing = started && !audio.paused && !mutedByUser;
+    toggle.classList.toggle('is-muted', mutedByUser);
+    toggle.classList.toggle('is-playing', playing);
+    root.classList.toggle('is-playing', playing);
+    toggle.setAttribute('aria-pressed', mutedByUser ? 'false' : 'true');
+    toggle.setAttribute(
+      'aria-label',
+      mutedByUser ? 'Включить фоновую музыку' : 'Выключить фоновую музыку'
+    );
   }
 
   function clearFade() {
@@ -222,52 +232,59 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   function fadeTo(target, ms) {
     clearFade();
-    // iOS may ignore volume changes — still try
-    const start = audio.volume;
+    const startVol = Number(audio.volume) || 0;
     const steps = Math.max(1, Math.round(ms / 40));
     let step = 0;
     fadeTimer = setInterval(() => {
       step += 1;
       const t = step / steps;
       try {
-        audio.volume = Math.max(0, Math.min(1, start + (target - start) * t));
+        audio.volume = Math.max(0, Math.min(1, startVol + (target - startVol) * t));
       } catch (e) {}
       if (step >= steps) {
         clearFade();
         try {
           audio.volume = target;
         } catch (e) {}
-        if (target === 0) audio.pause();
+        if (target === 0) {
+          try {
+            audio.pause();
+          } catch (e) {}
+        }
+        syncUi();
       }
     }, 40);
   }
 
   function onStarted() {
-    if (started) return;
     started = true;
     unlocking = false;
-    setUi(true);
+    mutedByUser = false;
     localStorage.setItem(STORAGE_KEY, 'on');
-    fadeTo(TARGET_VOLUME, 1100);
+    fadeTo(TARGET_VOLUME, 900);
     removeUnlockListeners();
+    syncUi();
   }
 
   function playAmbient() {
-    if (!enabled) return Promise.resolve(false);
-    unlocking = true;
+    if (mutedByUser) {
+      syncUi();
+      return Promise.resolve(false);
+    }
 
+    unlocking = true;
     try {
       audio.muted = false;
-      audio.volume = 0;
+      if (!started) audio.volume = 0;
     } catch (e) {}
 
     let playPromise;
     try {
-      // Must call play() synchronously inside user gesture (mobile Chrome/Safari)
+      // Must stay inside the user gesture call stack on mobile
       playPromise = audio.play();
     } catch (err) {
       unlocking = false;
-      setUi(false);
+      syncUi(); // keep note icon — do NOT mark muted
       return Promise.resolve(false);
     }
 
@@ -279,7 +296,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         })
         .catch(() => {
           unlocking = false;
-          setUi(false);
+          syncUi(); // failure != mute
           return false;
         });
     }
@@ -289,28 +306,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   }
 
   function stopAmbient() {
-    localStorage.setItem(STORAGE_KEY, 'off');
-    enabled = false;
+    mutedByUser = true;
     started = false;
-    setUi(false);
-    fadeTo(0, 400);
+    unlocking = false;
+    localStorage.setItem(STORAGE_KEY, 'off');
+    fadeTo(0, 350);
+    bindUnlockListeners();
+    syncUi();
   }
 
   function tryUnlock(e) {
-    if (!enabled || started || unlocking) return;
+    if (mutedByUser || started || unlocking) return;
     if (e && e.target && (toggle === e.target || toggle.contains(e.target))) return;
     playAmbient();
   }
 
+  // Real gestures only — scroll/wheel alone often fail media unlock on mobile
   const unlockEvents = [
     ['touchstart', { capture: true, passive: true }],
     ['touchend', { capture: true, passive: true }],
-    ['touchmove', { capture: true, passive: true }],
     ['pointerdown', { capture: true, passive: true }],
     ['click', { capture: true }],
     ['keydown', { capture: true }],
-    ['wheel', { capture: true, passive: true }],
-    ['scroll', { capture: true, passive: true }],
   ];
 
   function removeUnlockListeners() {
@@ -321,6 +338,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   }
 
   function bindUnlockListeners() {
+    removeUnlockListeners();
     unlockEvents.forEach(([type, opts]) => {
       document.addEventListener(type, tryUnlock, opts);
       window.addEventListener(type, tryUnlock, opts);
@@ -332,11 +350,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     e => {
       e.preventDefault();
       e.stopPropagation();
-      if (started && !audio.paused && enabled) {
+      if (!mutedByUser && started && !audio.paused) {
         stopAmbient();
       } else {
-        enabled = true;
+        mutedByUser = false;
         localStorage.setItem(STORAGE_KEY, 'on');
+        started = false;
         playAmbient();
       }
     },
@@ -344,16 +363,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   );
 
   document.addEventListener('visibilitychange', () => {
-    if (!started || !enabled) return;
+    if (mutedByUser || !started) return;
     if (document.hidden) fadeTo(0.08, 250);
     else if (!audio.paused) fadeTo(TARGET_VOLUME, 500);
   });
 
-  // Resume if returning to tab on mobile
   window.addEventListener('pageshow', () => {
-    if (enabled && started && audio.paused) playAmbient();
+    if (!mutedByUser && started && audio.paused) playAmbient();
   });
 
-  setUi(enabled);
-  if (enabled) bindUnlockListeners();
+  syncUi();
+  if (!mutedByUser) bindUnlockListeners();
 })();
