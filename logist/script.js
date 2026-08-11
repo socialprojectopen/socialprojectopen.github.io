@@ -183,7 +183,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Ambient music: start on first real gesture (tap/touch). Never show "muted" on failed unlock.
+// Ambient music: unlock on tap AND swipe (touchmove while finger is down).
 (function initAmbientAudio() {
   const audio = document.getElementById('ambient-audio');
   const root = document.querySelector('[data-ambient]');
@@ -193,10 +193,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   const STORAGE_KEY = 'ambient-music';
   const TARGET_VOLUME = 0.28;
   let fadeTimer = null;
-  // Only explicit user mute turns music "off"
   let mutedByUser = localStorage.getItem(STORAGE_KEY) === 'off';
   let started = false;
-  let unlocking = false;
+  let playInFlight = null;
+  let fingerDown = false;
+  let lastTryAt = 0;
+  let audioCtx = null;
+  let mediaWired = false;
 
   audio.loop = true;
   audio.preload = 'auto';
@@ -210,6 +213,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   try {
     audio.load();
   } catch (e) {}
+
+  // iOS/Android: swipe often won't unlock <audio>, but AudioContext.resume() does
+  function wakeAudioContext() {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    try {
+      if (!audioCtx) audioCtx = new AC();
+      if (!mediaWired) {
+        try {
+          audioCtx.createMediaElementSource(audio).connect(audioCtx.destination);
+        } catch (e) {
+          // already connected from a previous page life
+        }
+        mediaWired = true;
+      }
+      if (audioCtx.state === 'suspended') {
+        // call resume() sync inside gesture; don't await before play()
+        audioCtx.resume().catch(() => {});
+      }
+    } catch (e) {}
+  }
 
   function syncUi() {
     const playing = started && !audio.paused && !mutedByUser;
@@ -258,7 +282,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   function onStarted() {
     started = true;
-    unlocking = false;
+    playInFlight = null;
+    fingerDown = false;
     mutedByUser = false;
     localStorage.setItem(STORAGE_KEY, 'on');
     fadeTo(TARGET_VOLUME, 900);
@@ -267,38 +292,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   }
 
   function playAmbient() {
-    if (mutedByUser) {
+    if (mutedByUser || started) {
       syncUi();
       return Promise.resolve(false);
     }
+    // Don't call play() again while one is pending — that aborts the first attempt
+    if (playInFlight) return playInFlight;
 
-    unlocking = true;
     try {
       audio.muted = false;
       if (!started) audio.volume = 0;
     } catch (e) {}
 
+    // Must stay synchronous inside the user gesture (tap or swipe move)
+    wakeAudioContext();
+
     let playPromise;
     try {
-      // Must stay inside the user gesture call stack on mobile
       playPromise = audio.play();
     } catch (err) {
-      unlocking = false;
-      syncUi(); // keep note icon — do NOT mark muted
+      playInFlight = null;
+      syncUi();
       return Promise.resolve(false);
     }
 
     if (playPromise && typeof playPromise.then === 'function') {
-      return playPromise
+      playInFlight = playPromise
         .then(() => {
           onStarted();
           return true;
         })
         .catch(() => {
-          unlocking = false;
-          syncUi(); // failure != mute
+          playInFlight = null;
+          syncUi();
           return false;
         });
+      return playInFlight;
     }
 
     onStarted();
@@ -308,24 +337,55 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   function stopAmbient() {
     mutedByUser = true;
     started = false;
-    unlocking = false;
+    playInFlight = null;
+    fingerDown = false;
     localStorage.setItem(STORAGE_KEY, 'off');
     fadeTo(0, 350);
     bindUnlockListeners();
     syncUi();
   }
 
+  function fromToggle(e) {
+    return e && e.target && (toggle === e.target || toggle.contains(e.target));
+  }
+
   function tryUnlock(e) {
-    if (mutedByUser || started || unlocking) return;
-    if (e && e.target && (toggle === e.target || toggle.contains(e.target))) return;
+    if (mutedByUser || started) return;
+    if (fromToggle(e)) return;
+
+    const type = e && e.type;
+    if (type === 'touchstart' || (type === 'pointerdown' && e.pointerType !== 'mouse')) {
+      fingerDown = true;
+    }
+    if (type === 'touchend' || type === 'touchcancel' || type === 'pointerup' || type === 'pointercancel') {
+      // last chance in this gesture; click still handles pure taps
+      playAmbient();
+      fingerDown = false;
+      return;
+    }
+    if (type === 'touchmove' || type === 'pointermove') {
+      if (!fingerDown && type === 'pointermove') return;
+      // throttle a bit so we don't spam play() after failures
+      const now = Date.now();
+      if (now - lastTryAt < 80 && playInFlight) return;
+      lastTryAt = now;
+      playAmbient();
+      return;
+    }
+
+    lastTryAt = Date.now();
     playAmbient();
   }
 
-  // Real gestures only — scroll/wheel alone often fail media unlock on mobile
+  // Swipe = touchstart + many touchmove; tap often ends as click
   const unlockEvents = [
     ['touchstart', { capture: true, passive: true }],
+    ['touchmove', { capture: true, passive: true }],
     ['touchend', { capture: true, passive: true }],
+    ['touchcancel', { capture: true, passive: true }],
     ['pointerdown', { capture: true, passive: true }],
+    ['pointermove', { capture: true, passive: true }],
+    ['pointerup', { capture: true, passive: true }],
     ['click', { capture: true }],
     ['keydown', { capture: true }],
   ];
@@ -333,7 +393,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   function removeUnlockListeners() {
     unlockEvents.forEach(([type, opts]) => {
       document.removeEventListener(type, tryUnlock, opts);
-      window.removeEventListener(type, tryUnlock, opts);
     });
   }
 
@@ -341,7 +400,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     removeUnlockListeners();
     unlockEvents.forEach(([type, opts]) => {
       document.addEventListener(type, tryUnlock, opts);
-      window.addEventListener(type, tryUnlock, opts);
     });
   }
 
@@ -356,6 +414,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         mutedByUser = false;
         localStorage.setItem(STORAGE_KEY, 'on');
         started = false;
+        playInFlight = null;
         playAmbient();
       }
     },
