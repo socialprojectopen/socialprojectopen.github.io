@@ -20,10 +20,10 @@
         <span class="logo__text">Наша компания</span>
       </a>
       <nav class="nav">
-        <a href="#company">О компании</a>
         <a href="#nds">НДС</a>
-        <a href="#industries">Отрасли</a>
         <a href="#etrn">ЭТрН</a>
+        <a href="#company">О компании</a>
+        <a href="#industries">Отрасли</a>
         <a href="#new-law">Новый закон</a>
         <a href="#compliance">Соответствие</a>
         <a href="#capabilities">Возможности</a>
@@ -167,6 +167,226 @@
           <span class="stat__value">0</span>
           <span class="stat__label">Рисков по НДС для клиентов</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Электронные транспортные накладные -->
+  <section class="etrn" id="etrn">
+    <div class="etrn__mast">
+      <div class="container etrn__mast-inner">
+        <div class="etrn__mast-copy">
+          <p class="etrn__kicker">ФЗ от 07.06.2025 №&nbsp;140 · ГИС&nbsp;ЭПД</p>
+          <h2>Электронные транспортные накладные</h2>
+          <p class="etrn__lead">
+            С&nbsp;1&nbsp;сентября&nbsp;2026 ЭТрН обязательна для большинства коммерческих грузоперевозок.
+            Бумажная накладная для таких рейсов теряет силу: в&nbsp;ГИС&nbsp;ЭПД принимаются только электронные данные.
+          </p>
+        </div>
+        <aside class="etrn__deadline" aria-label="Срок обязательности">
+          <span class="etrn__deadline-label">Дедлайн</span>
+          <span class="etrn__deadline-date">01.09.2026</span>
+          <span class="etrn__deadline-note">Переходный период законом не&nbsp;предусмотрен</span>
+        </aside>
+      </div>
+    </div>
+
+    <div class="container etrn__body">
+      <div class="etrn__facts">
+        <article class="etrn__fact">
+          <h3>Что становится обязательным</h3>
+          <p>
+            Транспортные накладные, заказы-заявки и&nbsp;экспедиторские документы
+            оформляются в&nbsp;электронном виде и&nbsp;направляются в&nbsp;ГИС&nbsp;ЭПД.
+          </p>
+        </article>
+        <article class="etrn__fact">
+          <h3>Бумага — только в исключениях</h3>
+          <p>
+            Бумажную форму допустят лишь в&nbsp;ограниченном перечне случаев,
+            который определяет Минтранс. Для обычных коммерческих рейсов ориентир — ЭТрН.
+          </p>
+        </article>
+        <article class="etrn__fact">
+          <h3>Ответственность сторон</h3>
+          <p>
+            Отсутствие ЭТрН приравнивается к&nbsp;перевозке без сопроводительных документов
+            (ст.&nbsp;11.14.3 КоАП&nbsp;РФ в&nbsp;редакции закона №&nbsp;281-ФЗ).
+          </p>
+        </article>
+      </div>
+
+      <div class="etrn__split">
+        <div class="etrn__split-copy">
+          <span class="etrn__label">Суть документа</span>
+          <h3>ЭТрН — не скан PDF, а цепочка титулов</h3>
+          <p>
+            Электронная транспортная накладная — структурированный XML-документ.
+            Участники по&nbsp;очереди заполняют и&nbsp;подписывают титулы; все части связаны
+            единым идентификатором в&nbsp;ГИС&nbsp;ЭПД. Обмен идёт через оператора ЭДО.
+          </p>
+          <ul class="etrn__checklist">
+            <li>Формат утверждён ФНС (в&nbsp;т.&nbsp;ч. приказ от&nbsp;14.05.2024 №&nbsp;ЕД-7-26/383@)</li>
+            <li>Четыре титула обязательны на&nbsp;каждый рейс; Т5–Т8 — по&nbsp;ситуации</li>
+            <li>Отдельная ЭТрН на&nbsp;каждое транспортное средство</li>
+            <li>Подписи: УКЭП (часто с&nbsp;МЧД), у&nbsp;водителя — ПЭП / УНЭП, в&nbsp;т.&nbsp;ч. через «Госключ»</li>
+          </ul>
+        </div>
+        <figure class="etrn__specimen">
+          <div class="etrn__specimen-frame">
+            <img
+              src="img/naklad/photo_2026-08-16_12-19-32.jpg"
+              alt="Образец формы электронной транспортной накладной"
+              loading="lazy"
+            >
+          </div>
+          <figcaption>
+            <span>Образец формы</span>
+            Стороны перевозки и сведения о&nbsp;грузе
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="etrn__flow">
+        <div class="etrn__block-head">
+          <span class="etrn__label">Схема рейса</span>
+          <h3>Как закрывается накладная</h3>
+        </div>
+        <ol class="etrn__timeline">
+          <li>
+            <span class="etrn__timeline-n">01</span>
+            <h4>Отправитель</h4>
+            <p>Создаёт ЭТрН, указывает стороны, груз и&nbsp;рейс, подписывает титул&nbsp;1</p>
+          </li>
+          <li>
+            <span class="etrn__timeline-n">02</span>
+            <h4>Приём груза</h4>
+            <p>Перевозчик / водитель фиксирует состояние при погрузке — титул&nbsp;2</p>
+          </li>
+          <li>
+            <span class="etrn__timeline-n">03</span>
+            <h4>Приёмка</h4>
+            <p>Получатель подтверждает выдачу, отмечает претензии — титул&nbsp;3</p>
+          </li>
+          <li>
+            <span class="etrn__timeline-n">04</span>
+            <h4>Закрытие</h4>
+            <p>Перевозчик ставит финальную подпись — титул&nbsp;4, документ в&nbsp;архиве</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="etrn__titles">
+        <div class="etrn__block-head">
+          <span class="etrn__label">Состав</span>
+          <h3>Титулы: кто заполняет и&nbsp;зачем</h3>
+          <p>Обязательные Т1–Т4 есть в&nbsp;каждой перевозке. Дополнительные — только при необходимости.</p>
+        </div>
+
+        <div class="etrn__titles-table" role="list">
+          <article class="etrn__row" role="listitem">
+            <span class="etrn__row-code">Т1</span>
+            <div class="etrn__row-main">
+              <h4>Оформление — грузоотправитель</h4>
+              <p>Стороны, договор, груз, водитель и&nbsp;ТС. При приёмке экспедитором — отметка и&nbsp;блок&nbsp;1а.</p>
+            </div>
+            <span class="etrn__row-badge">Обязательный</span>
+          </article>
+          <article class="etrn__row" role="listitem">
+            <span class="etrn__row-code">Т2</span>
+            <div class="etrn__row-main">
+              <h4>Погрузка — перевозчик / водитель</h4>
+              <p>Состояние груза, маркировка, масса, замечания при расхождениях; дата и&nbsp;время.</p>
+            </div>
+            <span class="etrn__row-badge">Обязательный</span>
+          </article>
+          <article class="etrn__row" role="listitem">
+            <span class="etrn__row-code">Т3</span>
+            <div class="etrn__row-main">
+              <h4>Приёмка — грузополучатель</h4>
+              <p>Факт получения, оценка тары и&nbsp;пломб, претензии. Без Т3 цепочка для ФНС не&nbsp;закрыта.</p>
+            </div>
+            <span class="etrn__row-badge">Обязательный</span>
+          </article>
+          <article class="etrn__row" role="listitem">
+            <span class="etrn__row-code">Т4</span>
+            <div class="etrn__row-main">
+              <h4>Сдача — перевозчик</h4>
+              <p>Подтверждение выдачи груза и&nbsp;завершение перевозки; ссылка на претензии из&nbsp;Т3.</p>
+            </div>
+            <span class="etrn__row-badge">Обязательный</span>
+          </article>
+        </div>
+
+        <div class="etrn__optional">
+          <h4>Дополнительно</h4>
+          <ul>
+            <li><strong>Т5–Т6</strong> — стоимость / первичный учёт расходов</li>
+            <li><strong>Т7</strong> — переадресация маршрута или получателя</li>
+            <li><strong>Т8</strong> — эстафета: замена ТС или водителя</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="etrn__grid-2">
+        <div class="etrn__panel">
+          <h3>Правила, которые нельзя игнорировать</h3>
+          <ul>
+            <li>Заполняйте только обязательные поля — система учитывает пометки «при наличии».</li>
+            <li>Ошибки в ИНН, адресах, госномерах и&nbsp;массе бьют по&nbsp;проверкам и&nbsp;вычетам.</li>
+            <li>При расхождениях оформляйте акт и&nbsp;прикладывайте к&nbsp;ЭТрН.</li>
+            <li>Не собирайте ЭТрН вручную в&nbsp;Word/Excel — ломается XML-структура.</li>
+          </ul>
+        </div>
+        <div class="etrn__panel etrn__panel--accent">
+          <h3>Кому что даёт</h3>
+          <div class="etrn__who">
+            <div>
+              <h4>Перевозчик</h4>
+              <p>Подпись с&nbsp;телефона, меньше простоев из‑за бумаги, понятный статус рейса.</p>
+            </div>
+            <div>
+              <h4>Отправитель и получатель</h4>
+              <p>Сопроводительные файлы и&nbsp;фото в&nbsp;документе, мгновенный архив без курьеров.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="etrn__scenarios">
+        <div class="etrn__block-head">
+          <span class="etrn__label">Сценарии</span>
+          <h3>Не только «идеальный» рейс</h3>
+        </div>
+        <div class="etrn__scenarios-grid">
+          <article>
+            <span>01</span>
+            <h4>Фиксация стоимости</h4>
+            <p>Финальное утверждение цены перевозки в&nbsp;дополнительных титулах.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h4>Переадресация</h4>
+            <p>Новый адрес или грузополучатель без потери юридической силы ЭТрН.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h4>Эстафета</h4>
+            <p>Замена транспорта или водителя в&nbsp;пути фиксируется в&nbsp;документе.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="etrn__ready">
+        <div class="etrn__ready-copy">
+          <span class="etrn__ready-tag">У нашей компании</span>
+          <h3>ЭТрН уже в рабочем контуре</h3>
+          <p>
+            Оформляем накладные вместе с&nbsp;ЭЗЗ и&nbsp;ЭПЛ: подписи в&nbsp;нужной последовательности,
+            данные совпадают с&nbsp;рейсом, документ доступен для учёта и&nbsp;проверок.
+          </p>
+        </div>
+        <a href="#compliance" class="btn btn--primary">Как мы соответствуем</a>
       </div>
     </div>
   </section>
@@ -636,239 +856,6 @@
           Работаем с любыми видами грузов — от нефтепродуктов до собственных перемещений клиентов.
           ГосЛог, ЭПД и СОРМ настроены для всех сценариев перевозки.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Электронные транспортные накладные -->
-  <section class="etrn" id="etrn">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag section-tag--alert">С 1 сентября 2026</span>
-        <h2>Электронные транспортные накладные (ЭТрН)</h2>
-        <p>
-          С 1 сентября 2026 года электронная транспортная накладная становится обязательной
-          для участников коммерческих перевозок по&nbsp;России (ФЗ от&nbsp;07.06.2025 №&nbsp;140).
-          Бумажный оригинал больше не&nbsp;заменяет цифровой документ в&nbsp;ГИС&nbsp;ЭПД.
-        </p>
-      </div>
-
-      <div class="etrn__why">
-        <article class="etrn__why-card">
-          <span class="etrn__why-num">01</span>
-          <h3>Обязательно для всех сторон</h3>
-          <p>Отправитель, перевозчик и&nbsp;получатель оформляют и&nbsp;подписывают ЭТрН в&nbsp;едином цифровом контуре.</p>
-        </article>
-        <article class="etrn__why-card">
-          <span class="etrn__why-num">02</span>
-          <h3>Прозрачность рейса</h3>
-          <p>Изменения видят все участники онлайн: статусы, замечания, фотофиксация состояния груза.</p>
-        </article>
-        <article class="etrn__why-card">
-          <span class="etrn__why-num">03</span>
-          <h3>Мгновенный обмен</h3>
-          <p>Не нужно ждать оригиналы почтой: документ сразу в&nbsp;электронном архиве и&nbsp;доступен для ФНС.</p>
-        </article>
-        <article class="etrn__why-card">
-          <span class="etrn__why-num">04</span>
-          <h3>Меньше затрат</h3>
-          <p>Без печати, восстановления испорченных бланков и&nbsp;ручной передачи в&nbsp;бухгалтерию.</p>
-        </article>
-      </div>
-
-      <div class="etrn__intro">
-        <div class="etrn__intro-copy">
-          <span class="etrn__label">Что это такое</span>
-          <h3>ЭТрН — основной документ перевозки груза</h3>
-          <p>
-            Электронная транспортная накладная фиксирует стороны, груз, маршрут и&nbsp;транспорт.
-            Участники заполняют титулы по&nbsp;очереди и&nbsp;подписывают их усиленной электронной подписью.
-            Данные проверяются на&nbsp;полноту, а&nbsp;цепочка доступна всем сторонам без сканов и&nbsp;курьеров.
-          </p>
-          <ul class="etrn__intro-list">
-            <li>Формат по приказу ФНС России от&nbsp;14.05.2024 №&nbsp;ЕД-7-26/383@</li>
-            <li>Обмен через оператора ЭДО и&nbsp;государственную систему ГИС&nbsp;ЭПД</li>
-            <li>Отдельная ЭТрН на&nbsp;каждое транспортное средство</li>
-          </ul>
-        </div>
-        <figure class="etrn__form">
-          <img
-            src="img/naklad/photo_2026-08-16_12-19-32.jpg"
-            alt="Образец электронной транспортной накладной — форма ЭТрН"
-            loading="lazy"
-          >
-          <figcaption>Образец формы ЭТрН: стороны перевозки и сведения о грузе</figcaption>
-        </figure>
-      </div>
-
-      <div class="etrn__flow">
-        <div class="section-header section-header--compact">
-          <span class="section-tag">Схема работы</span>
-          <h3>Как проходит рейс с электронной накладной</h3>
-        </div>
-        <ol class="etrn__steps">
-          <li class="etrn__step">
-            <span class="etrn__step-num">1</span>
-            <div>
-              <h4>Грузоотправитель создаёт ЭТрН</h4>
-              <p>Указывает стороны, рейс и&nbsp;груз, подписывает титул&nbsp;1 — документ уходит перевозчику.</p>
-            </div>
-          </li>
-          <li class="etrn__step">
-            <span class="etrn__step-num">2</span>
-            <div>
-              <h4>Перевозчик принимает груз</h4>
-              <p>Водитель или диспетчер фиксирует состояние при погрузке и&nbsp;подписывает титул&nbsp;2.</p>
-            </div>
-          </li>
-          <li class="etrn__step">
-            <span class="etrn__step-num">3</span>
-            <div>
-              <h4>Получатель принимает груз</h4>
-              <p>Подтверждает полную или частичную приёмку, отмечает претензии, подписывает титул&nbsp;3.</p>
-            </div>
-          </li>
-          <li class="etrn__step">
-            <span class="etrn__step-num">4</span>
-            <div>
-              <h4>Перевозчик закрывает сдачу</h4>
-              <p>Ставит заключительную подпись по&nbsp;титулу&nbsp;4 — перевозка завершена.</p>
-            </div>
-          </li>
-          <li class="etrn__step">
-            <span class="etrn__step-num">5</span>
-            <div>
-              <h4>Документ в электронном архиве</h4>
-              <p>Оригинал не&nbsp;нужно отвозить и&nbsp;сканировать: ЭТрН автоматически сохраняется для учёта и&nbsp;проверок.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-
-      <div class="etrn__titles">
-        <div class="section-header section-header--compact">
-          <span class="section-tag">Состав документа</span>
-          <h3>Титулы ЭТрН — кто что заполняет</h3>
-          <p>Участники заполняют разделы последовательно. Ниже — что обычно входит в&nbsp;каждый титул.</p>
-        </div>
-
-        <div class="etrn__titles-grid">
-          <article class="etrn__title-card">
-            <span class="etrn__title-tag">Титул 1</span>
-            <h4>От грузоотправителя</h4>
-            <ul>
-              <li>Участники: отправитель, получатель, перевозчик (наименование, ИНН, адрес, телефон)</li>
-              <li>Груз: наименование, масса, объём, места, упаковка</li>
-              <li>ТС и водитель: марка, госномер, ФИО, ВУ, телефон</li>
-              <li>Если груз принимает экспедитор — отметка и блок&nbsp;1а с данными заказчика</li>
-            </ul>
-          </article>
-
-          <article class="etrn__title-card">
-            <span class="etrn__title-tag">Титул 2</span>
-            <h4>Приём груза — перевозчик / водитель</h4>
-            <ul>
-              <li>Состояние при приёмке: целостность, маркировка, масса по&nbsp;взвешиванию</li>
-              <li>Замечания при расхождениях с титулом&nbsp;1 или повреждениях</li>
-              <li>Подпись с датой и&nbsp;временем</li>
-            </ul>
-          </article>
-
-          <article class="etrn__title-card">
-            <span class="etrn__title-tag">Титул 3</span>
-            <h4>Получение груза — грузополучатель</h4>
-            <ul>
-              <li>Факт приёмки, фактические дата и&nbsp;время</li>
-              <li>Оценка состояния груза, тары, пломб и&nbsp;маркировки</li>
-              <li>Претензии — при наличии; подпись уполномоченного лица</li>
-            </ul>
-          </article>
-
-          <article class="etrn__title-card">
-            <span class="etrn__title-tag">Титул 4</span>
-            <h4>Сдача груза — перевозчик</h4>
-            <ul>
-              <li>Завершение перевозки</li>
-              <li>Подпись с датой и&nbsp;временем</li>
-              <li>Ссылка на претензии из титула&nbsp;3, если они были</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="etrn__extra">
-          <h4>Дополнительные титулы — при необходимости</h4>
-          <div class="etrn__extra-grid">
-            <div class="etrn__extra-item"><strong>Титулы 5–6</strong> — фиксация и подтверждение стоимости перевозки</div>
-            <div class="etrn__extra-item"><strong>Титул 7</strong> — переадресация: новый маршрут или грузополучатель</div>
-            <div class="etrn__extra-item"><strong>Титул 8</strong> — эстафета: замена ТС или водителя в&nbsp;пути</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="etrn__rules-wrap">
-        <div class="etrn__rules">
-          <h3>Важные правила</h3>
-          <ul>
-            <li>Не все поля обязательны: заполняются блоки без пометок «при наличии» / «при необходимости».</li>
-            <li>Ошибки в ИНН, адресах, госномерах или характеристиках груза усложняют проверки и&nbsp;споры.</li>
-            <li>Каждый участник подписывает свой титул усиленной электронной подписью (УКЭП / УНЭП, в&nbsp;том числе через «Госключ»).</li>
-            <li>При расхождениях (например, по массе) стороны оформляют акт и&nbsp;прикладывают его к&nbsp;ЭТрН.</li>
-            <li>На каждое транспортное средство — отдельная накладная.</li>
-          </ul>
-        </div>
-        <div class="etrn__advice">
-          <h3>Практический подход</h3>
-          <p>
-            Не оформляйте ЭТрН «вручную» в текстовых редакторах — ломается структура файла.
-            Работайте через интерфейс оператора ЭДО: обязательные поля подсвечиваются,
-            реквизиты подтягиваются по&nbsp;ИНН, проверяется комплект подписей.
-          </p>
-          <div class="etrn__roles">
-            <div>
-              <h4>Перевозчикам</h4>
-              <p>Водители подписывают титулы с&nbsp;телефона, рейс не&nbsp;ждёт бумагу.</p>
-            </div>
-            <div>
-              <h4>Отправителям и получателям</h4>
-              <p>К накладной можно приложить сопроводительные документы и&nbsp;фото груза.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="etrn__scenarios">
-        <div class="section-header section-header--compact">
-          <span class="section-tag">Сценарии</span>
-          <h3>Поддерживаем все типовые ситуации перевозки</h3>
-        </div>
-        <div class="etrn__scenarios-grid">
-          <article class="etrn__scenario">
-            <span>01</span>
-            <h4>Фиксация стоимости</h4>
-            <p>Финальное утверждение цены за перевозку в&nbsp;дополнительных титулах.</p>
-          </article>
-          <article class="etrn__scenario">
-            <span>02</span>
-            <h4>Переадресация</h4>
-            <p>Смена адреса выгрузки или грузополучателя без потери юридической силы документа.</p>
-          </article>
-          <article class="etrn__scenario">
-            <span>03</span>
-            <h4>Эстафета</h4>
-            <p>Замена транспортного средства или водителя в&nbsp;пути с&nbsp;фиксированием в&nbsp;ЭТрН.</p>
-          </article>
-        </div>
-      </div>
-
-      <div class="etrn__ready">
-        <span class="etrn__ready-tag">У нашей компании</span>
-        <h3>ЭТрН уже в рабочем контуре</h3>
-        <p>
-          Оформляем электронные транспортные накладные вместе с ЭЗЗ и&nbsp;ЭПЛ.
-          Подписи сторон идут в&nbsp;нужной последовательности, данные совпадают с&nbsp;фактом рейса,
-          документ доступен для учёта и&nbsp;проверок — без бумаги и&nbsp;потерь оригиналов.
-        </p>
-        <a href="#compliance" class="btn btn--primary">Как мы соответствуем требованиям</a>
       </div>
     </div>
   </section>
