@@ -3469,13 +3469,6 @@ button:focus-visible {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
-.present figcaption {
-  margin-top: 12px;
-  color: var(--color-text-muted);
-  font-size: 0.92rem;
-  line-height: 1.5;
-}
-
 @media (max-width: 900px) {
   .branches {
     grid-template-columns: 1fr;
