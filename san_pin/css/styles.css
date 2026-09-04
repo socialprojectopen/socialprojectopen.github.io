@@ -298,6 +298,68 @@ section {
   max-width: 860px;
 }
 
+.hero__duty {
+  margin-top: 28px;
+  max-width: 860px;
+  border-radius: var(--radius-lg);
+  border: 1px solid #fecdd3;
+  background: linear-gradient(180deg, #fff 0%, #fff7f8 100%);
+  box-shadow: var(--shadow-sm);
+  padding: 22px 24px 20px;
+}
+
+.hero__duty-kicker {
+  margin: 0 0 14px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9f1239;
+}
+
+.hero__duty ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.hero__duty li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: #1f2937;
+}
+
+.hero__duty li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e11d48;
+}
+
+.hero__duty strong {
+  color: #9f1239;
+}
+
+.hero__duty-offer {
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--color-ready-bg);
+  border: 1px solid #bbf7d0;
+  color: #14532d;
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
 .hero__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
@@ -356,6 +418,9 @@ section {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  white-space: normal;
+  max-width: 100%;
+  line-height: 1.35;
 }
 
 .hero__tag--risk {
@@ -3159,6 +3224,14 @@ body.loaded .hero__stats {
 
   .hero__lead {
     font-size: 1rem;
+  }
+
+  .hero__duty {
+    padding: 18px 16px 16px;
+  }
+
+  .hero__duty li {
+    font-size: 0.97rem;
   }
 
   .hero__contrast,
